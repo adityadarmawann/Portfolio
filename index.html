@@ -73,7 +73,30 @@
             width: 100%;
             height: 2px;
             background: linear-gradient(90deg, #6a5acd, #4169e1);
+        
+            /* Gaya untuk hamburger menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
         }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 25px;
+            background: white;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        .navigation {
+            display: none;
+        }
+
+        }
+
+        
 
         /* Hero Section */
         .hero {
@@ -498,6 +521,29 @@
             .experience-timeline {
                 padding-left: 2rem;
             }
+
+            ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #333;
+                width: 100%;
+                display: none;
+            }
+
+            ul li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .navigation.active ul {
+                display: flex;
+            }
         }
 
         /* Smooth scroll offset */
@@ -510,6 +556,27 @@
     <header>
         <nav>
             <div class="logo">PORTFOLIO</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- <header>
+        <nav>
+            <div class="logo">PORTFOLIO</div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -520,7 +587,7 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </header> -->
 
     <section id="home" class="hero">
         <div class="hero-content">
@@ -810,18 +877,18 @@
 
         <section id="contact">
                     <h2>Contact</h2>
-                    <div class="contact-info">
+                        <div class="contact-info">
                         <h3>Let's Connect</h3>
                         <p style="color: #b0b0b0;">This portfolio reflects my passion for continuous learning and creating innovative solutions. Thank you for taking the time to review my portfolio. I believe my skills in Data, AI Engineer, and Project Management will be a great fit for your company's vision. Let's discuss how we can build something great together.</p>
                                             
                         <div style="margin: 30px 0; text-align: center;">
                             <h4 style="color: #fff; margin-bottom: 15px;">You can download my CV here:</h4>
                             <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-                                <a href="https://drive.google.com/uc?export=download&id=XXXXXXXX" target="_blank" class="cv-download-btn" style="color: white;">
+                                <a href="https://drive.google.com/file/d/13STj-X5-0Mjv21odHFOvV7n2sNo4gI2h/view?usp=sharing" target="_blank" class="cv-download-btn" style="color: white;">
                                     <span>📄</span>
                                     <span>CV Bidang Data dan AI</span>
                                 </a>
-                                <a href="https://drive.google.com/uc?export=download&id=YYYYYYYY" target="_blank" class="cv-download-btn" style="color: white;">
+                                <a href="https://drive.google.com/file/d/1NIP6aSnWZd4k7uHkB2ZgRxepWChYaOy9/view?usp=sharing" target="_blank" class="cv-download-btn" style="color: white;">
                                     <span>📋</span>
                                     <span>CV Project Management</span>
                                 </a>
