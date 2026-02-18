@@ -49,6 +49,12 @@
             background-clip: text;
         }
 
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
@@ -78,11 +84,11 @@
 
         /* Hamburger Menu */
         .hamburger {
-            display: none;
             cursor: pointer;
             flex-direction: column;
             gap: 5px;
             padding: 5px;
+            z-index: 1001;
         }
 
         .hamburger span {
@@ -110,6 +116,13 @@
             list-style: none;
             display: flex;
             gap: 2rem;
+        }
+
+        /* Desktop: Hide hamburger */
+        @media (min-width: 769px) {
+            .hamburger {
+                display: none !important;
+            }
         }
 
         
@@ -540,6 +553,10 @@
 
         /* Mobile Navigation Styles */
         @media (max-width: 768px) {
+            nav {
+                padding: 0 1rem;
+            }
+
             .hamburger {
                 display: flex !important;
             }
@@ -557,6 +574,7 @@
                 transition: left 0.3s ease;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
                 z-index: 999;
+                margin: 0;
             }
 
             .navigation ul.active {
@@ -792,21 +810,23 @@
     <header>
         <nav>
             <div class="logo">PORTFOLIO</div>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="navigation">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+            <div class="nav-wrapper">
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="navigation">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
