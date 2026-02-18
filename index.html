@@ -401,6 +401,8 @@
         .experience-timeline {
             position: relative;
             padding-left: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .experience-timeline::before {
@@ -841,6 +843,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#education">Education</a></li>
                         <li><a href="#skills">Skills</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#experience">Experience</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -921,7 +924,49 @@
 
 
         <section id="skills">
-            <h2>Skills & Certifications</h2>
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Project Management</li>
+                        <li>Analytical & Problem Solving</li>
+                        <li>Technical Communication</li>
+                        <li>Team Collaboration</li>
+                        <li>Business Presentation</li>
+                        <li>Cross-functional Collaboration</li>
+                        <li>Workplace Adaptability</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3 style="text-align: center;">ML and AI Engineering</h3>
+                    <ul>
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>Model Optimization & Evaluation</li>
+                        <li>Neural Network Architectures</li>
+                        <li>Natural Language Processing (NLP)</li>
+                        <li>Computer Vision</li>
+                        <li>Feature Engineering</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools and Programming</h3>
+                    <ul>
+                        <li>PHP Laravel, Python</li>
+                        <li>SQL</li>
+                        <li>Jupyter Notebook, Google Colab</li>
+                        <li>Git & GitHub</li>
+                        <li>Microsoft Excel</li>
+                        <li>Power BI</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Professional Certifications</h2>
             <div class="skills-grid">
                 <div class="skill-card">
                     <h3>Program Analyst</h3>
@@ -944,11 +989,13 @@
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Additional Skills</h3>
+                    <h3>Data Science</h3>
+                    <p style="color: #4a5568;"><em>Certified by PT Hacktivate Teknologi Indonesia on Study Independent Program</em></p>
                     <ul>
-                        <li>Soft Skills: Project Management, Analytical & Problem Solving, Technical Communication, Team Collaboration, Business Presentation, Cross-functional Collaboration, Workplace Adaptability</li>
-                        <li>Machine Learning and AI Engineering: TensorFlow, PyTorch, Model Optimization & Evaluation, Neural Network Architectures, Natural Language Processing (NLP), Computer Vision, Feature Engineering</li>
-                        <li>Tools and Programming: PHP Laravel, Python, SQL, Jupyter Notebook, Git & GitHub, Google Colab, Microsoft Excel, Power BI, Anaconda, PostgreSQL</li>
+                        <li>Python & Data Processing</li>
+                        <li>Statistical Analysis & Data Query</li>
+                        <li>Machine Learning Model Development</li>
+                        <li>End-to-end Data Science Workflows</li>
                     </ul>
                 </div>
             </div>
@@ -962,7 +1009,7 @@
                         <img src="Asset/AI Comparison.png" alt="AI Comparison for Scoring Team Performance" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
                     <div class="project-header">
-                        <h3>AI Comparison for Scoring Team Performance/h3>
+                        <h3>AI Comparison for Scoring Team Performance </h3>
                     </div>
                     <div class="project-body">
                         <p style="color: #2d3748;"><strong>AI Comparison for Scoring Team Performance</strong></p>
@@ -975,16 +1022,14 @@
                         <p style="color: #4a5568; margin-top: 1rem;"><em>*In process for journal publication</em></p>
                     </div>
                 </div>
+
+
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="Asset/TNN (2).png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="Asset/TNN.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
                     <div class="project-header">
                         <h3>Trans Neural Network Model</h3>
-                        <!-- <div class="project-stats">
-                            <span>Accuracy: 99.57%</span>
-                            <span>Loss: 0.0096</span>
-                        </div> -->
                     </div>
                     <div class="project-body">
                         <p style="color: #2d3748;"><strong>Hybrid Model for Malware Detection Based on Network Traffic</strong></p>
@@ -1015,6 +1060,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="Asset/risk.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -1031,12 +1077,14 @@
                             <li>Tech: Python, Scikit-learn, XGBoost, Pandas, NumPy, Matplotlib, Imbalanced-learn</li>
                         </ul>
                     </div>
-                    <div class="project-card">
+                </div>
+
+                <div class="project-card">
                     <div class="project-image">
-                        <img src="Asset/Web Niskala.png" alt="Web Niskala" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="Asset/Web Niskala.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
                     <div class="project-header">
-                        <h3>Development Niskala Publisher Website</h3>
+                        <h3>Niskala Publisher Website</h3>
                     </div>
                     <div class="project-body">
                         <p style="color: #2d3748;"><strong>Website for Online Shop Niskala Publisher</strong></p>
@@ -1048,6 +1096,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="Asset/babarengan.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -1121,7 +1170,7 @@
                     <div class="experience-body">
                         <p style="color: #2d3748;"><strong>Coding and Artificial Intelligence Program</strong></p>
                         <ul>
-                            <li>Delivered coding and artificial intelligence training to teacher representatives from 120 schools across Tasikmalaya and Ciamis in multiple structured training batches.</li>
+                            <li>Delivered coding and artificial intelligence training to teacher representatives from 600+ schools across Tasikmalaya and Ciamis in multiple structured training batches.</li>
                             <li>Facilitated technology knowledge transfer to teachers as a multiplier effect, contributing to sustainable technology adoption within the local education ecosystem and strengthening multi-stakeholder collaboration between academia, government, and industry.</li>
                             <li>Managed participant registration and training administration while coordinating with lecturers, education offices, regional coordinators, school principals, and teachers to ensure smooth program execution.</li>
                             <li>Demonstrated strong adaptability and time management by balancing academic responsibilities with professional duties.</li>
@@ -1283,11 +1332,13 @@
         window.addEventListener('scroll', () => {
             let current = '';
             const sections = document.querySelectorAll('section');
+            const scrollPosition = scrollY + 150; // Adjust threshold for better detection
             
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 100)) {
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                     current = section.getAttribute('id');
                 }
             });
