@@ -84,11 +84,14 @@
 
         /* Hamburger Menu */
         .hamburger {
+            display: none;
             cursor: pointer;
             flex-direction: column;
             gap: 5px;
             padding: 5px;
             z-index: 1001;
+            align-items: center;
+            justify-content: center;
         }
 
         .hamburger span {
@@ -553,12 +556,28 @@
 
         /* Mobile Navigation Styles */
         @media (max-width: 768px) {
+            header {
+                padding: 0.8rem 0;
+            }
+
             nav {
-                padding: 0 1rem;
+                padding: 0 1.5rem;
+                min-height: 50px;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .nav-wrapper {
+                gap: 0;
+                align-items: center;
             }
 
             .hamburger {
                 display: flex !important;
+                margin-left: auto;
+                padding: 0.5rem;
             }
 
             .navigation ul {
@@ -927,11 +946,9 @@
                 <div class="skill-card">
                     <h3>Additional Skills</h3>
                     <ul>
-                        <li>Python, SQL, PyTorch, TensorFlow</li>
-                        <li>Microsoft Office</li>
-                        <li>Google WorkSpace</li>
-                        <li>Programming & Data Analysis</li>
-                        <li>Machine Learning & Deep Learning</li>
+                        <li>Soft Skills: Project Management, Analytical & Problem Solving, Technical Communication, Team Collaboration, Business Presentation, Cross-functional Collaboration, Workplace Adaptability</li>
+                        <li>Machine Learning and AI Engineering: TensorFlow, PyTorch, Model Optimization & Evaluation, Neural Network Architectures, Natural Language Processing (NLP), Computer Vision, Feature Engineering</li>
+                        <li>Tools and Programming: PHP Laravel, Python, SQL, Jupyter Notebook, Git & GitHub, Google Colab, Microsoft Excel, Power BI, Anaconda, PostgreSQL</li>
                     </ul>
                 </div>
             </div>
@@ -940,6 +957,24 @@
         <section id="projects">
             <h2>Project Experiences</h2>
             <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Asset/AI Comparison.png" alt="AI Comparison for Scoring Team Performance" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div class="project-header">
+                        <h3>AI Comparison for Scoring Team Performance/h3>
+                    </div>
+                    <div class="project-body">
+                        <p style="color: #2d3748;"><strong>AI Comparison for Scoring Team Performance</strong></p>
+                        <ul>
+                            <li>Extracted performance data from the LMS (communication, experience, technical skills, HR scores) and Standardized inputs using structured, interview-based prompts</li>
+                            <li>Evaluated 5 leading AI platforms (Chat GPT, Claude, GLM, Deep Seek, Gemini)</li>
+                            <li>Applied Repeated Measures ANOVA and post-hoc tests to assess statistical differences</li>
+                            <li>Used Python for data analysis and Streamlit to build an interactive evaluation dashboard</li>
+                        </ul>
+                        <p style="color: #4a5568; margin-top: 1rem;"><em>*In process for journal publication</em></p>
+                    </div>
+                </div>
                 <div class="project-card">
                     <div class="project-image">
                         <img src="Asset/TNN (2).png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -954,10 +989,10 @@
                     <div class="project-body">
                         <p style="color: #2d3748;"><strong>Hybrid Model for Malware Detection Based on Network Traffic</strong></p>
                         <ul>
-                            <li>Designed hybrid model combining Transformers and CNN with transfer learning</li>
-                            <li>Built model using PyTorch with USTC-TFC2016 dataset</li>
-                            <li>Evaluated using nine metrics including accuracy 99,57%, precision 99,58%, recall 99,57%, F1-score 99,58%</li>
+                            <li>Built Transfirmer + CNN model on USTC-TFC2016 dataset (8M+ samples) achieving 99.57% accuracy, 0.98 F1-Score, and 15% improvement over baseline models</li>
+                            <li>Evaluated using Precision, Recall, F1-Score, Confusion Matrix, and loss analysis, reducing false positive rate to 0.8% with 5,000 samples/second processing speed</li>
                             <li>Contributing to scientific research on hybrid deep learning</li>
+                            <li>Tech: MySQL, Python, TensorFlow, PyTorch, BERT, CNN, feature extraction</li>
                         </ul>
                         <p style="color: #4a5568; margin-top: 1rem;"><em>*In process for journal publication</em></p>
                     </div>
@@ -973,14 +1008,46 @@
                     <div class="project-body">
                         <p style="color: #2d3748;"><strong>Prototype Business Analyst TikTok Marketplace Based</strong></p>
                         <ul>
-                            <li>Built supervised learning model using Gradient Boosting for sales prediction</li>
-                            <li>Performed in-depth data analysis with visual dashboards</li>
-                            <li>Prototyped application integrating predictive models and visualization</li>
-                            <li>Translated analytical results into business reports for management</li>
+                            <li>Analyzed sales trends across product types and visual content patterns on 100,000+ transaction records, identifying key customer preferences and market opportunities</li>
+                            <li>Developed predictive sales model forecasting 40% decline in next-month revenue under existing strategy, prompting creation of new data-driven sales approach</li>
+                            <li>Designed and implemented new sales strategy based on trend analysis and customer insights, successfully increasing monthly sales from 150 to 250 units (67% growth) and achieving target realization</li>
+                            <li>Tech: Microsoft Excel, Python, Scikit-learn, Pandas, data visualization</li>
                         </ul>
                     </div>
                 </div>
-
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Asset/risk.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div class="project-header">
+                        <h3>Credit Risk Analysis</h3>
+                    </div>
+                    <div class="project-body">
+                        <p style="color: #2d3748;"><strong>LendingClub Dataset (ML for Classification)</strong></p>
+                        <ul>
+                            <li>Developed an end-to-end credit risk prediction pipeline on 466K+ loan records, optimizing recall to minimize false negatives and improve default risk detection</li>
+                            <li>Implemented and compared Logistic Regression, Random Forest, SVM, and XGBoost, achieving improved classification performance through SMOTE-based imbalance handling and PCA-driven dimensionality reduction</li>
+                            <li>Enhanced model reliability and interpretability via hyperparameter tuning (GridSearchCV), confusion matrix evaluation, and feature importance analysis to support data-driven credit decisions</li>
+                            <li>Tech: Python, Scikit-learn, XGBoost, Pandas, NumPy, Matplotlib, Imbalanced-learn</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                    <div class="project-image">
+                        <img src="Asset/Web Niskala.png" alt="Web Niskala" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div class="project-header">
+                        <h3>Development Niskala Publisher Website</h3>
+                    </div>
+                    <div class="project-body">
+                        <p style="color: #2d3748;"><strong>Website for Online Shop Niskala Publisher</strong></p>
+                        <ul>
+                            <li>Successfully delivered a fully functional catalog website for Penerbit Niskala within a 7-day development sprint</li>
+                            <li>Led project management, UX structuring, and frontend implementation to ensure a smooth and engaging user experience</li>
+                            <li>Strengthened digital presence for a multidisciplinary publisher through an efficient and modern web platform</li>
+                            <li>Tech: Laravel Framework</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="project-card">
                     <div class="project-image">
                         <img src="Asset/babarengan.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -995,6 +1062,7 @@
                             <li>Created integrated system for MSMEs, investors, and cooperatives</li>
                             <li>Developed platform for easy public investment participation</li>
                             <li>Designed secure and transparent data flow for stock transactions</li>
+                            <li>Tech: Laravel Framework</li>
                         </ul>
                     </div>
                 </div>
@@ -1013,6 +1081,7 @@
                             <li>Managed projects and team collaboration</li>
                             <li>Designed intuitive UI/UX interfaces</li>
                             <li>Created and managed application content</li>
+                            <li>Tech: Laravel Framework</li>
                         </ul>
                     </div>
                 </div>
@@ -1031,25 +1100,10 @@
                             <li>Developed role-based user system (admin, cashier, chef)</li>
                             <li>Created seamless workflow with real-time order status updates</li>
                             <li>Managed database schema for users, orders, and menus</li>
+                            <li>Tech: PHP Native</li>                            
                         </ul>
                     </div>
                 </div>
-
-                    <div class="project-card">
-                    <div class="project-image">
-                        <img src="Asset/risk.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                    </div>
-                    <div class="project-header">
-                        <h3>Credit Risk Analysis</h3>
-                    </div>
-                    <div class="project-body">
-                        <p style="color: #2d3748;"><strong>LendingClub Dataset (ML for Classification)</strong></p>
-                        <ul>
-                            <li>Developed an end-to-end ML pipeline to predict loan repayment outcomes using Logistic Regression, Random Forest, SVM, and XGBoost.</li>
-                            <li>Applied SMOTE for class balancing and StandardScaler for numerical normalization.</li>
-                            <li>Visualized results through ROC curves and feature importance to enhance interpretability for stakeholders.</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1140,11 +1194,11 @@
                         <div style="margin: 30px 0; text-align: center;">
                             <h4 style="color: #2d3748; margin-bottom: 15px;">You can download my CV here:</h4>
                             <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-                                <a href="https://drive.google.com/file/d/13STj-X5-0Mjv21odHFOvV7n2sNo4gI2h/view?usp=sharing" target="_blank" class="cv-download-btn" style="color: #2d3748;">
+                                <a href="https://1drv.ms/b/c/e8e138949147d58e/IQAFI4PIO1INTb1Jo-O4fD6tAZR5PBwNO9dRDXw1NJYToPI?e=xm2zfj" target="_blank" class="cv-download-btn" style="color: #2d3748;">
                                     <span>📄</span>
                                     <span>CV in Data and AI Scope</span>
                                 </a>
-                                <a href="https://drive.google.com/file/d/1NIP6aSnWZd4k7uHkB2ZgRxepWChYaOy9/view?usp=sharing" target="_blank" class="cv-download-btn" style="color: #2d3748;">
+                                <a href="https://1drv.ms/b/c/e8e138949147d58e/IQB9Zq4C9iheS4MRDd-6DkD6AX5rWSZEYpjEPUPYAzIGwGw?e=qEIE5J" target="_blank" class="cv-download-btn" style="color: #2d3748;">
                                     <span>📋</span>
                                     <span>CV Project Management Scope</span>
                                 </a>
@@ -1163,10 +1217,6 @@
                             <a href="https://www.linkedin.com/in/muhamad-aditya-darmawan-57027a240/" class="contact-link" target="_blank">
                                 <span><img src="Asset/linkedin.png" alt="LinkedIn" style="width: 24px; height: 24px; object-fit: contain;"></span>
                                 <span>LinkedIn</span>
-                            </a>
-                            <a href="https://wa.me/6287831143158" class="contact-link" target="_blank">
-                                <span><img src="Asset/wa.png" alt="WhatsApp" style="width: 24px; height: 24px; object-fit: contain;"></span>
-                                <span>+62 878-3114-3158</span>
                             </a>
                             <a href="https://www.instagram.com/adityadarmawan___?igsh=YmVoZjN1ZDMzY3A%3D&utm_source=qr" class="contact-link" target="_blank">
                                 <span><img src="Asset/ig.png" alt="Instagram" style="width: 24px; height: 24px; object-fit: contain;"></span>
