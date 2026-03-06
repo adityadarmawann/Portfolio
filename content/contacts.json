@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "url": "mailto:darmawanaditya521@gmail.com",
+      "icon": "Asset/gmail.png",
+      "targetBlank": false,
+      "label": { "en": "darmawanaditya521@gmail.com", "id": "darmawanaditya521@gmail.com" }
+    },
+    {
+      "url": "https://github.com/adityadarmawann",
+      "icon": "Asset/github.png",
+      "targetBlank": true,
+      "label": { "en": "GitHub", "id": "GitHub" }
+    },
+    {
+      "url": "https://www.linkedin.com/in/muhamad-aditya-darmawan-57027a240/",
+      "icon": "Asset/linkedin.png",
+      "targetBlank": true,
+      "label": { "en": "LinkedIn", "id": "LinkedIn" }
+    },
+    {
+      "url": "https://www.instagram.com/adityadarmawan___?igsh=YmVoZjN1ZDMzY3A%3D&utm_source=qr",
+      "icon": "Asset/ig.png",
+      "targetBlank": true,
+      "label": { "en": "@adityadarmawan___", "id": "@adityadarmawan___" }
+    }
+  ]
+}

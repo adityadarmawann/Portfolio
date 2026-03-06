@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "title": { "en": "Program Analyst", "id": "Program Analyst" },
+      "subtitle": { "en": "Certified by BNSP Authority and LSP Siliwangi University", "id": "Tersertifikasi oleh BNSP dan LSP Universitas Siliwangi" },
+      "items": [
+        { "en": "Program unit testing, debugging, and profiling", "id": "Unit testing, debugging, dan profiling program" },
+        { "en": "Implementing algorithm with databases", "id": "Implementasi algoritma dengan database" },
+        { "en": "Code documentation and analysis", "id": "Dokumentasi dan analisis kode" }
+      ]
+    },
+    {
+      "title": { "en": "ICT Project Manager", "id": "ICT Project Manager" },
+      "subtitle": { "en": "Certified by BNSP Authority and LSP Siliwangi University", "id": "Tersertifikasi oleh BNSP dan LSP Universitas Siliwangi" },
+      "items": [
+        { "en": "Project integration and scope management", "id": "Manajemen integrasi dan ruang lingkup proyek" },
+        { "en": "Time, cost, and quality management", "id": "Manajemen waktu, biaya, dan kualitas" },
+        { "en": "Risk and stakeholder management", "id": "Manajemen risiko dan stakeholder" }
+      ]
+    },
+    {
+      "title": { "en": "Data Science", "id": "Data Science" },
+      "subtitle": { "en": "Certified by PT Hacktivate Teknologi Indonesia on Study Independent Program", "id": "Tersertifikasi oleh PT Hacktivate Teknologi Indonesia pada Program Studi Independen" },
+      "items": [
+        { "en": "Python and Data Processing", "id": "Python dan Pemrosesan Data" },
+        { "en": "Statistical Analysis and Data Query", "id": "Analisis Statistik dan Query Data" },
+        { "en": "Machine Learning Model Development", "id": "Pengembangan Model Machine Learning" }
+      ]
+    }
+  ]
+}

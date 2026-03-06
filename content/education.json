@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "title": {
+        "en": "Bachelor's Degree of Informatics",
+        "id": "Sarjana Informatika"
+      },
+      "institution": "Universitas Siliwangi",
+      "location": "Tasikmalaya, ID",
+      "period": "Aug 2021 - Jul 2025",
+      "details": [
+        {
+          "en": "GPA: 3.97/4.0",
+          "id": "IPK: 3,97/4,0"
+        },
+        {
+          "en": "Relevant Coursework: Software Engineering, Artificial Intelligence, Data Science, Machine Learning, Deep Learning, Statistics and Probability, Algorithms and Data Structures.",
+          "id": "Mata kuliah relevan: Rekayasa Perangkat Lunak, Kecerdasan Buatan, Data Science, Machine Learning, Deep Learning, Statistika dan Probabilitas, Algoritma dan Struktur Data."
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Mathematics and Sciences Program",
+        "id": "Program Matematika dan Ilmu Pengetahuan Alam"
+      },
+      "institution": "SMA Negeri 2 Tasikmalaya",
+      "location": "Tasikmalaya, ID",
+      "period": "2018 - 2021",
+      "details": []
+    }
+  ]
+}

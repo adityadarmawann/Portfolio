@@ -1,0 +1,13 @@
+{
+  "items": [
+    { "order": 1, "image": "Asset/photo-1.jpg", "caption": { "en": "Professional Portrait", "id": "Potret Profesional" } },
+    { "order": 2, "image": "Asset/photo-2.jpg", "caption": { "en": "At Work", "id": "Saat Bekerja" } },
+    { "order": 3, "image": "Asset/photo-3.jpg", "caption": { "en": "Casual Moment", "id": "Momen Santai" } },
+    { "order": 4, "image": "Asset/photo-4.jpg", "caption": { "en": "Conference Presentation", "id": "Presentasi Konferensi" } },
+    { "order": 5, "image": "Asset/photo-5.jpg", "caption": { "en": "Team Collaboration", "id": "Kolaborasi Tim" } },
+    { "order": 6, "image": "Asset/photo-6.jpg", "caption": { "en": "Working Session", "id": "Sesi Kerja" } },
+    { "order": 7, "image": "Asset/photo-7.jpg", "caption": { "en": "Creative Process", "id": "Proses Kreatif" } },
+    { "order": 8, "image": "Asset/photo-8.jpg", "caption": { "en": "Outdoor Portrait", "id": "Potret Outdoor" } },
+    { "order": 9, "image": "Asset/photo-9.jpg", "caption": { "en": "Professional Headshot", "id": "Foto Headshot Profesional" } }
+  ]
+}

@@ -1,0 +1,334 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+publish_mode: simple
+
+media_folder: "Asset/uploads"
+public_folder: "/Asset/uploads"
+
+collections:
+  - name: "pengaturan_situs"
+    label: "Pengaturan Situs"
+    files:
+      - file: "content/site-settings.json"
+        label: "Konten Global"
+        name: "konten_global"
+        format: "json"
+        fields:
+          - label: "Terjemahan"
+            name: "translations"
+            widget: "object"
+            fields:
+              - label: "Bahasa Inggris"
+                name: "en"
+                widget: "object"
+                fields:
+                  - { label: "Judul Hero", name: "hero_title", widget: "string" }
+                  - { label: "Deskripsi Hero", name: "hero_desc", widget: "text" }
+                  - { label: "Lead About", name: "about_lead", widget: "text" }
+                  - { label: "Paragraf About 1", name: "about_p1", widget: "text" }
+                  - { label: "Paragraf About 2", name: "about_p2", widget: "text" }
+                  - { label: "Paragraf About 3", name: "about_p3", widget: "text" }
+                  - { label: "Lead Galeri", name: "gallery_lead", widget: "text" }
+                  - { label: "Judul Publikasi", name: "publications_title", widget: "string" }
+                  - { label: "Lead Publikasi", name: "publications_lead", widget: "text" }
+                  - { label: "Deskripsi Kontak", name: "contact_desc", widget: "text" }
+                  - { label: "Meta Title", name: "meta_title", widget: "string" }
+                  - { label: "Meta Description", name: "meta_desc", widget: "text" }
+                  - { label: "Meta OG Description", name: "meta_og_desc", widget: "text" }
+              - label: "Bahasa Indonesia"
+                name: "id"
+                widget: "object"
+                fields:
+                  - { label: "Judul Hero", name: "hero_title", widget: "string" }
+                  - { label: "Deskripsi Hero", name: "hero_desc", widget: "text" }
+                  - { label: "Lead About", name: "about_lead", widget: "text" }
+                  - { label: "Paragraf About 1", name: "about_p1", widget: "text" }
+                  - { label: "Paragraf About 2", name: "about_p2", widget: "text" }
+                  - { label: "Paragraf About 3", name: "about_p3", widget: "text" }
+                  - { label: "Lead Galeri", name: "gallery_lead", widget: "text" }
+                  - { label: "Judul Publikasi", name: "publications_title", widget: "string" }
+                  - { label: "Lead Publikasi", name: "publications_lead", widget: "text" }
+                  - { label: "Deskripsi Kontak", name: "contact_desc", widget: "text" }
+                  - { label: "Meta Title", name: "meta_title", widget: "string" }
+                  - { label: "Meta Description", name: "meta_desc", widget: "text" }
+                  - { label: "Meta OG Description", name: "meta_og_desc", widget: "text" }
+          - label: "SEO Lengkap"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "URL Canonical", name: "canonical", widget: "string", hint: "Contoh: https://domainkamu.com/" }
+              - { label: "Gambar OG", name: "og_image", widget: "image" }
+              - { label: "Kata Kunci", name: "keywords", widget: "text", hint: "Pisahkan dengan koma" }
+          - label: "Galeri Hero"
+            name: "heroGallery"
+            widget: "list"
+            summary: "{{fields.alt}}"
+            fields:
+              - { label: "Gambar", name: "image", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string" }
+          - label: "Gambar About"
+            name: "aboutImage"
+            widget: "object"
+            fields:
+              - { label: "Sumber", name: "src", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string" }
+          - label: "Link CV"
+            name: "cv"
+            widget: "object"
+            fields:
+              - { label: "URL CV Data/AI", name: "data", widget: "string", hint: "Gunakan URL lengkap" }
+              - { label: "URL CV Project Management", name: "pm", widget: "string", hint: "Gunakan URL lengkap" }
+
+  - name: "pendidikan"
+    label: "Pendidikan"
+    files:
+      - file: "content/education.json"
+        label: "Daftar Pendidikan"
+        name: "daftar_pendidikan"
+        format: "json"
+        fields:
+          - label: "Item Pendidikan"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title.en}} | {{fields.institution}}"
+            fields:
+              - label: "Judul"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }
+              - { label: "Institusi", name: "institution", widget: "string" }
+              - { label: "Lokasi", name: "location", widget: "string" }
+              - { label: "Periode", name: "period", widget: "string" }
+              - label: "Detail"
+                name: "details"
+                widget: "list"
+                summary: "{{fields.en}}"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "text" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "text" }
+
+  - name: "keahlian"
+    label: "Keahlian"
+    files:
+      - file: "content/skills.json"
+        label: "Grup Keahlian"
+        name: "grup_keahlian"
+        format: "json"
+        fields:
+          - label: "Grup"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title.en}}"
+            fields:
+              - label: "Judul"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }
+              - label: "Poin"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.en}}"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }
+
+  - name: "sertifikasi"
+    label: "Sertifikasi"
+    files:
+      - file: "content/certifications.json"
+        label: "Grup Sertifikasi"
+        name: "grup_sertifikasi"
+        format: "json"
+        fields:
+          - label: "Item Sertifikasi"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title.en}}"
+            fields:
+              - label: "Judul"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }
+              - label: "Subjudul"
+                name: "subtitle"
+                widget: "object"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }
+              - label: "Poin"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.en}}"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }
+
+  - name: "proyek"
+    label: "Proyek"
+    files:
+      - file: "content/projects.json"
+        label: "Daftar Proyek"
+        name: "daftar_proyek"
+        format: "json"
+        fields:
+          - label: "Item Proyek"
+            name: "items"
+            widget: "list"
+            summary: "#{{fields.order}} - {{fields.title.en}}"
+            fields:
+              - { label: "Urutan", name: "order", widget: "number", value_type: "int", min: 1, hint: "Semakin kecil, semakin atas" }
+              - label: "Kategori"
+                name: "categories"
+                widget: "list"
+                field:
+                  label: "Kategori"
+                  name: "category"
+                  widget: "select"
+                  options: ["ai", "web", "data"]
+              - { label: "Gambar", name: "image", widget: "image" }
+              - { label: "Alt Gambar", name: "imageAlt", widget: "string" }
+              - label: "Judul"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }
+              - label: "Ringkasan"
+                name: "summary"
+                widget: "object"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }
+              - label: "Poin"
+                name: "bullets"
+                widget: "list"
+                summary: "{{fields.en}}"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "text" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "text" }
+              - label: "Catatan Kaki"
+                name: "footnote"
+                required: false
+                widget: "object"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string", required: false }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string", required: false }
+
+  - name: "pengalaman"
+    label: "Pengalaman Kerja"
+    files:
+      - file: "content/experience.json"
+        label: "Daftar Pengalaman"
+        name: "daftar_pengalaman"
+        format: "json"
+        fields:
+          - label: "Item Pengalaman"
+            name: "items"
+            widget: "list"
+            summary: "#{{fields.order}} - {{fields.role.en}}"
+            fields:
+              - { label: "Urutan", name: "order", widget: "number", value_type: "int", min: 1, hint: "Semakin kecil, semakin atas" }
+              - label: "Posisi"
+                name: "role"
+                widget: "object"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }
+              - label: "Bidang"
+                name: "domain"
+                widget: "object"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }
+              - { label: "Perusahaan", name: "company", widget: "string" }
+              - { label: "Lokasi", name: "location", widget: "string" }
+              - { label: "Periode", name: "period", widget: "string" }
+              - label: "Poin"
+                name: "bullets"
+                widget: "list"
+                summary: "{{fields.en}}"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "text" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "text" }
+
+  - name: "publikasi"
+    label: "Publikasi Ilmiah"
+    files:
+      - file: "content/publications.json"
+        label: "Daftar Publikasi"
+        name: "daftar_publikasi"
+        format: "json"
+        fields:
+          - label: "Item Publikasi"
+            name: "items"
+            widget: "list"
+            summary: "#{{fields.order}} - {{fields.title}}"
+            fields:
+              - { label: "Urutan", name: "order", widget: "number", value_type: "int", min: 1, hint: "Semakin kecil, semakin atas" }
+              - { label: "Penulis", name: "authors", widget: "string", hint: "Format: A. B. C., D. E. F., dst." }
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Jurnal/Konferensi", name: "journal", widget: "string" }
+              - { label: "Volume", name: "volume", widget: "string", required: false }
+              - { label: "Nomor", name: "number", widget: "string", required: false }
+              - { label: "Halaman", name: "pages", widget: "string", required: false }
+              - { label: "Tahun", name: "year", widget: "string" }
+              - { label: "Bulan", name: "month", widget: "string", required: false }
+              - { label: "DOI", name: "doi", widget: "string", required: false, hint: "Contoh: 10.1109/ICWT66752.2025.11181799" }
+              - { label: "URL", name: "url", widget: "string", required: false }
+              - { label: "Abstrak (Bahasa Inggris)", name: "abstract_en", widget: "text" }
+              - { label: "Abstrak (Bahasa Indonesia)", name: "abstract_id", widget: "text" }
+              - { label: "Kata Kunci", name: "keywords", widget: "string", required: false, hint: "Pisahkan dengan koma" }
+
+  - name: "galeri"
+    label: "Galeri"
+    files:
+      - file: "content/gallery.json"
+        label: "Daftar Galeri"
+        name: "daftar_galeri"
+        format: "json"
+        fields:
+          - label: "Item Galeri"
+            name: "items"
+            widget: "list"
+            summary: "#{{fields.order}} - {{fields.caption.en}}"
+            fields:
+              - { label: "Urutan", name: "order", widget: "number", value_type: "int", min: 1, hint: "Semakin kecil, semakin kiri/depan" }
+              - { label: "Gambar", name: "image", widget: "image" }
+              - label: "Caption"
+                name: "caption"
+                widget: "object"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }
+
+  - name: "kontak"
+    label: "Link Kontak"
+    files:
+      - file: "content/contacts.json"
+        label: "Daftar Kontak"
+        name: "daftar_kontak"
+        format: "json"
+        fields:
+          - label: "Item Kontak"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.label.en}}"
+            fields:
+              - { label: "URL", name: "url", widget: "string", hint: "Gunakan URL lengkap atau mailto:" }
+              - { label: "Ikon", name: "icon", widget: "image" }
+              - { label: "Buka di Tab Baru", name: "targetBlank", widget: "boolean", default: true }
+              - label: "Label"
+                name: "label"
+                widget: "object"
+                fields:
+                  - { label: "Bahasa Inggris", name: "en", widget: "string" }
+                  - { label: "Bahasa Indonesia", name: "id", widget: "string" }

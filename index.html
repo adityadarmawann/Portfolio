@@ -1,110 +1,215 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Muhamad Aditya Darmawan, S.Kom.</title>
+    <meta name="description" id="meta-description" content="Portfolio of Muhamad Aditya Darmawan, Informatics graduate focused on Data, AI Engineering, and project delivery.">
+    <meta name="keywords" id="meta-keywords" content="Muhamad Aditya Darmawan, portfolio, data science, AI engineer, machine learning, web development, project management">
+    <meta name="author" content="Muhamad Aditya Darmawan">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" id="og-title" content="Portfolio - Muhamad Aditya Darmawan, S.Kom.">
+    <meta property="og:description" id="og-description" content="Explore projects and experience in Data, AI Engineering, and system development.">
+    <meta property="og:url" id="og-url" content="">
+    <meta property="og:image" id="og-image" content="Asset/aditya1.png">
+    <meta property="og:site_name" content="Aditya Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twitter-title" content="Portfolio - Muhamad Aditya Darmawan, S.Kom.">
+    <meta name="twitter:description" id="twitter-description" content="Explore projects and experience in Data, AI Engineering, and system development.">
+    <meta name="twitter:image" id="twitter-image" content="Asset/aditya1.png">
+    <link rel="canonical" id="canonical-url" href="">
+    <link rel="icon" type="image/svg+xml" href="Asset/favicon.svg">
+    <link rel="apple-touch-icon" href="Asset/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json" id="structured-data-person">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhamad Aditya Darmawan",
+        "jobTitle": "Data and AI Engineer",
+        "description": "Informatics graduate with strengths in Data, AI Engineering, and system development.",
+        "url": "https://your-netlify-site.netlify.app/",
+        "image": "Asset/aditya1.png",
+        "email": "mailto:darmawanaditya521@gmail.com",
+        "sameAs": [
+            "https://github.com/adityadarmawann",
+            "https://www.linkedin.com/in/muhamad-aditya-darmawan-57027a240/",
+            "https://www.instagram.com/adityadarmawan___?igsh=YmVoZjN1ZDMzY3A%3D&utm_source=qr"
+        ]
+    }
+    </script>
     <style>
+        :root {
+            --bg: #eef3ff;
+            --surface: rgba(255, 255, 255, 0.72);
+            --surface-strong: #ffffff;
+            --ink: #1d2952;
+            --muted: #5d6f9b;
+            --line: #d8e2ff;
+            --brand: #4b6bdf;
+            --brand-soft: #e8eeff;
+            --accent: #6f88ea;
+            --accent-soft: #f0f4ff;
+            --shadow: 0 18px 45px rgba(31, 54, 120, 0.12);
+            --radius-lg: 22px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+            --header-h: 76px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #2d3748;
-            background: #f7fafc;
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--header-h) + 18px);
         }
 
-        /* Header & Navigation */
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            line-height: 1.7;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 12% 10%, #deebff 0%, transparent 38%),
+                radial-gradient(circle at 88% 16%, #e7efff 0%, transparent 42%),
+                radial-gradient(circle at 50% 100%, #d9e5ff 0%, transparent 45%),
+                var(--bg);
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: min(1720px, 97vw);
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 2.2vw, 2.6rem);
+        }
+
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(106, 90, 205, 0.15);
-            padding: 1rem 0;
             position: fixed;
-            width: 100%;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            left: 0;
+            right: 0;
+            z-index: 1100;
+            backdrop-filter: blur(14px);
+            background: rgba(238, 243, 255, 0.82);
+            border-bottom: 1px solid transparent;
+            transition: 0.35s ease;
+        }
+
+        header.scrolled {
+            border-color: rgba(61, 88, 171, 0.16);
+            box-shadow: 0 8px 24px rgba(17, 33, 45, 0.08);
         }
 
         nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            height: var(--header-h);
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #6a5acd 0%, #4169e1 50%, #00bfff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: "Sora", sans-serif;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            font-size: 1.18rem;
+            color: var(--brand);
+            text-transform: uppercase;
         }
 
         .nav-wrapper {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.2rem;
         }
 
-        nav ul {
+        .lang-switch {
+            display: inline-flex;
+            border: 1px solid rgba(22, 50, 60, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.68);
+        }
+
+        .lang-btn {
+            border: 0;
+            background: transparent;
+            padding: 0.42rem 0.58rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #324452;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--brand);
+            color: #f2fffd;
+        }
+
+        .navigation ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
-        nav a {
-            color: #2d3748;
-            text-decoration: none;
-            transition: color 0.3s;
+        .navigation a {
             position: relative;
+            padding: 0.4rem 0.6rem;
+            border-radius: 8px;
+            font-size: 0.94rem;
+            font-weight: 500;
+            color: #2f3944;
+            transition: color 0.25s ease, background 0.25s ease;
         }
 
-        nav a:hover {
-            color: #6a5acd;
+        .navigation a:hover {
+            color: var(--brand);
+            background: rgba(75, 107, 223, 0.1);
         }
 
-        nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, #6a5acd, #4169e1);
+        .navigation a.active {
+            color: var(--brand);
+            background: var(--brand-soft);
         }
 
-        /* Hamburger Menu */
         .hamburger {
             display: none;
             cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-            padding: 5px;
-            z-index: 1001;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            border: 1px solid rgba(33, 51, 65, 0.2);
             align-items: center;
             justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.68);
         }
 
         .hamburger span {
-            display: block;
-            height: 3px;
-            width: 25px;
-            background: #2d3748;
-            transition: 0.3s;
-            border-radius: 3px;
+            width: 20px;
+            height: 2px;
+            border-radius: 99px;
+            background: var(--ink);
+            transition: 0.25s ease;
         }
 
         .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
+            transform: rotate(45deg) translate(5px, 5px);
         }
 
         .hamburger.active span:nth-child(2) {
@@ -112,825 +217,1522 @@
         }
 
         .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
+            transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        .navigation ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        /* Desktop: Hide hamburger */
-        @media (min-width: 769px) {
-            .hamburger {
-                display: none !important;
-            }
-        }
-
-        
-
-        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 50%, #e6efff 100%);
-            padding: 140px 2rem 100px;
-            text-align: center;
+            min-height: unset;
+            display: flex;
+            align-items: flex-start;
+            padding-top: calc(var(--header-h) + 1.6rem);
+            padding-bottom: 1.2rem;
             position: relative;
             overflow: hidden;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(0.5px);
+            z-index: -1;
         }
 
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(106, 90, 205, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(65, 105, 225, 0.08) 0%, transparent 50%);
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle at 40% 40%, rgba(75, 107, 223, 0.24), rgba(75, 107, 223, 0));
+            top: -130px;
+            left: -120px;
+            animation: floatGlow 8s ease-in-out infinite;
         }
 
-        .hero-content {
+        .hero::after {
+            width: 390px;
+            height: 390px;
+            background: radial-gradient(circle at 40% 40%, rgba(111, 136, 234, 0.24), rgba(111, 136, 234, 0));
+            right: -90px;
+            bottom: -100px;
+            animation: floatGlow 9s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatGlow {
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(14px) translateX(8px);
+            }
+        }
+
+        .hero-grid {
+            width: 100%;
+            display: block;
+        }
+
+        .hero-main {
+            background: var(--surface);
+            border: 1px solid rgba(61, 88, 171, 0.2);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            backdrop-filter: blur(10px);
             position: relative;
-            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.78fr);
+            gap: 1.15rem;
+            align-items: stretch;
+        }
+
+        .hero-copy {
+            min-width: 0;
+        }
+
+        .hero-media {
+            min-width: 0;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .hero-main::after {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            right: -120px;
+            bottom: -120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(75, 107, 223, 0.16), rgba(75, 107, 223, 0));
+            pointer-events: none;
         }
 
         .hero-badge {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(106, 90, 205, 0.08);
-            border: 1px solid rgba(106, 90, 205, 0.25);
-            border-radius: 30px;
-            color: #6a5acd;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.95rem;
+            border-radius: 999px;
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: #0f6b64;
+            background: var(--brand-soft);
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-badge::before {
+            content: "\2726";
+            color: var(--brand);
+            font-size: 0.8rem;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #2d3748 0%, #5a4fcf 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: "Sora", sans-serif;
+            font-size: clamp(1.9rem, 3.2vw, 3.15rem);
+            line-height: 1.16;
+            margin-bottom: 0.9rem;
+            letter-spacing: -0.02em;
+            max-width: 30ch;
+            text-wrap: balance;
+            word-break: normal;
+            overflow-wrap: normal;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            color: #4a5568;
-            margin-bottom: 2rem;
+            color: var(--muted);
+            max-width: 64ch;
         }
 
-        .hero-image-placeholder {
-            margin: 3rem auto;
-            max-width: 1200px;
-            height: 500px;
-            background: rgba(255, 255, 255, 0.8);
-            border: 2px solid rgba(106, 90, 205, 0.15);
-            border-radius: 15px;
+        .hero-actions {
+            margin-top: 1.5rem;
             display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-focus {
+            margin-top: 1rem;
+            color: #324250;
+        }
+
+        .hero-focus-title {
+            font-family: "Sora", sans-serif;
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: #233b78;
+            margin-bottom: 0.45rem;
+        }
+
+        .hero-focus-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem 0.75rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-focus-list li {
+            font-size: 0.92rem;
+            position: relative;
+            padding-left: 0.8rem;
+        }
+
+        .hero-focus-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.58rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .btn {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 0.45rem;
+            font-weight: 600;
+            border-radius: 11px;
+            border: 1px solid transparent;
+            padding: 0.72rem 1rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--brand);
+            color: #f7fcfb;
+            box-shadow: 0 9px 20px rgba(75, 107, 223, 0.3);
+        }
+
+        .btn-primary::before {
+            content: "\2197";
+            font-weight: 700;
+        }
+
+        .btn-secondary {
+            border-color: rgba(75, 107, 223, 0.32);
+            color: #2f448f;
+            background: rgba(255, 255, 255, 0.75);
+        }
+
+        .btn-secondary::before {
+            content: "\2709";
+            font-size: 0.82rem;
+        }
+
+        .hero-gallery {
+            margin-top: 1.3rem;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.55rem;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            z-index: 2;
         }
 
-        .hero-image-placeholder::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .hero-media .hero-gallery {
+            margin-top: 0;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(106, 90, 205, 0.1), transparent);
-            animation: shimmer 3s infinite;
+            grid-template-columns: 1fr;
+            gap: 0.65rem;
         }
 
-        @keyframes shimmer {
-            100% { left: 100%; }
+        .hero-gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(75, 107, 223, 0.22);
+            background: #e8eeff;
+            box-shadow: 0 10px 20px rgba(41, 61, 127, 0.12);
         }
 
-        .placeholder-text {
-            color: #a0aec0;
-            font-size: 1.2rem;
-            text-align: center;
-            padding: 2rem;
+        .hero-gallery-item img {
+            width: 100%;
+            height: 86px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
         }
 
-        /* Main Content */
-        .container {
-            max-width: 1400px;
+        .hero-media .hero-gallery-item img {
+            height: 118px;
+        }
+
+        .hero-gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .quick-card,
+        .highlight-card {
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(61, 88, 171, 0.16);
+            background: var(--surface);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            padding: 1.35rem;
+        }
+
+        .quick-card h3,
+        .highlight-card h3 {
+            font-family: "Sora", sans-serif;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .quick-card h3::before,
+        .highlight-card h3::before {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--brand-soft);
+            color: var(--brand);
+            font-size: 0.76rem;
+            font-weight: 700;
+        }
+
+        .quick-card h3::before {
+            content: "AI";
+        }
+
+        .highlight-card h3::before {
+            content: "UP";
+        }
+
+        .quick-list {
+            list-style: none;
+            display: grid;
+            gap: 0.65rem;
+        }
+
+        .quick-list li {
+            color: #324250;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+
+        .quick-list li::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 4px rgba(111, 136, 234, 0.2);
+        }
+
+        .highlight-meta {
+            color: var(--muted);
+            font-size: 0.93rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .container-main {
+            max-width: min(1720px, 97vw);
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 1.9rem clamp(1rem, 2.2vw, 2.6rem) 4.8rem;
         }
 
         section {
-            margin-bottom: 6rem;
+            margin-bottom: 4rem;
         }
 
         h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            background: linear-gradient(135deg, #2d3748 0%, #5a4fcf 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: "Sora", sans-serif;
+            font-size: clamp(1.6rem, 2.7vw, 2.35rem);
+            margin-bottom: 1.4rem;
+            letter-spacing: -0.02em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
         }
 
-        /* About Section */
-        .about-content {
-            background: #ffffff;
-            border: 1px solid rgba(106, 90, 205, 0.15);
-            padding: 3rem;
-            border-radius: 15px;
-            line-height: 1.8;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Image Placeholder Section */
-        .image-placeholder {
-            width: 100%;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.8);
-            border: 2px dashed rgba(106, 90, 205, 0.25);
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
+        h2::before {
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin: 2rem 0;
-            transition: all 0.3s;
+            border-radius: 8px;
+            background: linear-gradient(145deg, #e6edff, #d6e2ff);
+            color: var(--brand);
+            font-size: 0.96rem;
+            font-weight: 700;
+            content: "\25C8";
+            box-shadow: 0 6px 15px rgba(64, 90, 170, 0.16);
         }
 
-        .image-placeholder:hover {
-            border-color: rgba(106, 90, 205, 0.5);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 4px 15px rgba(106, 90, 205, 0.1);
+        #about h2::before {
+            content: "\263A";
         }
 
-        .image-placeholder-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.5;
+        #education h2::before {
+            content: "\1F393";
         }
 
-        /* Skills Section */
-        .skills-grid {
+        #skills h2::before {
+            content: "\2699";
+        }
+
+        #certifications h2::before {
+            content: "\2713";
+        }
+
+        #projects h2::before {
+            content: "\1F5BC";
+        }
+
+        #publications h2::before {
+            content: "\1F4C4";
+        }
+
+        #gallery h2::before {
+            content: "\1F5BC";
+        }
+
+        #experience h2::before {
+            content: "\1F4BC";
+        }
+
+        #contact h2::before {
+            content: "\2709";
+        }
+
+        .section-lead {
+            color: var(--muted);
+            max-width: 62ch;
+            margin-bottom: 1.2rem;
+        }
+
+        #about .section-lead {
+            max-width: 100%;
+            white-space: nowrap;
+        }
+
+        .about-wrap {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.3rem;
+            align-items: stretch;
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .profile-frame {
+            background: var(--surface);
+            border: 1px solid rgba(61, 88, 171, 0.16);
+            border-radius: var(--radius-lg);
+            padding: 0.7rem;
+            box-shadow: var(--shadow);
+            min-height: 100%;
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
+            display: block;
+        }
+
+        .about-content {
+            background: var(--surface);
+            border: 1px solid rgba(61, 88, 171, 0.16);
+            border-radius: var(--radius-lg);
+            padding: 1.7rem;
+            box-shadow: var(--shadow);
+        }
+
+        .about-content p {
+            color: #344350;
+            margin-bottom: 0.95rem;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-grid,
+        .projects-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .projects-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .project-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-btn {
+            border: 1px solid rgba(20, 58, 67, 0.24);
+            background: rgba(255, 255, 255, 0.8);
+            color: #2a3e4a;
+            border-radius: 999px;
+            padding: 0.45rem 0.86rem;
+            font-size: 0.86rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: rgba(75, 107, 223, 0.48);
+            color: var(--brand);
+        }
+
+        .filter-btn.active {
+            background: var(--brand);
+            border-color: var(--brand);
+            color: #edfffb;
+        }
+
+        .project-card.is-hidden {
+            display: none;
+        }
+
+        .skill-card,
+        .project-card,
+        .experience-item,
+        .contact-info {
+            background: var(--surface);
+            border: 1px solid rgba(61, 88, 171, 0.16);
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(8px);
+            box-shadow: var(--shadow);
+            transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
+        }
+
+        .skill-card:hover,
+        .project-card:hover,
+        .experience-item:hover,
+        .contact-info:hover {
+            transform: translateY(-5px);
+            border-color: rgba(75, 107, 223, 0.44);
+            box-shadow: 0 20px 38px rgba(31, 54, 120, 0.16);
         }
 
         .skill-card {
-            background: #ffffff;
-            border: 1px solid rgba(106, 90, 205, 0.15);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(106, 90, 205, 0.4);
-            box-shadow: 0 12px 35px rgba(106, 90, 205, 0.15);
+            padding: 1.35rem;
         }
 
         .skill-card h3 {
-            color: #6a5acd;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-family: "Sora", sans-serif;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            color: #153844;
         }
 
-        .skill-card ul {
+        .skill-card p {
+            color: var(--muted);
+            margin-bottom: 0.7rem;
+            font-size: 0.94rem;
+        }
+
+        .skill-card ul,
+        .project-body ul,
+        .experience-body ul {
             list-style: none;
-        }
-
-        .skill-card li {
-            padding: 0.7rem 0;
-            border-bottom: 1px solid rgba(106, 90, 205, 0.08);
-            color: #4a5568;
-        }
-
-        .skill-card li:last-child {
-            border-bottom: none;
-        }
-
-        /* Projects Section */
-        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2rem;
+            gap: 0.45rem;
+        }
+
+        .skill-card li,
+        .project-body li,
+        .experience-body li {
+            color: #344350;
+            position: relative;
+            padding-left: 1.12rem;
+            font-size: 0.94rem;
+        }
+
+        .skill-card li::before,
+        .project-body li::before,
+        .experience-body li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--brand);
         }
 
         .project-card {
-            background: #ffffff;
-            border: 1px solid rgba(106, 90, 205, 0.15);
-            border-radius: 15px;
             overflow: hidden;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(106, 90, 205, 0.4);
-            box-shadow: 0 12px 35px rgba(106, 90, 205, 0.15);
+            display: flex;
+            flex-direction: column;
         }
 
         .project-image {
+            height: 240px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--line);
+            background: #f2f5f4;
+        }
+
+        .project-image img {
             width: 100%;
-            height: 200px;
-            background: #f7fafc;
-            border-bottom: 1px solid rgba(106, 90, 205, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #a0aec0;
-            font-size: 0.9rem;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.55s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.06);
         }
 
         .project-header {
-            background: linear-gradient(135deg, rgba(106, 90, 205, 0.05) 0%, rgba(65, 105, 225, 0.05) 100%);
-            padding: 1.5rem;
+            padding: 1rem 1.2rem 0.4rem;
         }
 
         .project-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #2d3748;
-        }
-
-        .project-stats {
-            display: flex;
-            gap: 1rem;
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-            color: #6a5acd;
+            font-family: "Sora", sans-serif;
+            font-size: 1.08rem;
+            line-height: 1.4;
+            color: #1c2f3d;
         }
 
         .project-body {
-            padding: 1.5rem;
+            padding: 0.2rem 1.2rem 1.15rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
         }
 
-        .project-body ul {
-            list-style: none;
+        .project-body p {
+            color: #2f3f4e;
+            font-size: 0.95rem;
         }
 
-        .project-body li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: #4a5568;
-        }
-
-        .project-body li:before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: #6a5acd;
-        }
-
-        /* Work Experience */
         .experience-timeline {
             position: relative;
-            padding-left: 3rem;
-            max-width: 900px;
-            margin: 0 auto;
+            margin-left: 0.6rem;
+            padding-left: 1.3rem;
+            display: grid;
+            gap: 1rem;
         }
 
         .experience-timeline::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(180deg, #6a5acd, #4169e1);
+            background: linear-gradient(to bottom, var(--brand), rgba(75, 107, 223, 0.15));
         }
 
         .experience-item {
-            background: #ffffff;
-            border: 1px solid rgba(106, 90, 205, 0.15);
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
+            padding: 1.15rem 1.2rem;
             position: relative;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
-        .experience-item:hover {
-            border-color: rgba(106, 90, 205, 0.4);
-            box-shadow: 0 8px 25px rgba(106, 90, 205, 0.12);
-        }
-
-        .experience-item:before {
+        .experience-item::before {
             content: "";
             position: absolute;
-            left: -3rem;
-            top: 2rem;
-            width: 15px;
-            height: 15px;
-            background: #6a5acd;
+            left: -1.7rem;
+            top: 1.25rem;
+            width: 11px;
+            height: 11px;
             border-radius: 50%;
-            border: 3px solid #f7fafc;
-            box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.2);
+            background: var(--accent);
+            box-shadow: 0 0 0 4px rgba(111, 136, 234, 0.2);
         }
 
         .experience-header h3 {
-            color: #6a5acd;
-            font-size: 1.5rem;
+            font-family: "Sora", sans-serif;
+            font-size: 1.05rem;
+            margin-bottom: 0.2rem;
+            color: #203847;
         }
 
         .experience-meta {
-            color: #888;
+            color: #5b6772;
             font-size: 0.9rem;
-            margin-top: 0.5rem;
         }
 
         .experience-body {
-            margin-top: 1rem;
+            margin-top: 0.8rem;
         }
 
-        .experience-body ul {
-            list-style: none;
+        /* Publications Section */
+        .publications-lead {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
         }
 
-        .experience-body li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+        .publications-timeline {
             position: relative;
-            color: #4a5568;
+            margin-left: 0.6rem;
+            padding-left: 1.3rem;
+            display: grid;
+            gap: 1rem;
         }
 
-        .experience-body li:before {
-            content: "•";
+        .publications-timeline::before {
+            content: "";
             position: absolute;
             left: 0;
-            color: #6a5acd;
-            font-weight: bold;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--brand), rgba(75, 107, 223, 0.15));
         }
 
-        /* Contact Section */
-        .contact-info {
-            background: #ffffff;
-            border: 1px solid rgba(106, 90, 205, 0.15);
-            padding: 3rem;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        .publication-item {
+            background: var(--surface);
+            border: 1px solid rgba(61, 88, 171, 0.16);
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(8px);
+            box-shadow: var(--shadow);
+            transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
+            padding: 1.15rem 1.2rem;
+            position: relative;
         }
 
-        .contact-info h3 {
-            color: #6a5acd;
-            margin-bottom: 2rem;
-            font-size: 2rem;
+        .publication-item::before {
+            content: "";
+            position: absolute;
+            left: -1.7rem;
+            top: 1.25rem;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 4px rgba(111, 136, 234, 0.2);
         }
 
-        .contact-links {
+        .publication-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(75, 107, 223, 0.44);
+            box-shadow: 0 20px 38px rgba(31, 54, 120, 0.16);
+        }
+
+        .publication-header h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.4;
+            color: #203847;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .publication-authors {
+            color: #5b6772;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .publication-meta {
+            color: #5b6772;
+            font-size: 0.88rem;
+            margin-bottom: 0.7rem;
+            font-style: italic;
+        }
+
+        .publication-keywords {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
             flex-wrap: wrap;
-            margin-top: 2rem;
+            gap: 0.4rem;
+            margin-bottom: 0.7rem;
         }
 
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: rgba(106, 90, 205, 0.06);
-            border: 1px solid rgba(106, 90, 205, 0.2);
-            border-radius: 10px;
-            text-decoration: none;
-            color: #2d3748;
-            transition: all 0.3s;
+        .publication-keywords span {
+            background: rgba(75, 107, 223, 0.1);
+            color: var(--brand);
+            padding: 0.25rem 0.65rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(75, 107, 223, 0.2);
         }
 
-        .contact-link:hover {
-            background: rgba(106, 90, 205, 0.12);
-            border-color: rgba(106, 90, 205, 0.4);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(106, 90, 205, 0.15);
+        .publication-body {
+            margin-top: 0.7rem;
         }
 
-        /* CV Download Buttons */
-        .cv-download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(135deg, rgba(106, 90, 205, 0.1), rgba(65, 105, 225, 0.1));
-            border: 1px solid rgba(106, 90, 205, 0.3);
-            border-radius: 10px;
-            text-decoration: none;
-            color: #2d3748;
-            transition: all 0.3s;
+        .publication-body > p {
+            margin-bottom: 0.4rem;
+            color: #203847;
+        }
+
+        .publication-abstract-preview,
+        .publication-abstract-full {
+            color: #344350;
+            font-size: 0.93rem;
+            line-height: 1.65;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-toggle {
+            display: inline-block;
+            margin-top: 0.3rem;
+            color: var(--brand);
+            font-size: 0.88rem;
+            cursor: pointer;
+            user-select: none;
             font-weight: 500;
         }
 
-        .cv-download-btn:hover {
-            background: linear-gradient(135deg, rgba(106, 90, 205, 0.15), rgba(65, 105, 225, 0.15));
-            border-color: rgba(106, 90, 205, 0.5);
+        .publication-toggle:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .publication-links {
+            margin-top: 0.7rem;
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        .publication-link {
+            display: inline-block;
+            padding: 0.45rem 1rem;
+            background: var(--brand);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.88rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-weight: 500;
+        }
+
+        .publication-link:hover {
+            background: var(--accent);
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(106, 90, 205, 0.2);
         }
 
-        /* Footer */
+        .gallery-lead {
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .gallery-container {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 4.5rem;
+        }
+
+        .gallery-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            overflow: visible;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(61, 88, 171, 0.16);
+            box-shadow: var(--shadow);
+            background: #eaf0ff;
+            aspect-ratio: 9 / 16;
+            cursor: zoom-in;
+            transition: all 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        .gallery-card.side {
+            width: 200px;
+            opacity: 0.65;
+            transform: scale(0.88);
+        }
+
+        .gallery-card.center {
+            width: 280px;
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 12px 28px rgba(29, 41, 82, 0.22);
+        }
+
+        .gallery-card.hidden {
+            display: none;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.35s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-card figcaption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0.55rem 0.65rem;
+            font-size: 0.78rem;
+            color: #f4f8ff;
+            background: linear-gradient(to top, rgba(24, 37, 77, 0.76), rgba(24, 37, 77, 0));
+        }
+
+        .gallery-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: 1px solid rgba(75, 107, 223, 0.3);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.4rem;
+            color: #4b6bdf;
+            box-shadow: 0 4px 12px rgba(29, 41, 82, 0.15);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .gallery-nav-btn:hover {
+            background: #4b6bdf;
+            color: white;
+            box-shadow: 0 6px 18px rgba(75, 107, 223, 0.4);
+        }
+
+        .gallery-nav-btn.prev {
+            left: 0.5rem;
+        }
+
+        .gallery-nav-btn.next {
+            right: 0.5rem;
+        }
+
+        .gallery-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1800;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(13, 21, 48, 0.74);
+            padding: 1.2rem;
+        }
+
+        .gallery-modal.open {
+            display: flex;
+        }
+
+        .gallery-modal-dialog {
+            width: min(980px, 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            background: #f4f7ff;
+            border: 1px solid rgba(174, 190, 239, 0.5);
+            box-shadow: 0 18px 38px rgba(6, 15, 37, 0.3);
+        }
+
+        .gallery-modal-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.8rem;
+            padding: 0.65rem 0.9rem;
+            border-bottom: 1px solid rgba(127, 145, 214, 0.28);
+        }
+
+        .gallery-modal-title {
+            font-weight: 600;
+            color: #23376b;
+            font-size: 0.92rem;
+        }
+
+        .gallery-modal-close {
+            border: 1px solid rgba(90, 112, 197, 0.32);
+            background: #ffffff;
+            color: #2a3f7a;
+            border-radius: 10px;
+            padding: 0.36rem 0.7rem;
+            font-size: 0.84rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .gallery-modal-image {
+            display: block;
+            width: 100%;
+            max-height: 78vh;
+            object-fit: contain;
+            background: #eef3ff;
+        }
+
+        .contact-info {
+            padding: 1.8rem;
+        }
+
+        .contact-info h3 {
+            font-family: "Sora", sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
+            margin-top: 1.2rem;
+        }
+
+        .contact-link,
+        .cv-download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.58rem;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 11px;
+            border: 1px solid rgba(61, 88, 171, 0.24);
+            background: rgba(255, 255, 255, 0.72);
+            color: #263746;
+            font-weight: 600;
+            transition: 0.24s ease;
+        }
+
+        .contact-link:hover,
+        .cv-download-btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(75, 107, 223, 0.5);
+            background: #ffffff;
+        }
+
+        .contact-link img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+        .cv-grid {
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
+        }
+
         footer {
-            background: rgba(255, 255, 255, 0.95);
-            border-top: 1px solid rgba(106, 90, 205, 0.15);
-            color: #4a5568;
+            border-top: 1px solid rgba(18, 44, 56, 0.14);
+            background: rgba(255, 255, 255, 0.62);
             text-align: center;
-            padding: 2rem;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+            color: #526270;
+            padding: 1.2rem;
         }
 
-        /* Mobile Navigation Styles */
-        @media (max-width: 768px) {
-            header {
-                padding: 0.8rem 0;
-            }
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
 
-            nav {
-                padding: 0 1.5rem;
-                min-height: 50px;
-            }
+        .reveal.show {
+            opacity: 1;
+            transform: none;
+        }
 
-            .logo {
-                font-size: 1.3rem;
-            }
-
-            .nav-wrapper {
-                gap: 0;
-                align-items: center;
-            }
-
-            .hamburger {
-                display: flex !important;
-                margin-left: auto;
-                padding: 0.5rem;
-            }
-
-            .navigation ul {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                padding: 2rem 0;
-                gap: 0;
-                transition: left 0.3s ease;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-                z-index: 999;
-                margin: 0;
-            }
-
-            .navigation ul.active {
-                left: 0;
-            }
-
-            .navigation ul li {
-                width: 100%;
-                text-align: center;
-                padding: 1rem 0;
-                border-bottom: 1px solid rgba(106, 90, 205, 0.1);
-            }
-
-            .navigation ul li:last-child {
-                border-bottom: none;
-            }
-
-            nav a {
-                display: block;
-                padding: 0.5rem 1rem;
-                font-size: 1.1rem;
-            }
-
-            /* Hero Section */
-            .hero {
-                padding: 100px 1rem 60px;
-            }
-
-            .hero-badge {
-                font-size: 0.8rem;
-                padding: 0.4rem 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem !important;
-                margin-bottom: 1rem;
-            }
-
-            .hero p {
-                font-size: 1rem !important;
-            }
-
-            .hero-image-placeholder {
-                height: 250px;
-                margin: 2rem auto;
-            }
-
-            /* Container */
-            .container {
-                padding: 2rem 1rem;
-            }
-
-            /* Typography */
-            h2 {
-                font-size: 1.8rem !important;
-                margin-bottom: 2rem;
-            }
-
-            /* About Section */
-            .about-content {
-                padding: 1.5rem;
-            }
-
-            /* Skills Grid */
+        @media (min-width: 1360px) {
             .skills-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
             }
 
-            .skill-card {
-                padding: 1.5rem;
-            }
-
-            .skill-card h3 {
-                font-size: 1.3rem;
-            }
-
-            /* Projects Grid */
             .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
             }
 
-            .project-card {
-                margin-bottom: 1rem;
-            }
-
-            .project-image {
-                height: 180px;
-            }
-
-            .project-header {
-                padding: 1rem;
-            }
-
-            .project-header h3 {
-                font-size: 1.2rem;
-            }
-
-            .project-body {
-                padding: 1rem;
-            }
-
-            .project-stats {
-                flex-direction: column;
-                gap: 0.5rem;
-                align-items: flex-start;
-            }
-
-            /* Experience Timeline */
-            .experience-timeline {
-                padding-left: 1.5rem;
-            }
-
-            .experience-timeline::before {
-                left: 0;
-            }
-
+            .hero-main,
+            .quick-card,
+            .highlight-card,
+            .about-content,
+            .contact-info,
+            .skill-card,
+            .project-card,
             .experience-item {
-                padding: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .experience-item:before {
-                left: -1.55rem;
-                width: 12px;
-                height: 12px;
-            }
-
-            .experience-header h3 {
-                font-size: 1.2rem;
-            }
-
-            .experience-meta {
-                font-size: 0.85rem;
-            }
-
-            /* Contact Section */
-            .contact-info {
-                padding: 2rem 1.5rem;
-            }
-
-            .contact-info h3 {
-                font-size: 1.5rem;
-            }
-
-            .contact-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .contact-link {
-                padding: 0.8rem 1.5rem;
-                width: 100%;
-                justify-content: center;
-            }
-
-            .cv-download-btn {
-                padding: 0.7rem 1rem;
-                width: 100%;
-                justify-content: center;
-                font-size: 0.9rem;
-            }
-
-            /* Footer */
-            footer {
-                padding: 1.5rem 1rem;
-                font-size: 0.9rem;
-            }
-
-            /* Images */
-            img {
-                max-width: 100% !important;
-            }
-
-            /* Section Spacing */
-            section {
-                margin-bottom: 3rem;
+                border-radius: 18px;
             }
         }
 
-        /* Tablet Responsive */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .hero h1 {
-                font-size: 2.8rem;
+        @media (max-width: 1060px) {
+            .navigation ul {
+                gap: 0.6rem;
+            }
+
+            .hero-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-media .hero-gallery {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .hero-grid,
+            .about-wrap {
+                grid-template-columns: 1fr;
             }
 
             .skills-grid,
             .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
-            .container {
-                padding: 3rem 1.5rem;
+            #about .section-lead {
+                white-space: normal;
+            }
+
+            .about-wrap {
+                max-width: 100%;
             }
         }
 
-        /* Small Mobile */
-        @media (max-width: 480px) {
-            .logo {
+        @media (max-width: 820px) {
+            .hamburger {
+                display: inline-flex;
+            }
+
+            .navigation ul {
+                position: fixed;
+                top: calc(var(--header-h) + 6px);
+                right: 1rem;
+                width: min(300px, calc(100% - 2rem));
+                border-radius: 14px;
+                border: 1px solid rgba(18, 46, 58, 0.14);
+                background: rgba(255, 255, 255, 0.93);
+                box-shadow: 0 24px 38px rgba(15, 37, 51, 0.16);
+                padding: 0.7rem;
+                display: grid;
+                transform: scale(0.96);
+                opacity: 0;
+                pointer-events: none;
+                transform-origin: top right;
+                transition: 0.24s ease;
+            }
+
+            .lang-switch {
+                margin-right: 0.2rem;
+            }
+
+            .navigation ul.active {
+                opacity: 1;
+                transform: scale(1);
+                pointer-events: auto;
+            }
+
+            .navigation a {
+                display: block;
+                width: 100%;
+            }
+
+            .hero {
+                min-height: unset;
+                padding-bottom: 2.8rem;
+            }
+
+            .hero-main,
+            .quick-card,
+            .highlight-card,
+            .about-content,
+            .contact-info,
+            .skill-card,
+            .project-card,
+            .experience-item,
+            .publication-item {
+                border-radius: 15px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .contact-links,
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-container {
+                padding: 0 3.5rem;
+            }
+
+            .gallery-grid {
+                gap: 0.8rem;
+            }
+
+            .gallery-card.side {
+                width: 140px;
+            }
+
+            .gallery-card.center {
+                width: 200px;
+            }
+
+            .gallery-nav-btn {
+                width: 42px;
+                height: 42px;
                 font-size: 1.2rem;
             }
 
-            .hero h1 {
-                font-size: 1.6rem !important;
+            .hero-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
-            .hero p {
-                font-size: 0.9rem !important;
+            .project-filters {
+                gap: 0.45rem;
             }
 
-            h2 {
-                font-size: 1.5rem !important;
-            }
-
-            .contact-info h3 {
-                font-size: 1.3rem !important;
-            }
-
-            .project-header h3,
-            .experience-header h3 {
-                font-size: 1.1rem !important;
+            .project-image {
+                height: 200px;
             }
         }
 
-        /* Smooth scroll offset */
-        html {
-            scroll-padding-top: 80px;
+        @media (max-width: 520px) {
+            .container {
+                padding: 0 0.85rem;
+            }
+
+            .container-main {
+                padding: 1.15rem 0.85rem 3rem;
+            }
+
+            section {
+                margin-bottom: 2.6rem;
+            }
+
+            .hero {
+                padding-top: calc(var(--header-h) + 1.3rem);
+                padding-bottom: 1.8rem;
+            }
+
+            .hero-main,
+            .quick-card,
+            .highlight-card,
+            .about-content,
+            .contact-info,
+            .skill-card,
+            .project-card,
+            .experience-item {
+                padding: 1.25rem;
+            }
+
+            .hero-actions {
+                gap: 0.55rem;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+
+            .hero-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-container {
+                padding: 0 3rem;
+            }
+
+            .gallery-grid {
+                gap: 0.6rem;
+            }
+
+            .gallery-card.side {
+                width: 100px;
+            }
+
+            .gallery-card.center {
+                width: 160px;
+            }
+
+            .gallery-nav-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 1.1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p,
+            .gallery-lead,
+            .publications-lead,
+            .project-body p,
+            .experience-meta,
+            .publication-meta {
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .project-filters {
+                gap: 0.4rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .filter-btn {
+                padding: 0.38rem 0.72rem;
+                font-size: 0.8rem;
+            }
+
+            .project-image {
+                height: 186px;
+            }
+
+            .project-header {
+                padding: 0.8rem 0.95rem 0.25rem;
+            }
+
+            .project-body {
+                padding: 0.15rem 0.95rem 0.95rem;
+                gap: 0.55rem;
+            }
+
+            .project-body li,
+            .experience-body li,
+            .skill-card li {
+                font-size: 0.88rem;
+            }
+
+            .experience-timeline,
+            .publications-timeline {
+                margin-left: 0.2rem;
+                padding-left: 1rem;
+            }
+
+            .experience-item::before,
+            .publication-item::before {
+                left: -1.38rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .container {
+                padding: 0 0.72rem;
+            }
+
+            .container-main {
+                padding: 1rem 0.72rem 2.6rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .lang-btn {
+                padding: 0.38rem 0.52rem;
+                font-size: 0.76rem;
+            }
+
+            .hamburger {
+                width: 38px;
+                height: 38px;
+            }
+
+            .hero h1 {
+                font-size: 1.55rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+                gap: 0.42rem;
+            }
+
+            h2::before {
+                width: 24px;
+                height: 24px;
+                font-size: 0.78rem;
+            }
+
+            .gallery-container {
+                padding: 0 2.5rem;
+            }
+
+            .gallery-card.side {
+                width: 72px;
+            }
+
+            .gallery-card.center {
+                width: 128px;
+            }
+
+            .gallery-card figcaption {
+                font-size: 0.68rem;
+                padding: 0.45rem 0.45rem;
+            }
+
+            .gallery-nav-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 1rem;
+            }
+
+            .project-image {
+                height: 170px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">PORTFOLIO</div>
+    <header id="site-header">
+        <nav class="container">
+            <div class="logo" data-i18n="logo">Portfolio</div>
             <div class="nav-wrapper">
-                <div class="hamburger" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="lang-switch" aria-label="Language switcher">
+                    <button id="lang-en" class="lang-btn active" type="button">EN</button>
+                    <button id="lang-id" class="lang-btn" type="button">ID</button>
                 </div>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="navigation">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#education">Education</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#certifications">Certifications</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                    <ul id="nav-list">
+                        <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                        <li><a href="#about" data-i18n="nav_about">About</a></li>
+                        <li><a href="#education" data-i18n="nav_education">Education</a></li>
+                        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+                        <li><a href="#certifications" data-i18n="nav_certifications">Certifications</a></li>
+                        <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+                        <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+                        <li><a href="#publications" data-i18n="nav_publications">Publications</a></li>
+                        <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+                        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- <header>
-        <nav>
-            <div class="logo">PORTFOLIO</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Eductaion</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header> -->
 
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">Available for Work Opportunities</div>
-            <h1>Welcome to My Professional Portfolio</h1>
-            <!-- <p>Data Scientist | AI Engineer | System Developer</p> -->
-            </div>
+        <div class="container hero-grid">
+            <div class="hero-main reveal">
+                <div class="hero-layout">
+                    <div class="hero-copy">
+                        <div class="hero-badge" data-i18n="hero_badge">Available for Work Opportunities</div>
+                        <h1 data-i18n="hero_title">Selamat Datang di Portofolio Profesional Muhamad Aditya Darmawan.</h1>
+                        <p data-i18n="hero_desc">
+                            Data and AI enthusiast with strong experience in machine learning, system development,
+                            and cross-functional collaboration. This portfolio highlights my education, certifications,
+                            project journey, and practical impact.
+                        </p>
+                        <div class="hero-focus" aria-label="Core focus">
+                            <p class="hero-focus-title" data-i18n="core_focus">Core Focus</p>
+                            <ul class="hero-focus-list">
+                                <li data-i18n="focus_1">Data Science</li>
+                                <li data-i18n="focus_2">Machine Learning Engineer</li>
+                                <li data-i18n="focus_3">AI Engineer</li>
+                                <li data-i18n="focus_4">Project Management</li>
+                            </ul>
+                        </div>
+                        <div class="hero-actions">
+                            <a class="btn btn-primary" href="#projects" data-i18n="hero_cta_projects">Explore Projects</a>
+                            <a class="btn btn-secondary" href="#contact" data-i18n="hero_cta_contact">Let's Connect</a>
+                        </div>
+                    </div>
+                    <div class="hero-media">
+                        <div class="hero-gallery" id="hero-gallery" aria-label="Project visual previews">
+                            <div class="hero-gallery-item">
+                                <img src="Asset/TNN.png" alt="AI project preview">
+                            </div>
+                            <div class="hero-gallery-item">
+                                <img src="Asset/AI Comparison.png" alt="Data project preview">
+                            </div>
+                            <div class="hero-gallery-item">
+                                <img src="Asset/Web Niskala.png" alt="Web project preview">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            
-            <div>
-                 <img src="Asset/aditya1.png" alt="Aditya Profile" style="width: 100%; max-width: 1400px; height: auto; display: block; margin: 0 auto;">
-            </div>
-
-            <div class="about-content">
-                <p>Bachelor's graduate in Informatics from the Faculty of Engineering, Universitas Siliwangi, with strong skills in data analysis, statistical modeling, and system development. Proficient in Python, SQL, PyTorch, and TensorFlow with hands-on experience in building and evaluating machine learning models. Able to extract actionable insights from complex datasets and turn them into strategic recommendations.</p>
-                <br>
-                <p>Known for clear and confident communication, with experience presenting technical material in both academic and organizational settings. Frequently invited as a speaker or facilitator in workshops, demonstrating the ability to engage diverse audiences.</p>
-                <br>
-                <p>Passionate about data-driven innovation and eager to contribute to collaborative, solution-focused environments. Combines analytical thinking, technical expertise, and communication skills to support effective decision-making and technological growth.</p>
+    <main class="container-main">
+        <section id="about" class="reveal">
+            <h2 data-i18n="about_title">About Me</h2>
+            <p class="section-lead" data-i18n="about_lead">Building practical technology solutions with clear communication and data-driven thinking.</p>
+            <div class="about-wrap">
+                <div class="profile-frame">
+                    <img id="profile-image" src="Asset/aditya1.png" alt="Aditya Profile">
+                </div>
+                <div class="about-content">
+                    <p data-i18n="about_p1">Bachelor's graduate in Informatics from the Faculty of Engineering, Universitas Siliwangi, with strong skills in data analysis, statistical modeling, and system development. Proficient in Python, SQL, PyTorch, and TensorFlow with hands-on experience in building and evaluating machine learning models. Able to extract actionable insights from complex datasets and turn them into strategic recommendations.</p>
+                    <p data-i18n="about_p2">Known for clear and confident communication, with experience presenting technical material in both academic and organizational settings. Frequently invited as a speaker or facilitator in workshops, demonstrating the ability to engage diverse audiences.</p>
+                    <p data-i18n="about_p3">Passionate about data-driven innovation and eager to contribute to collaborative, solution-focused environments. Combines analytical thinking, technical expertise, and communication skills to support effective decision-making and technological growth.</p>
+                </div>
             </div>
         </section>
 
-        <section id="education">
-                    <h2>Education</h2>
-                    <div class="experience-timeline">
-                        <div class="experience-item">
-                            <div class="experience-header">
-                                <h3>Bachelor's Degree of Informatics</h3>
-                                <div class="experience-meta">
-                                    <strong>Universitas Siliwangi</strong> | Tasikmalaya, ID | Aug 2021 - Jul 2025
-                                </div>
-                            </div>
-                            <div class="experience-body">
-                                <p style="color: #2d3748;"><strong>GPA: 3.97/4.0</strong></p>
-                                <p style="color: #4a5568; margin-top: 10px;"><strong>Relevant Coursework:</strong></p>
-                                <p style="color: #4a5568;">Software Engineering, Artificial Intelligence, Data Science, Data Engineering, Machine Learning, Deep Learning, Organizational Behavior, Statistics and Probability, Algorithms and Data Structures, Design Pattern, Object-Oriented Programming, Databases.</p>
-                            </div>
-                        </div>
-
-                        <div class="experience-item">
-                            <div class="experience-header">
-                                <h3>Mathematics and Sciences Program</h3>
-                                <div class="experience-meta">
-                                    <strong>SMA Negeri 2 Tasikmalaya</strong> | Tasikmalaya, ID | 2018 - 2021
-                                </div>
-                            </div>
+        <section id="education" class="reveal">
+            <h2 data-i18n="education_title">Education</h2>
+            <div class="experience-timeline" id="education-list">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Bachelor's Degree of Informatics</h3>
+                        <div class="experience-meta">
+                            <strong>Universitas Siliwangi</strong> | Tasikmalaya, ID | Aug 2021 - Jul 2025
                         </div>
                     </div>
-                </section>
+                    <div class="experience-body">
+                        <p><strong>GPA: 3.97/4.0</strong></p>
+                        <p><strong>Relevant Coursework:</strong> Software Engineering, Artificial Intelligence, Data Science, Data Engineering, Machine Learning, Deep Learning, Organizational Behavior, Statistics and Probability, Algorithms and Data Structures, Design Pattern, Object-Oriented Programming, Databases.</p>
+                    </div>
+                </div>
 
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Mathematics and Sciences Program</h3>
+                        <div class="experience-meta">
+                            <strong>SMA Negeri 2 Tasikmalaya</strong> | Tasikmalaya, ID | 2018 - 2021
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-grid">
+        <section id="skills" class="reveal">
+            <h2 data-i18n="skills_title">Skills</h2>
+            <div class="skills-grid" id="skills-list">
                 <div class="skill-card">
                     <h3>Soft Skills</h3>
                     <ul>
                         <li>Project Management</li>
-                        <li>Analytical & Problem Solving</li>
+                        <li>Analytical and Problem Solving</li>
                         <li>Technical Communication</li>
                         <li>Team Collaboration</li>
                         <li>Business Presentation</li>
@@ -939,11 +1741,11 @@
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3 style="text-align: center;">ML and AI Engineering</h3>
+                    <h3>ML and AI Engineering</h3>
                     <ul>
                         <li>TensorFlow</li>
                         <li>PyTorch</li>
-                        <li>Model Optimization & Evaluation</li>
+                        <li>Model Optimization and Evaluation</li>
                         <li>Neural Network Architectures</li>
                         <li>Natural Language Processing (NLP)</li>
                         <li>Computer Vision</li>
@@ -956,7 +1758,7 @@
                         <li>PHP Laravel, Python</li>
                         <li>SQL</li>
                         <li>Jupyter Notebook, Google Colab</li>
-                        <li>Git & GitHub</li>
+                        <li>Git and GitHub</li>
                         <li>Microsoft Excel</li>
                         <li>Power BI</li>
                         <li>PostgreSQL</li>
@@ -965,35 +1767,35 @@
             </div>
         </section>
 
-        <section id="certifications">
-            <h2>Professional Certifications</h2>
-            <div class="skills-grid">
+        <section id="certifications" class="reveal">
+            <h2 data-i18n="cert_title">Professional Certifications</h2>
+            <div class="skills-grid" id="certifications-list">
                 <div class="skill-card">
                     <h3>Program Analyst</h3>
-                    <p style="color: #4a5568;"><em>Certified by BNSP Authority & LSP Siliwangi University</em></p>
+                    <p><em>Certified by BNSP Authority and LSP Siliwangi University</em></p>
                     <ul>
                         <li>Program unit testing, debugging, and profiling</li>
                         <li>Implementing algorithm with databases</li>
-                        <li>Code documentation & analysis</li>
+                        <li>Code documentation and analysis</li>
                         <li>Program integration testing</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3>ICT Project Manager</h3>
-                    <p style="color: #4a5568;"><em>Certified by BNSP Authority & LSP Siliwangi University</em></p>
+                    <p><em>Certified by BNSP Authority and LSP Siliwangi University</em></p>
                     <ul>
-                        <li>Project integration & scope management</li>
+                        <li>Project integration and scope management</li>
                         <li>Time, cost, and quality management</li>
-                        <li>Human resource & stakeholder management</li>
+                        <li>Human resource and stakeholder management</li>
                         <li>Risk, procurement, and change management</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3>Data Science</h3>
-                    <p style="color: #4a5568;"><em>Certified by PT Hacktivate Teknologi Indonesia on Study Independent Program</em></p>
+                    <p><em>Certified by PT Hacktivate Teknologi Indonesia on Study Independent Program</em></p>
                     <ul>
-                        <li>Python & Data Processing</li>
-                        <li>Statistical Analysis & Data Query</li>
+                        <li>Python and Data Processing</li>
+                        <li>Statistical Analysis and Data Query</li>
                         <li>Machine Learning Model Development</li>
                         <li>End-to-end Data Science Workflows</li>
                     </ul>
@@ -1001,355 +1803,1058 @@
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Project Experiences</h2>
-            <div class="projects-grid">
-                <div class="project-card">
+        <section id="projects" class="reveal">
+            <h2 data-i18n="projects_title">Project Experiences</h2>
+            <div class="project-filters" aria-label="Project category filters">
+                <button class="filter-btn active" type="button" data-filter="all" data-i18n="filter_all">All</button>
+                <button class="filter-btn" type="button" data-filter="ai">AI</button>
+                <button class="filter-btn" type="button" data-filter="web">Web</button>
+                <button class="filter-btn" type="button" data-filter="data">Data</button>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <div class="project-card" data-category="ai data">
                     <div class="project-image">
-                        <img src="Asset/AI Comparison.png" alt="AI Comparison for Scoring Team Performance" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="Asset/AI Comparison.png" alt="AI Comparison for Scoring Team Performance">
                     </div>
                     <div class="project-header">
-                        <h3>AI Comparison for Scoring Team Performance </h3>
+                        <h3 data-en="AI Comparison for Scoring Team Performance" data-id="Komparasi AI untuk Penilaian Performa Tim">AI Comparison for Scoring Team Performance</h3>
                     </div>
                     <div class="project-body">
-                        <p style="color: #2d3748;"><strong>AI Comparison for Scoring Team Performance</strong></p>
+                        <p><strong data-en="AI Comparison for Scoring Team Performance" data-id="Komparasi AI untuk Penilaian Performa Tim">AI Comparison for Scoring Team Performance</strong></p>
                         <ul>
-                            <li>Extracted performance data from the LMS (communication, experience, technical skills, HR scores) and Standardized inputs using structured, interview-based prompts</li>
-                            <li>Evaluated 5 leading AI platforms (Chat GPT, Claude, GLM, Deep Seek, Gemini)</li>
-                            <li>Applied Repeated Measures ANOVA and post-hoc tests to assess statistical differences</li>
-                            <li>Used Python for data analysis and Streamlit to build an interactive evaluation dashboard</li>
+                            <li data-en="Extracted performance data from the LMS (communication, experience, technical skills, HR scores) and standardized inputs using structured, interview-based prompts" data-id="Mengekstrak data performa dari LMS (komunikasi, pengalaman, kemampuan teknis, skor HR) dan menstandarkan input dengan prompt terstruktur berbasis wawancara.">Extracted performance data from the LMS (communication, experience, technical skills, HR scores) and standardized inputs using structured, interview-based prompts</li>
+                            <li data-en="Evaluated 5 leading AI platforms (ChatGPT, Claude, GLM, DeepSeek, Gemini)" data-id="Mengevaluasi 5 platform AI terkemuka (ChatGPT, Claude, GLM, DeepSeek, Gemini).">Evaluated 5 leading AI platforms (ChatGPT, Claude, GLM, DeepSeek, Gemini)</li>
+                            <li data-en="Applied Repeated Measures ANOVA and post-hoc tests to assess statistical differences" data-id="Menerapkan Repeated Measures ANOVA dan uji post-hoc untuk menilai perbedaan statistik.">Applied Repeated Measures ANOVA and post-hoc tests to assess statistical differences</li>
+                            <li data-en="Used Python for data analysis and Streamlit to build an interactive evaluation dashboard" data-id="Menggunakan Python untuk analisis data dan Streamlit untuk membangun dashboard evaluasi interaktif.">Used Python for data analysis and Streamlit to build an interactive evaluation dashboard</li>
                         </ul>
-                        <p style="color: #4a5568; margin-top: 1rem;"><em>*In process for journal publication</em></p>
+                        <p><em data-en="*In process for journal publication" data-id="*Dalam proses publikasi jurnal">*In process for journal publication</em></p>
                     </div>
                 </div>
 
-
-                <div class="project-card">
+                <div class="project-card" data-category="ai">
                     <div class="project-image">
-                        <img src="Asset/TNN.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="Asset/TNN.png" alt="Trans Neural Network Model">
                     </div>
                     <div class="project-header">
-                        <h3>Trans Neural Network Model</h3>
+                        <h3 data-en="Trans Neural Network Model" data-id="Model Trans Neural Network">Trans Neural Network Model</h3>
                     </div>
                     <div class="project-body">
-                        <p style="color: #2d3748;"><strong>Hybrid Model for Malware Detection Based on Network Traffic</strong></p>
+                        <p><strong data-en="Hybrid Model for Malware Detection Based on Network Traffic" data-id="Model Hibrida untuk Deteksi Malware Berbasis Traffic Jaringan">Hybrid Model for Malware Detection Based on Network Traffic</strong></p>
                         <ul>
-                            <li>Built Transfirmer + CNN model on USTC-TFC2016 dataset (8M+ samples) achieving 99.57% accuracy, 0.98 F1-Score, and 15% improvement over baseline models</li>
-                            <li>Evaluated using Precision, Recall, F1-Score, Confusion Matrix, and loss analysis, reducing false positive rate to 0.8% with 5,000 samples/second processing speed</li>
-                            <li>Contributing to scientific research on hybrid deep learning</li>
-                            <li>Tech: MySQL, Python, TensorFlow, PyTorch, BERT, CNN, feature extraction</li>
+                            <li data-en="Built Transformer + CNN model on USTC-TFC2016 dataset (8M+ samples) achieving 99.57% accuracy, 0.98 F1-Score, and 15% improvement over baseline models" data-id="Membangun model Transformer + CNN pada dataset USTC-TFC2016 (8 juta+ sampel) dengan akurasi 99,57%, F1-Score 0,98, dan peningkatan 15% dibanding model baseline.">Built Transformer + CNN model on USTC-TFC2016 dataset (8M+ samples) achieving 99.57% accuracy, 0.98 F1-Score, and 15% improvement over baseline models</li>
+                            <li data-en="Evaluated using Precision, Recall, F1-Score, Confusion Matrix, and loss analysis, reducing false positive rate to 0.8% with 5,000 samples/second processing speed" data-id="Dievaluasi menggunakan Precision, Recall, F1-Score, Confusion Matrix, dan analisis loss; menurunkan false positive rate menjadi 0,8% dengan kecepatan proses 5.000 sampel/detik.">Evaluated using Precision, Recall, F1-Score, Confusion Matrix, and loss analysis, reducing false positive rate to 0.8% with 5,000 samples/second processing speed</li>
+                            <li data-en="Contributing to scientific research on hybrid deep learning" data-id="Berkontribusi pada riset ilmiah tentang hybrid deep learning.">Contributing to scientific research on hybrid deep learning</li>
+                            <li data-en="Tech: MySQL, Python, TensorFlow, PyTorch, BERT, CNN, feature extraction" data-id="Teknologi: MySQL, Python, TensorFlow, PyTorch, BERT, CNN, feature extraction.">Tech: MySQL, Python, TensorFlow, PyTorch, BERT, CNN, feature extraction</li>
                         </ul>
-                        <p style="color: #4a5568; margin-top: 1rem;"><em>*In process for journal publication</em></p>
+                        <p><em data-en="*In process for journal publication" data-id="*Dalam proses publikasi jurnal">*In process for journal publication</em></p>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="data">
                     <div class="project-image">
-                        <img src="Asset/Busines.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="Asset/Busines.png" alt="Business Analyst Prototype">
                     </div>
                     <div class="project-header">
-                        <h3>Business Analyst Prototype</h3>
+                        <h3 data-en="Business Analyst Prototype" data-id="Prototipe Business Analyst">Business Analyst Prototype</h3>
                     </div>
                     <div class="project-body">
-                        <p style="color: #2d3748;"><strong>Prototype Business Analyst TikTok Marketplace Based</strong></p>
+                        <p><strong data-en="Prototype Business Analyst TikTok Marketplace Based" data-id="Prototipe Business Analyst Berbasis TikTok Marketplace">Prototype Business Analyst TikTok Marketplace Based</strong></p>
                         <ul>
-                            <li>Analyzed sales trends across product types and visual content patterns on 100,000+ transaction records, identifying key customer preferences and market opportunities</li>
-                            <li>Developed predictive sales model forecasting 40% decline in next-month revenue under existing strategy, prompting creation of new data-driven sales approach</li>
-                            <li>Designed and implemented new sales strategy based on trend analysis and customer insights, successfully increasing monthly sales from 150 to 250 units (67% growth) and achieving target realization</li>
-                            <li>Tech: Microsoft Excel, Python, Scikit-learn, Pandas, data visualization</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="Asset/risk.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                    </div>
-                    <div class="project-header">
-                        <h3>Credit Risk Analysis</h3>
-                    </div>
-                    <div class="project-body">
-                        <p style="color: #2d3748;"><strong>LendingClub Dataset (ML for Classification)</strong></p>
-                        <ul>
-                            <li>Developed an end-to-end credit risk prediction pipeline on 466K+ loan records, optimizing recall to minimize false negatives and improve default risk detection</li>
-                            <li>Implemented and compared Logistic Regression, Random Forest, SVM, and XGBoost, achieving improved classification performance through SMOTE-based imbalance handling and PCA-driven dimensionality reduction</li>
-                            <li>Enhanced model reliability and interpretability via hyperparameter tuning (GridSearchCV), confusion matrix evaluation, and feature importance analysis to support data-driven credit decisions</li>
-                            <li>Tech: Python, Scikit-learn, XGBoost, Pandas, NumPy, Matplotlib, Imbalanced-learn</li>
+                            <li data-en="Analyzed sales trends across product types and visual content patterns on 100,000+ transaction records, identifying key customer preferences and market opportunities" data-id="Menganalisis tren penjualan lintas tipe produk dan pola konten visual pada 100.000+ data transaksi untuk mengidentifikasi preferensi pelanggan serta peluang pasar.">Analyzed sales trends across product types and visual content patterns on 100,000+ transaction records, identifying key customer preferences and market opportunities</li>
+                            <li data-en="Developed predictive sales model forecasting 40% decline in next-month revenue under existing strategy, prompting creation of new data-driven sales approach" data-id="Mengembangkan model prediksi penjualan yang memperkirakan penurunan pendapatan 40% pada bulan berikutnya jika strategi lama dipertahankan, sehingga mendorong perumusan pendekatan baru berbasis data.">Developed predictive sales model forecasting 40% decline in next-month revenue under existing strategy, prompting creation of new data-driven sales approach</li>
+                            <li data-en="Designed and implemented new sales strategy based on trend analysis and customer insights, successfully increasing monthly sales from 150 to 250 units (67% growth) and achieving target realization" data-id="Merancang dan mengimplementasikan strategi penjualan baru berbasis analisis tren serta insight pelanggan, sehingga penjualan bulanan naik dari 150 menjadi 250 unit (tumbuh 67%) dan target tercapai.">Designed and implemented new sales strategy based on trend analysis and customer insights, successfully increasing monthly sales from 150 to 250 units (67% growth) and achieving target realization</li>
+                            <li data-en="Tech: Microsoft Excel, Python, Scikit-learn, Pandas, data visualization" data-id="Teknologi: Microsoft Excel, Python, Scikit-learn, Pandas, visualisasi data.">Tech: Microsoft Excel, Python, Scikit-learn, Pandas, data visualization</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="data ai">
                     <div class="project-image">
-                        <img src="Asset/Web Niskala.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="Asset/risk.png" alt="Credit Risk Analysis">
                     </div>
                     <div class="project-header">
-                        <h3>Niskala Publisher Website</h3>
+                        <h3 data-en="Credit Risk Analysis" data-id="Analisis Risiko Kredit">Credit Risk Analysis</h3>
                     </div>
                     <div class="project-body">
-                        <p style="color: #2d3748;"><strong>Website for Online Shop Niskala Publisher</strong></p>
+                        <p><strong data-en="LendingClub Dataset (ML for Classification)" data-id="Dataset LendingClub (ML untuk Klasifikasi)">LendingClub Dataset (ML for Classification)</strong></p>
                         <ul>
-                            <li>Successfully delivered a fully functional catalog website for Penerbit Niskala within a 7-day development sprint</li>
-                            <li>Led project management, UX structuring, and frontend implementation to ensure a smooth and engaging user experience</li>
-                            <li>Strengthened digital presence for a multidisciplinary publisher through an efficient and modern web platform</li>
-                            <li>Tech: Laravel Framework</li>
+                            <li data-en="Developed an end-to-end credit risk prediction pipeline on 466K+ loan records, optimizing recall to minimize false negatives and improve default risk detection" data-id="Mengembangkan pipeline prediksi risiko kredit end-to-end pada 466 ribu+ data pinjaman, mengoptimalkan recall untuk meminimalkan false negative dan meningkatkan deteksi risiko gagal bayar.">Developed an end-to-end credit risk prediction pipeline on 466K+ loan records, optimizing recall to minimize false negatives and improve default risk detection</li>
+                            <li data-en="Implemented and compared Logistic Regression, Random Forest, SVM, and XGBoost, achieving improved classification performance through SMOTE-based imbalance handling and PCA-driven dimensionality reduction" data-id="Mengimplementasikan dan membandingkan Logistic Regression, Random Forest, SVM, dan XGBoost, serta meningkatkan performa klasifikasi melalui penanganan imbalance berbasis SMOTE dan reduksi dimensi berbasis PCA.">Implemented and compared Logistic Regression, Random Forest, SVM, and XGBoost, achieving improved classification performance through SMOTE-based imbalance handling and PCA-driven dimensionality reduction</li>
+                            <li data-en="Enhanced model reliability and interpretability via hyperparameter tuning (GridSearchCV), confusion matrix evaluation, and feature importance analysis to support data-driven credit decisions" data-id="Meningkatkan reliabilitas dan interpretabilitas model melalui tuning hyperparameter (GridSearchCV), evaluasi confusion matrix, dan analisis feature importance untuk mendukung keputusan kredit berbasis data.">Enhanced model reliability and interpretability via hyperparameter tuning (GridSearchCV), confusion matrix evaluation, and feature importance analysis to support data-driven credit decisions</li>
+                            <li data-en="Tech: Python, Scikit-learn, XGBoost, Pandas, NumPy, Matplotlib, Imbalanced-learn" data-id="Teknologi: Python, Scikit-learn, XGBoost, Pandas, NumPy, Matplotlib, Imbalanced-learn.">Tech: Python, Scikit-learn, XGBoost, Pandas, NumPy, Matplotlib, Imbalanced-learn</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="web">
                     <div class="project-image">
-                        <img src="Asset/babarengan.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="Asset/Web Niskala.png" alt="Niskala Publisher Website">
                     </div>
                     <div class="project-header">
-                        <h3>Babarengan</h3>
+                        <h3 data-en="Niskala Publisher Website" data-id="Website Niskala Publisher">Niskala Publisher Website</h3>
                     </div>
                     <div class="project-body">
-                        <p style="color: #2d3748;"><strong>Stock Trading Application for MSMEs</strong></p>
+                        <p><strong data-en="Website for Online Shop Niskala Publisher" data-id="Website Toko Online Niskala Publisher">Website for Online Shop Niskala Publisher</strong></p>
                         <ul>
-                            <li>Designed stock trading feature focused on MSMEs</li>
-                            <li>Created integrated system for MSMEs, investors, and cooperatives</li>
-                            <li>Developed platform for easy public investment participation</li>
-                            <li>Designed secure and transparent data flow for stock transactions</li>
-                            <li>Tech: Laravel Framework</li>
+                            <li data-en="Successfully delivered a fully functional catalog website for Penerbit Niskala within a 7-day development sprint" data-id="Berhasil merilis website katalog yang fungsional penuh untuk Penerbit Niskala dalam sprint pengembangan 7 hari.">Successfully delivered a fully functional catalog website for Penerbit Niskala within a 7-day development sprint</li>
+                            <li data-en="Led project management, UX structuring, and frontend implementation to ensure a smooth and engaging user experience" data-id="Memimpin manajemen proyek, penyusunan UX, dan implementasi frontend untuk memastikan pengalaman pengguna yang mulus dan menarik.">Led project management, UX structuring, and frontend implementation to ensure a smooth and engaging user experience</li>
+                            <li data-en="Strengthened digital presence for a multidisciplinary publisher through an efficient and modern web platform" data-id="Memperkuat kehadiran digital penerbit multidisiplin melalui platform web yang efisien dan modern.">Strengthened digital presence for a multidisciplinary publisher through an efficient and modern web platform</li>
+                            <li data-en="Tech: Laravel Framework" data-id="Teknologi: Laravel Framework.">Tech: Laravel Framework</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="web">
                     <div class="project-image">
-                        <img src="Asset/learnify.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="Asset/babarengan.png" alt="Babarengan">
                     </div>
                     <div class="project-header">
-                        <h3>Learnify</h3>
+                        <h3 data-en="Babarengan" data-id="Babarengan">Babarengan</h3>
                     </div>
                     <div class="project-body">
-                        <p style="color: #2d3748;"><strong>Learning Management System</strong></p>
+                        <p><strong data-en="Stock Trading Application for MSMEs" data-id="Aplikasi Perdagangan Saham untuk UMKM">Stock Trading Application for MSMEs</strong></p>
                         <ul>
-                            <li>Developed LMS web application with content management features</li>
-                            <li>Managed projects and team collaboration</li>
-                            <li>Designed intuitive UI/UX interfaces</li>
-                            <li>Created and managed application content</li>
-                            <li>Tech: Laravel Framework</li>
+                            <li data-en="Designed stock trading feature focused on MSMEs" data-id="Merancang fitur perdagangan saham yang berfokus pada UMKM.">Designed stock trading feature focused on MSMEs</li>
+                            <li data-en="Created integrated system for MSMEs, investors, and cooperatives" data-id="Membangun sistem terintegrasi untuk UMKM, investor, dan koperasi.">Created integrated system for MSMEs, investors, and cooperatives</li>
+                            <li data-en="Developed platform for easy public investment participation" data-id="Mengembangkan platform agar masyarakat mudah berpartisipasi dalam investasi.">Developed platform for easy public investment participation</li>
+                            <li data-en="Designed secure and transparent data flow for stock transactions" data-id="Merancang alur data transaksi saham yang aman dan transparan.">Designed secure and transparent data flow for stock transactions</li>
+                            <li data-en="Tech: Laravel Framework" data-id="Teknologi: Laravel Framework.">Tech: Laravel Framework</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="web">
                     <div class="project-image">
-                        <img src="Asset/mycoffe.png" alt="Trans Neural Network Model" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="Asset/learnify.png" alt="Learnify">
                     </div>
                     <div class="project-header">
-                        <h3>My Coffee</h3>
+                        <h3 data-en="Learnify" data-id="Learnify">Learnify</h3>
                     </div>
                     <div class="project-body">
-                        <p style="color: #2d3748;"><strong>Cashier Application for Coffee Shop</strong></p>
+                        <p><strong data-en="Learning Management System" data-id="Sistem Manajemen Pembelajaran">Learning Management System</strong></p>
                         <ul>
-                            <li>Implemented ordering system and real-time menu service status</li>
-                            <li>Developed role-based user system (admin, cashier, chef)</li>
-                            <li>Created seamless workflow with real-time order status updates</li>
-                            <li>Managed database schema for users, orders, and menus</li>
-                            <li>Tech: PHP Native</li>                            
+                            <li data-en="Developed LMS web application with content management features" data-id="Mengembangkan aplikasi web LMS dengan fitur manajemen konten.">Developed LMS web application with content management features</li>
+                            <li data-en="Managed projects and team collaboration" data-id="Mengelola proyek dan kolaborasi tim.">Managed projects and team collaboration</li>
+                            <li data-en="Designed intuitive UI/UX interfaces" data-id="Merancang antarmuka UI/UX yang intuitif.">Designed intuitive UI/UX interfaces</li>
+                            <li data-en="Created and managed application content" data-id="Membuat dan mengelola konten aplikasi.">Created and managed application content</li>
+                            <li data-en="Tech: Laravel Framework" data-id="Teknologi: Laravel Framework.">Tech: Laravel Framework</li>
                         </ul>
                     </div>
                 </div>
+
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="Asset/mycoffe.png" alt="My Coffee">
+                    </div>
+                    <div class="project-header">
+                        <h3 data-en="My Coffee" data-id="My Coffee">My Coffee</h3>
+                    </div>
+                    <div class="project-body">
+                        <p><strong data-en="Cashier Application for Coffee Shop" data-id="Aplikasi Kasir untuk Kedai Kopi">Cashier Application for Coffee Shop</strong></p>
+                        <ul>
+                            <li data-en="Implemented ordering system and real-time menu service status" data-id="Mengimplementasikan sistem pemesanan dan status layanan menu secara real-time.">Implemented ordering system and real-time menu service status</li>
+                            <li data-en="Developed role-based user system (admin, cashier, chef)" data-id="Mengembangkan sistem pengguna berbasis peran (admin, kasir, chef).">Developed role-based user system (admin, cashier, chef)</li>
+                            <li data-en="Created seamless workflow with real-time order status updates" data-id="Membuat alur kerja yang mulus dengan pembaruan status pesanan real-time.">Created seamless workflow with real-time order status updates</li>
+                            <li data-en="Managed database schema for users, orders, and menus" data-id="Mengelola skema database untuk pengguna, pesanan, dan menu.">Managed database schema for users, orders, and menus</li>
+                            <li data-en="Tech: PHP Native" data-id="Teknologi: PHP Native.">Tech: PHP Native</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience">
-            <h2>Work Experience</h2>
-            <div class="experience-timeline">
+        <section id="experience" class="reveal">
+            <h2 data-i18n="experience_title">Work Experience</h2>
+            <div class="experience-timeline" id="experience-list">
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3>Co-Facilitator and Project Manegement Officer</h3>
+                        <h3 data-en="Co-Facilitator and Project Management Officer" data-id="Co-Facilitator dan Project Management Officer">Co-Facilitator and Project Management Officer</h3>
                         <div class="experience-meta">
                             <strong>Sakata Innovation Center Foundation</strong> | Tasikmalaya, ID | Apr 2023 - Present
                         </div>
                     </div>
                     <div class="experience-body">
-                        <p style="color: #2d3748;"><strong>Coding and Artificial Intelligence Program</strong></p>
+                        <p><strong data-en="Coding and Artificial Intelligence Program" data-id="Program Coding dan Artificial Intelligence">Coding and Artificial Intelligence Program</strong></p>
                         <ul>
-                            <li>Delivered coding and artificial intelligence training to teacher representatives from 600+ schools across Tasikmalaya and Ciamis in multiple structured training batches.</li>
-                            <li>Facilitated technology knowledge transfer to teachers as a multiplier effect, contributing to sustainable technology adoption within the local education ecosystem and strengthening multi-stakeholder collaboration between academia, government, and industry.</li>
-                            <li>Managed participant registration and training administration while coordinating with lecturers, education offices, regional coordinators, school principals, and teachers to ensure smooth program execution.</li>
-                            <li>Demonstrated strong adaptability and time management by balancing academic responsibilities with professional duties.</li>
+                            <li data-en="Delivered coding and artificial intelligence training to teacher representatives from 600+ schools across Tasikmalaya and Ciamis in multiple structured training batches." data-id="Menyampaikan pelatihan coding dan artificial intelligence kepada perwakilan guru dari 600+ sekolah di Tasikmalaya dan Ciamis dalam beberapa gelombang pelatihan terstruktur.">Delivered coding and artificial intelligence training to teacher representatives from 600+ schools across Tasikmalaya and Ciamis in multiple structured training batches.</li>
+                            <li data-en="Facilitated technology knowledge transfer to teachers as a multiplier effect, contributing to sustainable technology adoption within the local education ecosystem and strengthening multi-stakeholder collaboration between academia, government, and industry." data-id="Memfasilitasi transfer pengetahuan teknologi kepada para guru sebagai efek pengganda, berkontribusi pada adopsi teknologi berkelanjutan di ekosistem pendidikan lokal, serta memperkuat kolaborasi multipihak antara akademisi, pemerintah, dan industri.">Facilitated technology knowledge transfer to teachers as a multiplier effect, contributing to sustainable technology adoption within the local education ecosystem and strengthening multi-stakeholder collaboration between academia, government, and industry.</li>
+                            <li data-en="Managed participant registration and training administration while coordinating with lecturers, education offices, regional coordinators, school principals, and teachers to ensure smooth program execution." data-id="Mengelola registrasi peserta dan administrasi pelatihan sambil berkoordinasi dengan dosen, dinas pendidikan, koordinator wilayah, kepala sekolah, dan guru untuk memastikan pelaksanaan program berjalan lancar.">Managed participant registration and training administration while coordinating with lecturers, education offices, regional coordinators, school principals, and teachers to ensure smooth program execution.</li>
+                            <li data-en="Demonstrated strong adaptability and time management by balancing academic responsibilities with professional duties." data-id="Menunjukkan kemampuan adaptasi dan manajemen waktu yang kuat dengan menyeimbangkan tanggung jawab akademik dan pekerjaan profesional.">Demonstrated strong adaptability and time management by balancing academic responsibilities with professional duties.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3>Assistant Lecturer</h3>
+                        <h3 data-en="Assistant Lecturer" data-id="Asisten Dosen">Assistant Lecturer</h3>
                         <div class="experience-meta">
                             <strong>Universitas Siliwangi</strong> | Tasikmalaya, ID | Feb 2024 - Mar 2025
                         </div>
                     </div>
                     <div class="experience-body">
-                        <p style="color: #2d3748;"><strong>Database and Software Engineering</strong></p>
+                        <p><strong data-en="Database and Software Engineering" data-id="Database dan Rekayasa Perangkat Lunak">Database and Software Engineering</strong></p>
                         <ul>
-                            <li>Assisted in delivering practicum sessions and mentoring students</li>
-                            <li>Explained technical concepts in programming, system design, and database management</li>
-                            <li>Facilitated discussions and addressed student inquiries</li>
-                            <li>Developed supporting materials such as modules and tutorials</li>
-                            <li>Provided constructive feedback and assessment</li>
+                            <li data-en="Assisted in delivering practicum sessions and mentoring students" data-id="Membantu pelaksanaan sesi praktikum dan pendampingan mahasiswa.">Assisted in delivering practicum sessions and mentoring students</li>
+                            <li data-en="Explained technical concepts in programming, system design, and database management" data-id="Menjelaskan konsep teknis terkait pemrograman, desain sistem, dan manajemen database.">Explained technical concepts in programming, system design, and database management</li>
+                            <li data-en="Facilitated discussions and addressed student inquiries" data-id="Memfasilitasi diskusi serta menjawab pertanyaan mahasiswa.">Facilitated discussions and addressed student inquiries</li>
+                            <li data-en="Developed supporting materials such as modules and tutorials" data-id="Menyusun materi pendukung seperti modul dan tutorial.">Developed supporting materials such as modules and tutorials</li>
+                            <li data-en="Provided constructive feedback and assessment" data-id="Memberikan umpan balik serta penilaian yang konstruktif.">Provided constructive feedback and assessment</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3>Data Analyst</h3>
+                        <h3 data-en="Data Analyst" data-id="Data Analyst">Data Analyst</h3>
                         <div class="experience-meta">
                             <strong>Fashion Tilang Indonesia</strong> | Tasikmalaya, ID | Jun 2024 - Oct 2024
                         </div>
                     </div>
                     <div class="experience-body">
-                        <p style="color: #2d3748;"><strong>Marketing and Database Management</strong></p>
+                        <p><strong data-en="Marketing and Database Management" data-id="Marketing dan Manajemen Database">Marketing and Database Management</strong></p>
                         <ul>
-                            <li>Managed databases for stock and financial transaction tracking</li>
-                            <li>Performed historical data analysis and developed predictive models</li>
-                            <li>Developed data-driven sales strategies</li>
-                            <li>Generated reports and visualizations for business performance monitoring</li>
+                            <li data-en="Managed databases for stock and financial transaction tracking" data-id="Mengelola database untuk pelacakan stok dan transaksi keuangan.">Managed databases for stock and financial transaction tracking</li>
+                            <li data-en="Performed historical data analysis and developed predictive models" data-id="Melakukan analisis data historis dan mengembangkan model prediktif.">Performed historical data analysis and developed predictive models</li>
+                            <li data-en="Developed data-driven sales strategies" data-id="Mengembangkan strategi penjualan berbasis data.">Developed data-driven sales strategies</li>
+                            <li data-en="Generated reports and visualizations for business performance monitoring" data-id="Menyusun laporan dan visualisasi untuk pemantauan performa bisnis.">Generated reports and visualizations for business performance monitoring</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3>Data Scientist Intern</h3>
+                        <h3 data-en="Data Scientist Intern" data-id="Data Scientist Intern">Data Scientist Intern</h3>
                         <div class="experience-meta">
                             <strong>PT. Hacktivate Teknologi Indonesia</strong> | Jakarta, ID | Aug 2023 - Dec 2023
                         </div>
                     </div>
                     <div class="experience-body">
-                        <p style="color: #2d3748;"><strong>Internship and Certified Independent Study</strong></p>
+                        <p><strong data-en="Internship and Certified Independent Study" data-id="Magang dan Studi Independen Bersertifikat">Internship and Certified Independent Study</strong></p>
                         <ul>
-                            <li>Conducted exploratory data analysis (EDA), data cleaning, and feature extraction on business datasets to support supervised learning models.</li>
-                            <li>Delivered insights through structured analysis and data visualizations to support decision-making and improve model performance during the internship program.</li>
-                            <li>Worked on data-driven capstone project from concept to implementation</li>
-                            <li>Published analysis results through presentations and reports</li>
+                            <li data-en="Conducted exploratory data analysis (EDA), data cleaning, and feature extraction on business datasets to support supervised learning models." data-id="Melakukan exploratory data analysis (EDA), pembersihan data, dan ekstraksi fitur pada dataset bisnis untuk mendukung model supervised learning.">Conducted exploratory data analysis (EDA), data cleaning, and feature extraction on business datasets to support supervised learning models.</li>
+                            <li data-en="Delivered insights through structured analysis and data visualizations to support decision-making and improve model performance during the internship program." data-id="Menyampaikan insight melalui analisis terstruktur dan visualisasi data untuk mendukung pengambilan keputusan serta meningkatkan performa model selama program magang.">Delivered insights through structured analysis and data visualizations to support decision-making and improve model performance during the internship program.</li>
+                            <li data-en="Worked on data-driven capstone project from concept to implementation" data-id="Mengerjakan proyek capstone berbasis data dari tahap konsep hingga implementasi.">Worked on data-driven capstone project from concept to implementation</li>
+                            <li data-en="Published analysis results through presentations and reports" data-id="Mempublikasikan hasil analisis melalui presentasi dan laporan.">Published analysis results through presentations and reports</li>
                         </ul>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <section id="publications" class="reveal">
+            <h2 data-i18n="publications_title">Scientific Publications</h2>
+            <p class="publications-lead" data-i18n="publications_lead">Research contributions in cybersecurity, machine learning, and network traffic analysis.</p>
+            <div class="publications-timeline" id="publications-container">
+                <!-- Publications will be loaded dynamically from publications.json -->
+            </div>
+        </section>
 
-        <section id="contact">
-                    <h2>Contact</h2>
-                        <div class="contact-info">
-                        <h3>Let's Connect</h3>
-                        <p style="color: #4a5568;">This portfolio reflects my passion for continuous learning and creating innovative solutions. Thank you for taking the time to review my portfolio. I believe my skills in Data, AI Engineer, and Project Management will be a great fit for your company's vision. Let's discuss how we can build something great together.</p>
-                                            
-                        <div style="margin: 30px 0; text-align: center;">
-                            <h4 style="color: #2d3748; margin-bottom: 15px;">You can download my CV here:</h4>
-                            <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-                                <a href="https://1drv.ms/b/c/e8e138949147d58e/IQAFI4PIO1INTb1Jo-O4fD6tAZR5PBwNO9dRDXw1NJYToPI?e=xm2zfj" target="_blank" class="cv-download-btn" style="color: #2d3748;">
-                                    <span>📄</span>
-                                    <span>CV in Data and AI Scope</span>
-                                </a>
-                                <a href="https://1drv.ms/b/c/e8e138949147d58e/IQB9Zq4C9iheS4MRDd-6DkD6AX5rWSZEYpjEPUPYAzIGwGw?e=qEIE5J" target="_blank" class="cv-download-btn" style="color: #2d3748;">
-                                    <span>📋</span>
-                                    <span>CV Project Management Scope</span>
-                                </a>
-                            </div>
-                        </div>
+        <section id="gallery" class="reveal">
+            <h2 data-i18n="gallery_title">Gallery</h2>
+            <p class="gallery-lead" data-i18n="gallery_lead">Personal moments and visual snapshots from my professional journey.</p>
+            <div class="gallery-container">
+                <button class="gallery-nav-btn prev" id="gallery-prev" aria-label="Previous">‹</button>
+                <div class="gallery-grid" id="gallery-grid">
+                <figure class="gallery-card" data-full="Asset/photo-1.jpg" data-caption="Professional Portrait">
+                    <img src="Asset/photo-1.jpg" alt="Professional Portrait">
+                    <figcaption>Professional Portrait</figcaption>
+                </figure>
+                <figure class="gallery-card" data-full="Asset/photo-2.jpg" data-caption="At Work">
+                    <img src="Asset/photo-2.jpg" alt="At Work">
+                    <figcaption>At Work</figcaption>
+                </figure>
+                <figure class="gallery-card" data-full="Asset/photo-3.jpg" data-caption="Casual Moment">
+                    <img src="Asset/photo-3.jpg" alt="Casual Moment">
+                    <figcaption>Casual Moment</figcaption>
+                </figure>
+                <figure class="gallery-card" data-full="Asset/photo-4.jpg" data-caption="Conference Presentation">
+                    <img src="Asset/photo-4.jpg" alt="Conference Presentation">
+                    <figcaption>Conference Presentation</figcaption>
+                </figure>
+                <figure class="gallery-card" data-full="Asset/photo-5.jpg" data-caption="Team Collaboration">
+                    <img src="Asset/photo-5.jpg" alt="Team Collaboration">
+                    <figcaption>Team Collaboration</figcaption>
+                </figure>
+                <figure class="gallery-card" data-full="Asset/photo-6.jpg" data-caption="Working Session">
+                    <img src="Asset/photo-6.jpg" alt="Working Session">
+                    <figcaption>Working Session</figcaption>
+                </figure>
+                <figure class="gallery-card" data-full="Asset/photo-7.jpg" data-caption="Creative Process">
+                    <img src="Asset/photo-7.jpg" alt="Creative Process">
+                    <figcaption>Creative Process</figcaption>
+                </figure>
+                <figure class="gallery-card" data-full="Asset/photo-8.jpg" data-caption="Outdoor Portrait">
+                    <img src="Asset/photo-8.jpg" alt="Outdoor Portrait">
+                    <figcaption>Outdoor Portrait</figcaption>
+                </figure>
+                <figure class="gallery-card" data-full="Asset/photo-9.jpg" data-caption="Professional Headshot">
+                    <img src="Asset/photo-9.jpg" alt="Professional Headshot">
+                    <figcaption>Professional Headshot</figcaption>
+                </figure>
+                </div>
+                <button class="gallery-nav-btn next" id="gallery-next" aria-label="Next">›</button>
+            </div>
+        </section>
 
-                        <div class="contact-links">
-                            <a href="mailto:darmawanaditya521@gmail.com" class="contact-link">
-                                <span><img src="Asset/gmail.png" alt="Email" style="width: 24px; height: 24px; object-fit: contain;"></span>
-                                <span>darmawanaditya521@gmail.com</span>
-                            </a>
-                            <a href="https://github.com/adityadarmawann" class="contact-link" target="_blank">
-                                <span><img src="Asset/github.png" alt="GitHub" style="width: 24px; height: 24px; object-fit: contain;"></span>
-                                <span>GitHub</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/muhamad-aditya-darmawan-57027a240/" class="contact-link" target="_blank">
-                                <span><img src="Asset/linkedin.png" alt="LinkedIn" style="width: 24px; height: 24px; object-fit: contain;"></span>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="https://www.instagram.com/adityadarmawan___?igsh=YmVoZjN1ZDMzY3A%3D&utm_source=qr" class="contact-link" target="_blank">
-                                <span><img src="Asset/ig.png" alt="Instagram" style="width: 24px; height: 24px; object-fit: contain;"></span>
-                                <span>@adityadarmawan___</span>
-                            </a>
-                        </div>
+        <section id="contact" class="reveal">
+            <h2 data-i18n="contact_title">Contact</h2>
+            <div class="contact-info">
+                <h3 data-i18n="contact_heading">Let's Connect</h3>
+                <p data-i18n="contact_desc">This portfolio reflects my passion for continuous learning and creating innovative solutions. Thank you for taking the time to review my portfolio. I believe my skills in Data, AI Engineer, and Project Management will be a great fit for your company's vision. Let's discuss how we can build something great together.</p>
+
+                <div style="margin: 1.2rem 0 0.4rem;">
+                    <h4 style="margin-bottom: 0.75rem; font-family: 'Sora', sans-serif;" data-i18n="cv_heading">You can download my CV here:</h4>
+                    <div class="cv-grid">
+                        <a id="cv-data-link" href="https://1drv.ms/b/c/e8e138949147d58e/IQAFI4PIO1INTb1Jo-O4fD6tAZR5PBwNO9dRDXw1NJYToPI?e=xm2zfj" target="_blank" rel="noopener" class="cv-download-btn">
+                            <span data-i18n="cv_data">CV in Data and AI Scope</span>
+                        </a>
+                        <a id="cv-pm-link" href="https://1drv.ms/b/c/e8e138949147d58e/IQB9Zq4C9iheS4MRDd-6DkD6AX5rWSZEYpjEPUPYAzIGwGw?e=qEIE5J" target="_blank" rel="noopener" class="cv-download-btn">
+                            <span data-i18n="cv_pm">CV Project Management Scope</span>
+                        </a>
                     </div>
-                </section>  
-    </div>  
+                </div>
+
+                <div class="contact-links" id="contact-links">
+                    <a href="mailto:darmawanaditya521@gmail.com" class="contact-link">
+                        <img src="Asset/gmail.png" alt="Email">
+                        <span>darmawanaditya521@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/adityadarmawann" class="contact-link" target="_blank" rel="noopener">
+                        <img src="Asset/github.png" alt="GitHub">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/muhamad-aditya-darmawan-57027a240/" class="contact-link" target="_blank" rel="noopener">
+                        <img src="Asset/linkedin.png" alt="LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/adityadarmawan___?igsh=YmVoZjN1ZDMzY3A%3D&utm_source=qr" class="contact-link" target="_blank" rel="noopener">
+                        <img src="Asset/ig.png" alt="Instagram">
+                        <span>@adityadarmawan___</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="gallery-modal" id="gallery-modal" aria-hidden="true">
+        <div class="gallery-modal-dialog" role="dialog" aria-modal="true" aria-label="Gallery Preview">
+            <div class="gallery-modal-top">
+                <span class="gallery-modal-title" id="gallery-modal-title">Gallery Preview</span>
+                <button class="gallery-modal-close" id="gallery-modal-close" type="button" data-i18n="gallery_close">Close</button>
+            </div>
+            <img class="gallery-modal-image" id="gallery-modal-image" src="" alt="Gallery Preview">
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2025 Muhamad Aditya Darmawan. All rights reserved.</p>
-    </footer>   
+        <p data-i18n="footer_text">&copy; 2025 Muhamad Aditya Darmawan. All rights reserved.</p>
+    </footer>
 
     <script>
-        // Toggle mobile menu
-        function toggleMenu() {
-            const navUl = document.querySelector('.navigation ul');
-            const hamburger = document.querySelector('.hamburger');
-            navUl.classList.toggle('active');
-            
-            // Animate hamburger icon
-            hamburger.classList.toggle('active');
+        const navList = document.getElementById("nav-list");
+        const hamburger = document.getElementById("hamburger");
+        const header = document.getElementById("site-header");
+        const navLinks = Array.from(document.querySelectorAll(".navigation a"));
+        const langEnBtn = document.getElementById("lang-en");
+        const langIdBtn = document.getElementById("lang-id");
+        let i18nNodes = document.querySelectorAll("[data-i18n]");
+        let bilingualNodes = document.querySelectorAll("[data-en][data-id]");
+        let filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
+        let projectCards = Array.from(document.querySelectorAll(".project-card"));
+        let galleryCards = Array.from(document.querySelectorAll(".gallery-card"));
+        const galleryModal = document.getElementById("gallery-modal");
+        const galleryModalImage = document.getElementById("gallery-modal-image");
+        const galleryModalTitle = document.getElementById("gallery-modal-title");
+        const galleryModalClose = document.getElementById("gallery-modal-close");
+        const heroGalleryEl = document.getElementById("hero-gallery");
+        const profileImageEl = document.getElementById("profile-image");
+        const educationListEl = document.getElementById("education-list");
+        const skillsListEl = document.getElementById("skills-list");
+        const certificationsListEl = document.getElementById("certifications-list");
+        const projectsGridEl = document.getElementById("projects-grid");
+        const experienceListEl = document.getElementById("experience-list");
+        const galleryGridEl = document.getElementById("gallery-grid");
+        const contactLinksEl = document.getElementById("contact-links");
+        const cvDataLinkEl = document.getElementById("cv-data-link");
+        const cvPmLinkEl = document.getElementById("cv-pm-link");
+
+        const translations = {
+            en: {
+                logo: "Portfolio",
+                nav_home: "Home",
+                nav_about: "About",
+                nav_education: "Education",
+                nav_skills: "Skills",
+                nav_certifications: "Certifications",
+                nav_projects: "Projects",
+                nav_experience: "Experience",
+                nav_publications: "Publications",
+                nav_gallery: "Gallery",
+                nav_contact: "Contact",
+                gallery_title: "Gallery",
+                gallery_lead: "Personal moments and visual snapshots from my professional journey.",
+                gallery_close: "Close",
+                hero_badge: "Available for Work Opportunities",
+                hero_title: "Welcome to Muhamad Aditya Darmawan's Professional Portfolio.",
+                hero_desc: "Data and AI enthusiast with strong experience in machine learning, system development, and cross-functional collaboration. This portfolio highlights my education, certifications, project journey, and practical impact.",
+                hero_cta_projects: "Explore Projects",
+                hero_cta_contact: "Let's Connect",
+                core_focus: "Core Focus",
+                focus_1: "Data Science",
+                focus_2: "Machine Learning Engineer",
+                focus_3: "AI Engineer",
+                focus_4: "Project Management",
+                highlights: "Current Highlights",
+                highlight_meta: "Informatics Graduate - Universitas Siliwangi | GPA 3.97/4.0",
+                highlight_1: "Journal publication in progress",
+                highlight_2: "600+ schools AI training impact",
+                about_title: "About Me",
+                about_lead: "Building practical technology solutions with clear communication and data-driven thinking.",
+                about_p1: "Bachelor's graduate in Informatics from the Faculty of Engineering, Universitas Siliwangi, with strong skills in data analysis, statistical modeling, and system development. Proficient in Python, SQL, PyTorch, and TensorFlow with hands-on experience in building and evaluating machine learning models. Able to extract actionable insights from complex datasets and turn them into strategic recommendations.",
+                about_p2: "Known for clear and confident communication, with experience presenting technical material in both academic and organizational settings. Frequently invited as a speaker or facilitator in workshops, demonstrating the ability to engage diverse audiences.",
+                about_p3: "Passionate about data-driven innovation and eager to contribute to collaborative, solution-focused environments. Combines analytical thinking, technical expertise, and communication skills to support effective decision-making and technological growth.",
+                education_title: "Education",
+                skills_title: "Skills",
+                cert_title: "Professional Certifications",
+                projects_title: "Project Experiences",
+                experience_title: "Work Experience",
+                contact_title: "Contact",
+                contact_heading: "Let's Connect",
+                contact_desc: "This portfolio reflects my passion for continuous learning and creating innovative solutions. Thank you for taking the time to review my portfolio. I believe my skills in Data, AI Engineer, and Project Management will be a great fit for your company's vision. Let's discuss how we can build something great together.",
+                cv_heading: "You can download my CV here:",
+                cv_data: "CV in Data and AI Scope",
+                cv_pm: "CV Project Management Scope",
+                filter_all: "All",
+                footer_text: "(c) 2025 Muhamad Aditya Darmawan. All rights reserved.",
+                meta_title: "Portfolio - Muhamad Aditya Darmawan, S.Kom.",
+                meta_desc: "Portfolio of Muhamad Aditya Darmawan, Informatics graduate focused on Data, AI Engineering, and project delivery.",
+                meta_og_desc: "Explore projects and experience in Data, AI Engineering, and system development."
+            },
+            id: {
+                logo: "Portofolio",
+                nav_home: "Beranda",
+                nav_about: "Tentang",
+                nav_education: "Pendidikan",
+                nav_skills: "Keahlian",
+                nav_certifications: "Sertifikasi",
+                nav_projects: "Proyek",
+                nav_experience: "Pengalaman",
+                nav_publications: "Publikasi",
+                nav_gallery: "Galeri",
+                nav_contact: "Kontak",
+                gallery_title: "Galeri",
+                gallery_lead: "Momen personal dan cuplikan visual dari perjalanan profesional saya.",
+                gallery_close: "Tutup",
+                hero_badge: "Terbuka untuk Kesempatan Kerja",
+                hero_title: "Selamat Datang di Portofolio Profesional Muhamad Aditya Darmawan.",
+                hero_desc: "Antusias di bidang Data dan AI dengan pengalaman kuat pada machine learning, pengembangan sistem, dan kolaborasi lintas fungsi. Portofolio ini menampilkan pendidikan, sertifikasi, perjalanan proyek, dan dampak nyata yang telah saya bangun.",
+                hero_cta_projects: "Lihat Proyek",
+                hero_cta_contact: "Mari Terhubung",
+                core_focus: "Fokus Utama",
+                focus_1: "Data Science",
+                focus_2: "Machine Learning Engineer",
+                focus_3: "AI Engineer",
+                focus_4: "Project Management",
+                highlights: "Sorotan Saat Ini",
+                highlight_meta: "Lulusan Informatika - Universitas Siliwangi | IPK 3.97/4.0",
+                highlight_1: "Publikasi jurnal sedang diproses",
+                highlight_2: "Dampak pelatihan AI ke 600+ sekolah",
+                about_title: "Tentang Saya",
+                about_lead: "Membangun solusi teknologi yang praktis dengan komunikasi yang jelas dan pola pikir berbasis data.",
+                about_p1: "Lulusan S1 Informatika dari Fakultas Teknik Universitas Siliwangi dengan kemampuan kuat pada analisis data, pemodelan statistik, dan pengembangan sistem. Menguasai Python, SQL, PyTorch, dan TensorFlow dengan pengalaman langsung membangun serta mengevaluasi model machine learning. Terbiasa mengekstrak insight yang dapat ditindaklanjuti dari data kompleks menjadi rekomendasi strategis.",
+                about_p2: "Dikenal dengan komunikasi yang jelas dan percaya diri, serta berpengalaman menyampaikan materi teknis dalam konteks akademik maupun organisasi. Sering diundang sebagai pembicara atau fasilitator workshop, dengan kemampuan melibatkan audiens yang beragam.",
+                about_p3: "Memiliki semangat tinggi pada inovasi berbasis data dan siap berkontribusi dalam lingkungan kolaboratif yang berorientasi solusi. Menggabungkan pola pikir analitis, keahlian teknis, dan kemampuan komunikasi untuk mendukung keputusan yang efektif serta pertumbuhan teknologi.",
+                education_title: "Pendidikan",
+                skills_title: "Keahlian",
+                cert_title: "Sertifikasi Profesional",
+                projects_title: "Pengalaman Proyek",
+                experience_title: "Pengalaman Kerja",
+                contact_title: "Kontak",
+                contact_heading: "Mari Terhubung",
+                contact_desc: "Portofolio ini merepresentasikan semangat saya untuk terus belajar dan menciptakan solusi inovatif. Terima kasih sudah meluangkan waktu untuk meninjau portofolio saya. Saya yakin kemampuan saya di bidang Data, AI Engineer, dan Project Management akan sangat relevan dengan visi perusahaan Anda. Mari diskusikan bagaimana kita bisa membangun sesuatu yang berdampak bersama.",
+                cv_heading: "Anda dapat mengunduh CV saya di sini:",
+                cv_data: "CV Bidang Data dan AI",
+                cv_pm: "CV Bidang Project Management",
+                filter_all: "Semua",
+                footer_text: "(c) 2025 Muhamad Aditya Darmawan. Hak cipta dilindungi.",
+                meta_title: "Portofolio - Muhamad Aditya Darmawan, S.Kom.",
+                meta_desc: "Portofolio Muhamad Aditya Darmawan, lulusan Informatika dengan fokus pada Data, AI Engineering, dan eksekusi proyek.",
+                meta_og_desc: "Jelajahi proyek dan pengalaman di bidang Data, AI Engineering, dan pengembangan sistem."
+            }
+        };
+
+        let currentLanguage = localStorage.getItem("preferredLanguage") || "en";
+        let currentGalleryIndex = 0;
+        let totalGalleryItems = 0;
+        let seoOverrides = {};
+        let cachedPublications = [];
+
+        function refreshDynamicNodeRefs() {
+            i18nNodes = document.querySelectorAll("[data-i18n]");
+            bilingualNodes = document.querySelectorAll("[data-en][data-id]");
+            filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
+            projectCards = Array.from(document.querySelectorAll(".project-card"));
+            galleryCards = Array.from(document.querySelectorAll(".gallery-card"));
+            totalGalleryItems = galleryCards.length;
         }
 
-        // Close menu when clicking on a link
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                const navUl = document.querySelector('.navigation ul');
-                const hamburger = document.querySelector('.hamburger');
-                if (navUl.classList.contains('active')) {
-                    navUl.classList.remove('active');
-                    hamburger.classList.remove('active');
+        function escapeHtml(value) {
+            return String(value ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/\"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
+        function sortByOrder(items) {
+            return [...items]
+                .map((item, index) => ({ item, index }))
+                .sort((a, b) => {
+                    const aOrder = Number.isFinite(Number(a.item?.order)) ? Number(a.item.order) : Number.MAX_SAFE_INTEGER;
+                    const bOrder = Number.isFinite(Number(b.item?.order)) ? Number(b.item.order) : Number.MAX_SAFE_INTEGER;
+                    if (aOrder !== bOrder) {
+                        return aOrder - bOrder;
+                    }
+                    return a.index - b.index;
+                })
+                .map((entry) => entry.item);
+        }
+
+        function resolveUrl(input, fallback) {
+            if (!input || typeof input !== "string") {
+                return fallback;
+            }
+            if (/^https?:\/\//i.test(input)) {
+                return input;
+            }
+            const normalized = input.replace(/^\/+/, "");
+            return `${window.location.origin}/${normalized}`;
+        }
+
+        function applySeoSettings() {
+            const runtimeUrl = `${window.location.origin}${window.location.pathname}`;
+            const canonical = seoOverrides.canonical || runtimeUrl;
+            const ogImage = resolveUrl(seoOverrides.og_image, `${window.location.origin}/Asset/aditya1.png`);
+
+            document.getElementById("canonical-url").setAttribute("href", canonical);
+            document.getElementById("og-url").setAttribute("content", canonical);
+            document.getElementById("og-image").setAttribute("content", ogImage);
+            document.getElementById("twitter-image").setAttribute("content", ogImage);
+
+            if (seoOverrides.keywords) {
+                document.getElementById("meta-keywords").setAttribute("content", seoOverrides.keywords);
+            }
+
+            const structuredDataEl = document.getElementById("structured-data-person");
+            try {
+                const schema = JSON.parse(structuredDataEl.textContent);
+                schema.url = canonical;
+                schema.image = ogImage;
+                structuredDataEl.textContent = JSON.stringify(schema);
+            } catch (error) {
+                console.error("Structured data update failed", error);
+            }
+        }
+
+        function renderEducation(items) {
+            if (!Array.isArray(items) || !educationListEl) return;
+            educationListEl.innerHTML = items.map((item) => {
+                const title = item.title?.[currentLanguage] || item.title?.en || item[currentLanguage] || item.en || "";
+                const details = (item.details || []).map((detail) => {
+                    const text = detail[currentLanguage] || detail.en || "";
+                    return `<p data-en="${escapeHtml(detail.en || text)}" data-id="${escapeHtml(detail.id || text)}">${escapeHtml(text)}</p>`;
+                }).join("");
+
+                return `
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 data-en="${escapeHtml(item.title?.en || item.en || title)}" data-id="${escapeHtml(item.title?.id || item.id || title)}">${escapeHtml(title)}</h3>
+                            <div class="experience-meta"><strong>${escapeHtml(item.institution || "")}</strong> | ${escapeHtml(item.location || "")} | ${escapeHtml(item.period || "")}</div>
+                        </div>
+                        <div class="experience-body">${details}</div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function renderSkillGroup(container, groups) {
+            if (!Array.isArray(groups) || !container) return;
+            container.innerHTML = groups.map((group) => {
+                const title = group.title?.[currentLanguage] || group.title?.en || "";
+                const subtitle = group.subtitle ? (group.subtitle[currentLanguage] || group.subtitle.en || "") : "";
+                const items = (group.items || []).map((item) => {
+                    const text = item[currentLanguage] || item.en || "";
+                    return `<li data-en="${escapeHtml(item.en || text)}" data-id="${escapeHtml(item.id || text)}">${escapeHtml(text)}</li>`;
+                }).join("");
+
+                return `
+                    <div class="skill-card">
+                        <h3 data-en="${escapeHtml(group.title?.en || title)}" data-id="${escapeHtml(group.title?.id || title)}">${escapeHtml(title)}</h3>
+                        ${subtitle ? `<p><em data-en="${escapeHtml(group.subtitle.en || subtitle)}" data-id="${escapeHtml(group.subtitle.id || subtitle)}">${escapeHtml(subtitle)}</em></p>` : ""}
+                        <ul>${items}</ul>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function renderProjects(items) {
+            if (!Array.isArray(items) || !projectsGridEl) return;
+            projectsGridEl.innerHTML = sortByOrder(items).map((item) => {
+                const title = item.title?.[currentLanguage] || item.title?.en || "";
+                const summary = item.summary?.[currentLanguage] || item.summary?.en || "";
+                const bullets = (item.bullets || []).map((bullet) => {
+                    const text = bullet[currentLanguage] || bullet.en || "";
+                    return `<li data-en="${escapeHtml(bullet.en || text)}" data-id="${escapeHtml(bullet.id || text)}">${escapeHtml(text)}</li>`;
+                }).join("");
+                const footnote = item.footnote ? (item.footnote[currentLanguage] || item.footnote.en || "") : "";
+
+                return `
+                    <div class="project-card" data-category="${escapeHtml((item.categories || []).join(" "))}">
+                        <div class="project-image">
+                            <img src="${escapeHtml(item.image || "")}" alt="${escapeHtml(item.imageAlt || title)}">
+                        </div>
+                        <div class="project-header">
+                            <h3 data-en="${escapeHtml(item.title?.en || title)}" data-id="${escapeHtml(item.title?.id || title)}">${escapeHtml(title)}</h3>
+                        </div>
+                        <div class="project-body">
+                            <p><strong data-en="${escapeHtml(item.summary?.en || summary)}" data-id="${escapeHtml(item.summary?.id || summary)}">${escapeHtml(summary)}</strong></p>
+                            <ul>${bullets}</ul>
+                            ${footnote ? `<p><em data-en="${escapeHtml(item.footnote.en || footnote)}" data-id="${escapeHtml(item.footnote.id || footnote)}">${escapeHtml(footnote)}</em></p>` : ""}
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function renderExperience(items) {
+            if (!Array.isArray(items) || !experienceListEl) return;
+            experienceListEl.innerHTML = sortByOrder(items).map((item) => {
+                const role = item.role?.[currentLanguage] || item.role?.en || "";
+                const domain = item.domain?.[currentLanguage] || item.domain?.en || "";
+                const bullets = (item.bullets || []).map((bullet) => {
+                    const text = bullet[currentLanguage] || bullet.en || "";
+                    return `<li data-en="${escapeHtml(bullet.en || text)}" data-id="${escapeHtml(bullet.id || text)}">${escapeHtml(text)}</li>`;
+                }).join("");
+
+                return `
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 data-en="${escapeHtml(item.role?.en || role)}" data-id="${escapeHtml(item.role?.id || role)}">${escapeHtml(role)}</h3>
+                            <div class="experience-meta"><strong>${escapeHtml(item.company || "")}</strong> | ${escapeHtml(item.location || "")} | ${escapeHtml(item.period || "")}</div>
+                        </div>
+                        <div class="experience-body">
+                            <p><strong data-en="${escapeHtml(item.domain?.en || domain)}" data-id="${escapeHtml(item.domain?.id || domain)}">${escapeHtml(domain)}</strong></p>
+                            <ul>${bullets}</ul>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function renderPublications(items) {
+            const container = document.getElementById("publications-container");
+            if (!Array.isArray(items) || !container) return;
+            
+            container.innerHTML = sortByOrder(items).map((item, index) => {
+                const abstract = item[`abstract_${currentLanguage}`] || item.abstract_en || "";
+                let meta = item.journal || "";
+                if (item.volume) meta += `, vol. ${item.volume}`;
+                if (item.number) meta += `, no. ${item.number}`;
+                if (item.pages) meta += `, pp. ${item.pages}`;
+                if (item.month) meta += `, ${item.month}`;
+                if (item.year) meta += ` ${item.year}`;
+                
+                let links = "";
+                if (item.doi) {
+                    links += `<a href="https://doi.org/${escapeHtml(item.doi)}" target="_blank" rel="noopener" class="publication-link">DOI</a>`;
                 }
+                if (item.url) {
+                    links += `<a href="${escapeHtml(item.url)}" target="_blank" rel="noopener" class="publication-link">URL</a>`;
+                }
+                
+                let keywordsHtml = "";
+                if (item.keywords) {
+                    const keywords = item.keywords.split(",").map(k => k.trim()).filter(k => k);
+                    if (keywords.length > 0) {
+                        keywordsHtml = `<div class="publication-keywords">${keywords.map(k => `<span>${escapeHtml(k)}</span>`).join("")}</div>`;
+                    }
+                }
+                
+                // Show brief preview by default, full abstract on toggle
+                let abstractHtml = "";
+                if (abstract) {
+                    const briefAbstract = abstract.length > 250 ? abstract.substring(0, 250) + "..." : abstract;
+                    const needsToggle = abstract.length > 250;
+                    
+                    abstractHtml = `
+                        <div class="publication-body">
+                            <p><strong>${currentLanguage === 'id' ? 'Topik Pembahasan' : 'Topic'}</strong></p>
+                            <div class="publication-abstract-preview" id="pub-preview-${index}">
+                                ${escapeHtml(briefAbstract)}
+                            </div>
+                            ${needsToggle ? `
+                                <div class="publication-abstract-full" id="pub-full-${index}" style="display: none;">
+                                    ${escapeHtml(abstract)}
+                                </div>
+                                <span class="publication-toggle" onclick="toggleAbstract(${index})" id="pub-toggle-${index}">
+                                    ${currentLanguage === 'id' ? 'Baca Selengkapnya' : 'Read More'} ▼
+                                </span>
+                            ` : `
+                                <div class="publication-abstract-full">
+                                    ${escapeHtml(abstract)}
+                                </div>
+                            `}
+                        </div>
+                    `;
+                }
+                
+                return `
+                    <div class="publication-item">
+                        <div class="publication-header">
+                            <h3>${escapeHtml(item.title || "")}</h3>
+                        </div>
+                        <div class="publication-authors"><strong>${currentLanguage === 'id' ? 'Penulis' : 'Authors'}:</strong> ${escapeHtml(item.authors || "")}</div>
+                        <div class="publication-meta"><strong>${currentLanguage === 'id' ? 'Jurnal' : 'Journal'}:</strong> ${escapeHtml(meta)}</div>
+                        ${keywordsHtml}
+                        ${abstractHtml}
+                        ${links ? `<div class="publication-links">${links}</div>` : ""}
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function toggleAbstract(index) {
+            const previewEl = document.getElementById(`pub-preview-${index}`);
+            const fullEl = document.getElementById(`pub-full-${index}`);
+            const toggleEl = document.getElementById(`pub-toggle-${index}`);
+            if (!previewEl || !fullEl || !toggleEl) return;
+            
+            const isExpanded = fullEl.style.display === "none";
+            if (isExpanded) {
+                previewEl.style.display = "none";
+                fullEl.style.display = "block";
+                toggleEl.innerHTML = `${currentLanguage === 'id' ? 'Sembunyikan' : 'Show Less'} ▲`;
+            } else {
+                previewEl.style.display = "block";
+                fullEl.style.display = "none";
+                toggleEl.innerHTML = `${currentLanguage === 'id' ? 'Baca Selengkapnya' : 'Read More'} ▼`;
+            }
+        }
+
+        function renderGallery(items) {
+            if (!Array.isArray(items) || !galleryGridEl) return;
+            galleryGridEl.innerHTML = sortByOrder(items).map((item) => {
+                const caption = item.caption?.[currentLanguage] || item.caption?.en || "";
+                return `
+                    <figure class="gallery-card" data-full="${escapeHtml(item.image || "")}" data-caption="${escapeHtml(caption)}">
+                        <img src="${escapeHtml(item.image || "")}" alt="${escapeHtml(caption)}">
+                        <figcaption data-en="${escapeHtml(item.caption?.en || caption)}" data-id="${escapeHtml(item.caption?.id || caption)}">${escapeHtml(caption)}</figcaption>
+                    </figure>
+                `;
+            }).join("");
+            currentGalleryIndex = 0;
+        }
+
+        function renderContacts(items) {
+            if (!Array.isArray(items) || !contactLinksEl) return;
+            contactLinksEl.innerHTML = items.map((item) => {
+                const label = item.label?.[currentLanguage] || item.label?.en || item.label || "";
+                const targetBlank = item.targetBlank ? " target=\"_blank\" rel=\"noopener\"" : "";
+                return `
+                    <a href="${escapeHtml(item.url || "#")}" class="contact-link"${targetBlank}>
+                        <img src="${escapeHtml(item.icon || "")}" alt="${escapeHtml(label)}">
+                        <span data-en="${escapeHtml(item.label?.en || label)}" data-id="${escapeHtml(item.label?.id || label)}">${escapeHtml(label)}</span>
+                    </a>
+                `;
+            }).join("");
+        }
+
+        function bindProjectFilters() {
+            filterButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    applyProjectFilter(button.dataset.filter);
+                });
+            });
+        }
+
+        function bindGalleryInteractions() {
+            galleryCards.forEach((card) => {
+                card.addEventListener("click", () => {
+                    openGalleryModal(card.dataset.full, card.dataset.caption);
+                });
+            });
+        }
+
+        async function loadCmsContent() {
+            try {
+                const [settingsRes, educationRes, skillsRes, certificationsRes, projectsRes, experienceRes, publicationsRes, galleryRes, contactsRes] = await Promise.all([
+                    fetch("content/site-settings.json"),
+                    fetch("content/education.json"),
+                    fetch("content/skills.json"),
+                    fetch("content/certifications.json"),
+                    fetch("content/projects.json"),
+                    fetch("content/experience.json"),
+                    fetch("content/publications.json"),
+                    fetch("content/gallery.json"),
+                    fetch("content/contacts.json")
+                ]);
+
+                if (![settingsRes, educationRes, skillsRes, certificationsRes, projectsRes, experienceRes, publicationsRes, galleryRes, contactsRes].every((r) => r.ok)) {
+                    return;
+                }
+
+                const settings = await settingsRes.json();
+                const education = await educationRes.json();
+                const skills = await skillsRes.json();
+                const certifications = await certificationsRes.json();
+                const projects = await projectsRes.json();
+                const experience = await experienceRes.json();
+                const publications = await publicationsRes.json();
+                const gallery = await galleryRes.json();
+                const contacts = await contactsRes.json();
+
+                if (settings?.translations?.en) {
+                    Object.assign(translations.en, settings.translations.en);
+                }
+                if (settings?.translations?.id) {
+                    Object.assign(translations.id, settings.translations.id);
+                }
+
+                if (settings?.seo) {
+                    seoOverrides = settings.seo;
+                }
+
+                if (settings?.heroGallery && heroGalleryEl) {
+                    heroGalleryEl.innerHTML = settings.heroGallery.map((item) => `
+                        <div class="hero-gallery-item">
+                            <img src="${escapeHtml(item.image || "")}" alt="${escapeHtml(item.alt || "Hero preview")}">
+                        </div>
+                    `).join("");
+                }
+
+                if (settings?.aboutImage?.src && profileImageEl) {
+                    profileImageEl.src = settings.aboutImage.src;
+                    profileImageEl.alt = settings.aboutImage.alt || profileImageEl.alt;
+                }
+
+                if (settings?.cv?.data && cvDataLinkEl) {
+                    cvDataLinkEl.href = settings.cv.data;
+                }
+                if (settings?.cv?.pm && cvPmLinkEl) {
+                    cvPmLinkEl.href = settings.cv.pm;
+                }
+
+                cachedPublications = publications.items || [];
+
+                renderEducation(education.items || []);
+                renderSkillGroup(skillsListEl, skills.items || []);
+                renderSkillGroup(certificationsListEl, certifications.items || []);
+                renderProjects(projects.items || []);
+                renderExperience(experience.items || []);
+                renderPublications(cachedPublications);
+                renderGallery(gallery.items || []);
+                renderContacts(contacts.items || []);
+
+                refreshDynamicNodeRefs();
+                bindGalleryInteractions();
+                setLanguage(currentLanguage);
+                applySeoSettings();
+                applyProjectFilter("all");
+                updateGalleryCarousel();
+                observeRevealElements();
+            } catch (error) {
+                console.error("CMS content loading failed", error);
+            }
+        }
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            const dict = translations[lang] || translations.en;
+            i18nNodes.forEach((node) => {
+                const key = node.dataset.i18n;
+                if (dict[key]) {
+                    node.textContent = dict[key];
+                }
+            });
+
+            bilingualNodes.forEach((node) => {
+                node.textContent = lang === "id" ? node.dataset.id : node.dataset.en;
+            });
+
+            // Re-render publications to update labels and abstracts
+            if (cachedPublications.length > 0) {
+                renderPublications(cachedPublications);
+            }
+
+            document.documentElement.lang = lang;
+            document.title = dict.meta_title;
+            document.getElementById("meta-description").setAttribute("content", dict.meta_desc);
+            document.getElementById("og-title").setAttribute("content", dict.meta_title);
+            document.getElementById("og-description").setAttribute("content", dict.meta_og_desc);
+            document.getElementById("twitter-title").setAttribute("content", dict.meta_title);
+            document.getElementById("twitter-description").setAttribute("content", dict.meta_og_desc);
+
+            langEnBtn.classList.toggle("active", lang === "en");
+            langIdBtn.classList.toggle("active", lang === "id");
+            localStorage.setItem("preferredLanguage", lang);
+        }
+
+        function toggleMenu() {
+            navList.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        }
+
+        function applyProjectFilter(category) {
+            filterButtons.forEach((btn) => {
+                btn.classList.toggle("active", btn.dataset.filter === category);
+            });
+
+            projectCards.forEach((card) => {
+                const categories = card.dataset.category.split(" ");
+                const isMatch = category === "all" || categories.includes(category);
+                card.classList.toggle("is-hidden", !isMatch);
+            });
+        }
+
+        function openGalleryModal(source, caption) {
+            galleryModalImage.src = source;
+            galleryModalImage.alt = caption;
+            galleryModalTitle.textContent = caption;
+            galleryModal.classList.add("open");
+            galleryModal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeGalleryModal() {
+            galleryModal.classList.remove("open");
+            galleryModal.setAttribute("aria-hidden", "true");
+            galleryModalImage.src = "";
+            document.body.style.overflow = "";
+        }
+
+        hamburger.addEventListener("click", toggleMenu);
+
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                navList.classList.remove("active");
+                hamburger.classList.remove("active");
             });
         });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            const nav = document.querySelector('nav');
-            const navUl = document.querySelector('.navigation ul');
-            const hamburger = document.querySelector('.hamburger');
-            
-            if (!nav.contains(e.target) && navUl.classList.contains('active')) {
-                navUl.classList.remove('active');
-                hamburger.classList.remove('active');
+        langEnBtn.addEventListener("click", () => setLanguage("en"));
+        langIdBtn.addEventListener("click", () => setLanguage("id"));
+
+        function updateGalleryCarousel() {
+            if (!totalGalleryItems) {
+                return;
+            }
+
+            if (currentGalleryIndex > totalGalleryItems - 1) {
+                currentGalleryIndex = 0;
+            }
+
+            galleryCards.forEach((card, index) => {
+                card.classList.remove('side', 'center', 'hidden');
+                
+                const prevIndex = (currentGalleryIndex - 1 + totalGalleryItems) % totalGalleryItems;
+                const nextIndex = (currentGalleryIndex + 1) % totalGalleryItems;
+                
+                if (index === currentGalleryIndex) {
+                    card.classList.add('center');
+                } else if (index === prevIndex || index === nextIndex) {
+                    card.classList.add('side');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        function navigateGallery(direction) {
+            if (!totalGalleryItems) {
+                return;
+            }
+            currentGalleryIndex = (currentGalleryIndex + direction + totalGalleryItems) % totalGalleryItems;
+            updateGalleryCarousel();
+        }
+
+        document.getElementById('gallery-prev').addEventListener('click', () => navigateGallery(-1));
+        document.getElementById('gallery-next').addEventListener('click', () => navigateGallery(1));
+
+        refreshDynamicNodeRefs();
+        bindProjectFilters();
+        bindGalleryInteractions();
+        updateGalleryCarousel();
+
+        galleryModalClose.addEventListener("click", closeGalleryModal);
+
+        galleryModal.addEventListener("click", (event) => {
+            if (event.target === galleryModal) {
+                closeGalleryModal();
             }
         });
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && galleryModal.classList.contains("open")) {
+                closeGalleryModal();
+            }
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!event.target.closest("nav") && navList.classList.contains("active")) {
+                navList.classList.remove("active");
+                hamburger.classList.remove("active");
+            }
+        });
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 16) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+
+            const scrollPoint = window.scrollY + 170;
+            document.querySelectorAll("section").forEach((section) => {
+                const top = section.offsetTop;
+                const bottom = top + section.offsetHeight;
+                const id = section.getAttribute("id");
+
+                if (scrollPoint >= top && scrollPoint < bottom) {
+                    navLinks.forEach((link) => {
+                        link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
                     });
                 }
             });
         });
 
-        // Active navigation highlight on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            const scrollPosition = scrollY + 150; // Adjust threshold for better detection
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    current = section.getAttribute('id');
-                }
-            });
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            },
+            { threshold: 0.12 }
+        );
 
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
+        function observeRevealElements() {
+            const revealEls = document.querySelectorAll(".reveal, .project-card, .skill-card, .experience-item");
+            revealEls.forEach((el) => {
+                if (!el.classList.contains("reveal")) {
+                    el.classList.add("reveal");
                 }
+                observer.observe(el);
             });
-        });
+        }
+
+        observeRevealElements();
+
+        setLanguage(currentLanguage);
+        applySeoSettings();
+        applyProjectFilter("all");
+        loadCmsContent();
     </script>
 </body>
 </html>

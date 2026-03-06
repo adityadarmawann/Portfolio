@@ -1,0 +1,110 @@
+{
+  "items": [
+    {
+      "order": 1,
+      "categories": ["ai", "data"],
+      "image": "Asset/AI Comparison.png",
+      "imageAlt": "AI Comparison for Scoring Team Performance",
+      "title": { "en": "AI Comparison for Scoring Team Performance", "id": "Komparasi AI untuk Penilaian Performa Tim" },
+      "summary": { "en": "AI Comparison for Scoring Team Performance", "id": "Komparasi AI untuk Penilaian Performa Tim" },
+      "bullets": [
+        { "en": "Extracted and standardized LMS-based performance data from multiple criteria.", "id": "Mengekstrak dan menstandarkan data performa berbasis LMS dari berbagai kriteria." },
+        { "en": "Evaluated 5 leading AI platforms with statistical testing.", "id": "Mengevaluasi 5 platform AI terkemuka dengan pengujian statistik." },
+        { "en": "Built an interactive analysis dashboard using Python and Streamlit.", "id": "Membangun dashboard analisis interaktif menggunakan Python dan Streamlit." }
+      ],
+      "footnote": { "en": "*In process for journal publication", "id": "*Dalam proses publikasi jurnal" }
+    },
+    {
+      "order": 2,
+      "categories": ["ai"],
+      "image": "Asset/TNN.png",
+      "imageAlt": "Trans Neural Network Model",
+      "title": { "en": "Trans Neural Network Model", "id": "Model Trans Neural Network" },
+      "summary": { "en": "Hybrid Model for Malware Detection Based on Network Traffic", "id": "Model Hibrida untuk Deteksi Malware Berbasis Traffic Jaringan" },
+      "bullets": [
+        { "en": "Built a Transformer + CNN model with 99.57% accuracy.", "id": "Membangun model Transformer + CNN dengan akurasi 99,57%." },
+        { "en": "Improved false positive rate and throughput using robust evaluation.", "id": "Meningkatkan false positive rate dan throughput dengan evaluasi yang kuat." },
+        { "en": "Contributing to hybrid deep learning research.", "id": "Berkontribusi pada riset hybrid deep learning." }
+      ],
+      "footnote": { "en": "*In process for journal publication", "id": "*Dalam proses publikasi jurnal" }
+    },
+    {
+      "order": 3,
+      "categories": ["data"],
+      "image": "Asset/Busines.png",
+      "imageAlt": "Business Analyst Prototype",
+      "title": { "en": "Business Analyst Prototype", "id": "Prototipe Business Analyst" },
+      "summary": { "en": "Prototype Business Analyst TikTok Marketplace Based", "id": "Prototipe Business Analyst Berbasis TikTok Marketplace" },
+      "bullets": [
+        { "en": "Analyzed 100K+ transaction records for trend and customer insights.", "id": "Menganalisis 100 ribu+ data transaksi untuk tren dan insight pelanggan." },
+        { "en": "Developed forecasting model and proposed new sales strategy.", "id": "Mengembangkan model prediksi dan mengusulkan strategi penjualan baru." },
+        { "en": "Increased monthly sales from 150 to 250 units.", "id": "Meningkatkan penjualan bulanan dari 150 menjadi 250 unit." }
+      ]
+    },
+    {
+      "order": 4,
+      "categories": ["data", "ai"],
+      "image": "Asset/risk.png",
+      "imageAlt": "Credit Risk Analysis",
+      "title": { "en": "Credit Risk Analysis", "id": "Analisis Risiko Kredit" },
+      "summary": { "en": "LendingClub Dataset (ML for Classification)", "id": "Dataset LendingClub (ML untuk Klasifikasi)" },
+      "bullets": [
+        { "en": "Built end-to-end risk prediction pipeline on 466K+ records.", "id": "Membangun pipeline prediksi risiko end-to-end pada 466 ribu+ data." },
+        { "en": "Compared multiple models with SMOTE and PCA techniques.", "id": "Membandingkan berbagai model dengan teknik SMOTE dan PCA." },
+        { "en": "Improved model reliability via tuning and feature analysis.", "id": "Meningkatkan reliabilitas model melalui tuning dan analisis fitur." }
+      ]
+    },
+    {
+      "order": 5,
+      "categories": ["web"],
+      "image": "Asset/Web Niskala.png",
+      "imageAlt": "Niskala Publisher Website",
+      "title": { "en": "Niskala Publisher Website", "id": "Website Niskala Publisher" },
+      "summary": { "en": "Website for Online Shop Niskala Publisher", "id": "Website Toko Online Niskala Publisher" },
+      "bullets": [
+        { "en": "Delivered a fully functional catalog website in 7 days.", "id": "Merilis website katalog yang fungsional dalam 7 hari." },
+        { "en": "Led project management, UX, and frontend implementation.", "id": "Memimpin manajemen proyek, UX, dan implementasi frontend." },
+        { "en": "Tech: Laravel Framework", "id": "Teknologi: Laravel Framework" }
+      ]
+    },
+    {
+      "order": 6,
+      "categories": ["web"],
+      "image": "Asset/babarengan.png",
+      "imageAlt": "Babarengan",
+      "title": { "en": "Babarengan", "id": "Babarengan" },
+      "summary": { "en": "Stock Trading Application for MSMEs", "id": "Aplikasi Perdagangan Saham untuk UMKM" },
+      "bullets": [
+        { "en": "Designed stock trading features focused on MSMEs.", "id": "Merancang fitur perdagangan saham berfokus pada UMKM." },
+        { "en": "Built integrated flows for MSMEs, investors, and cooperatives.", "id": "Membangun alur terintegrasi untuk UMKM, investor, dan koperasi." },
+        { "en": "Tech: Laravel Framework", "id": "Teknologi: Laravel Framework" }
+      ]
+    },
+    {
+      "order": 7,
+      "categories": ["web"],
+      "image": "Asset/learnify.png",
+      "imageAlt": "Learnify",
+      "title": { "en": "Learnify", "id": "Learnify" },
+      "summary": { "en": "Learning Management System", "id": "Sistem Manajemen Pembelajaran" },
+      "bullets": [
+        { "en": "Developed LMS with content management and team collaboration.", "id": "Mengembangkan LMS dengan manajemen konten dan kolaborasi tim." },
+        { "en": "Designed intuitive user interfaces.", "id": "Merancang antarmuka pengguna yang intuitif." },
+        { "en": "Tech: Laravel Framework", "id": "Teknologi: Laravel Framework" }
+      ]
+    },
+    {
+      "order": 8,
+      "categories": ["web"],
+      "image": "Asset/mycoffe.png",
+      "imageAlt": "My Coffee",
+      "title": { "en": "My Coffee", "id": "My Coffee" },
+      "summary": { "en": "Cashier Application for Coffee Shop", "id": "Aplikasi Kasir untuk Kedai Kopi" },
+      "bullets": [
+        { "en": "Implemented ordering and real-time menu service status.", "id": "Mengimplementasikan pemesanan dan status layanan menu real-time." },
+        { "en": "Developed role-based access for admin, cashier, and chef.", "id": "Mengembangkan akses berbasis peran untuk admin, kasir, dan chef." },
+        { "en": "Tech: PHP Native", "id": "Teknologi: PHP Native" }
+      ]
+    }
+  ]
+}

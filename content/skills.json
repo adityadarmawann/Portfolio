@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "title": { "en": "Soft Skills", "id": "Soft Skills" },
+      "items": [
+        { "en": "Project Management", "id": "Manajemen Proyek" },
+        { "en": "Analytical and Problem Solving", "id": "Analitis dan Pemecahan Masalah" },
+        { "en": "Technical Communication", "id": "Komunikasi Teknis" },
+        { "en": "Team Collaboration", "id": "Kolaborasi Tim" }
+      ]
+    },
+    {
+      "title": { "en": "ML and AI Engineering", "id": "ML dan AI Engineering" },
+      "items": [
+        { "en": "TensorFlow", "id": "TensorFlow" },
+        { "en": "PyTorch", "id": "PyTorch" },
+        { "en": "Neural Network Architectures", "id": "Arsitektur Neural Network" },
+        { "en": "Natural Language Processing (NLP)", "id": "Natural Language Processing (NLP)" }
+      ]
+    },
+    {
+      "title": { "en": "Tools and Programming", "id": "Tools dan Pemrograman" },
+      "items": [
+        { "en": "PHP Laravel, Python", "id": "PHP Laravel, Python" },
+        { "en": "SQL", "id": "SQL" },
+        { "en": "Git and GitHub", "id": "Git dan GitHub" },
+        { "en": "Power BI", "id": "Power BI" }
+      ]
+    }
+  ]
+}

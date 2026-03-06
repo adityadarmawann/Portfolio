@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "order": 1,
+      "role": { "en": "Co-Facilitator and Project Management Officer", "id": "Co-Facilitator dan Project Management Officer" },
+      "domain": { "en": "Coding and Artificial Intelligence Program", "id": "Program Coding dan Artificial Intelligence" },
+      "company": "Sakata Innovation Center Foundation",
+      "location": "Tasikmalaya, ID",
+      "period": "Apr 2023 - Present",
+      "bullets": [
+        { "en": "Delivered coding and AI training to representatives from 600+ schools.", "id": "Menyampaikan pelatihan coding dan AI kepada perwakilan dari 600+ sekolah." },
+        { "en": "Coordinated program operations with lecturers, schools, and local stakeholders.", "id": "Mengoordinasikan operasional program dengan dosen, sekolah, dan stakeholder lokal." },
+        { "en": "Balanced academic responsibilities with professional project delivery.", "id": "Menyeimbangkan tanggung jawab akademik dengan pekerjaan profesional." }
+      ]
+    },
+    {
+      "order": 2,
+      "role": { "en": "Assistant Lecturer", "id": "Asisten Dosen" },
+      "domain": { "en": "Database and Software Engineering", "id": "Database dan Rekayasa Perangkat Lunak" },
+      "company": "Universitas Siliwangi",
+      "location": "Tasikmalaya, ID",
+      "period": "Feb 2024 - Mar 2025",
+      "bullets": [
+        { "en": "Assisted practicum sessions and student mentoring.", "id": "Membantu sesi praktikum dan pendampingan mahasiswa." },
+        { "en": "Explained programming, system design, and database concepts.", "id": "Menjelaskan konsep pemrograman, desain sistem, dan database." },
+        { "en": "Prepared modules and tutorials for class support.", "id": "Menyusun modul dan tutorial pendukung kelas." }
+      ]
+    },
+    {
+      "order": 3,
+      "role": { "en": "Data Analyst", "id": "Data Analyst" },
+      "domain": { "en": "Marketing and Database Management", "id": "Marketing dan Manajemen Database" },
+      "company": "Fashion Tilang Indonesia",
+      "location": "Tasikmalaya, ID",
+      "period": "Jun 2024 - Oct 2024",
+      "bullets": [
+        { "en": "Managed stock and transaction databases.", "id": "Mengelola database stok dan transaksi." },
+        { "en": "Built predictive analysis for sales strategy decisions.", "id": "Membangun analisis prediktif untuk keputusan strategi penjualan." },
+        { "en": "Generated business reports and visual dashboards.", "id": "Menyusun laporan bisnis dan dashboard visual." }
+      ]
+    },
+    {
+      "order": 4,
+      "role": { "en": "Data Scientist Intern", "id": "Data Scientist Intern" },
+      "domain": { "en": "Internship and Certified Independent Study", "id": "Magang dan Studi Independen Bersertifikat" },
+      "company": "PT. Hacktivate Teknologi Indonesia",
+      "location": "Jakarta, ID",
+      "period": "Aug 2023 - Dec 2023",
+      "bullets": [
+        { "en": "Conducted EDA, data cleaning, and feature extraction.", "id": "Melakukan EDA, pembersihan data, dan ekstraksi fitur." },
+        { "en": "Presented insights through analysis and visual reporting.", "id": "Menyampaikan insight melalui analisis dan pelaporan visual." },
+        { "en": "Delivered capstone project from concept to implementation.", "id": "Menyelesaikan proyek capstone dari konsep hingga implementasi." }
+      ]
+    }
+  ]
+}
