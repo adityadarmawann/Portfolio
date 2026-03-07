@@ -310,6 +310,8 @@ collections:
 
   - name: "galeri"
     label: "Galeri"
+    editor:
+      preview: false
     files:
       - file: "content/gallery.json"
         label: "Daftar Galeri"
