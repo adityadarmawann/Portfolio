@@ -1,13 +1,8 @@
 {
   "translations": {
     "en": {
-      "hero_title": "Welcome to My Professional Portfolio.",
-      "hero_desc": "Data and AI enthusiast with strong experience in machine learning, system development, and cross-functional collaboration. This portfolio highlights my education, certifications, project journey, and practical impact.",
       "hero_intro": "I'm",
-      "about_lead": "Building practical technology solutions with clear communication and data-driven thinking.",
       "about_p1": "AI-focused Data Scientist and Machine Learning Engineer with a strong foundation in modeling and end-to-end ML development. Experienced in designing robust machine learning pipelines, optimizing deep learning architectures, and delivering high-performance predictive models. Proficient in Python, TensorFlow, PyTorch, and SQL, with expertise in feature engineering, model optimization, and evaluation strategies. Driven to build scalable, production-oriented AI solutions that generate measurable business and research impact.",
-      "about_p2": "Known for clear and confident communication, with experience presenting technical material in both academic and organizational settings.",
-      "about_p3": "Passionate about data-driven innovation and eager to contribute to collaborative, solution-focused environments.",
       "gallery_lead": "Personal moments and visual snapshots from my professional journey.",
       "publications_title": "Scientific Publications",
       "publications_lead": "Research contributions in cybersecurity, machine learning, and network traffic analysis.",
@@ -17,13 +12,8 @@
       "meta_og_desc": "Explore projects and experience in Data, AI Engineering, and system development."
     },
     "id": {
-      "hero_title": "Welcome to My Professional Portfolio.",
-      "hero_desc": "Data and AI enthusiast with strong experience in machine learning, system development, and cross-functional collaboration. This portfolio highlights my education, certifications, project journey, and practical impact.",
       "hero_intro": "Saya",
-      "about_lead": "Membangun solusi teknologi yang praktis dengan komunikasi yang jelas dan pola pikir berbasis data.",
       "about_p1": "Data Scientist yang berfokus pada AI dan Machine Learning dengan fondasi yang kuat dalam pemodelan serta pengembangan ML end-to-end. Berpengalaman dalam merancang pipeline machine learning yang tangguh, mengoptimalkan arsitektur deep learning, dan menghasilkan model prediktif berkinerja tinggi. Terbiasa menggunakan Python, TensorFlow, PyTorch, dan SQL, dengan keahlian dalam rekayasa fitur, optimasi model, serta strategi evaluasi. Termotivasi untuk membangun solusi AI yang skalabel dan berorientasi produksi, yang mampu memberikan dampak nyata bagi bisnis maupun penelitian.",
-      "about_p2": "Dikenal dengan komunikasi yang jelas dan percaya diri, serta berpengalaman menyampaikan materi teknis dalam konteks akademik maupun organisasi.",
-      "about_p3": "Memiliki semangat tinggi pada inovasi berbasis data dan siap berkontribusi dalam lingkungan kolaboratif yang berorientasi solusi.",
       "gallery_lead": "Momen personal dan cuplikan visual dari perjalanan profesional saya.",
       "publications_title": "Publikasi Ilmiah",
       "publications_lead": "Kontribusi riset dalam keamanan siber, machine learning, dan analisis lalu lintas jaringan.",
@@ -37,15 +27,6 @@
     "canonical": "",
     "og_image": "Asset/aditya1.png",
     "keywords": "Muhamad Aditya Darmawan, portfolio, data science, AI engineer, machine learning, web development, project management"
-  },
-  "heroGallery": [
-    { "image": "Asset/TNN.png", "alt": "AI project preview" },
-    { "image": "Asset/AI Comparison.png", "alt": "Data project preview" },
-    { "image": "Asset/Web Niskala.png", "alt": "Web project preview" }
-  ],
-  "aboutImage": {
-    "src": "Asset/aditya1.png",
-    "alt": "Aditya Profile"
   },
   "cv": {
     "data": "https://1drv.ms/b/c/e8e138949147d58e/IQAFI4PIO1INTb1Jo-O4fD6tAZR5PBwNO9dRDXw1NJYToPI?e=xm2zfj",

@@ -26,16 +26,27 @@ collections:
                 name: "en"
                 widget: "object"
                 fields:
-                  - { label: "Judul Hero", name: "hero_title", widget: "string" }
-                  - { label: "Deskripsi Hero", name: "hero_desc", widget: "text" }
-                  - { label: "Lead About", name: "about_lead", widget: "text" }
+                  - { label: "Sapaan Hero", name: "hero_greeting", widget: "string", required: false }
+                  - { label: "Pembuka Hero", name: "hero_intro", widget: "string", required: false }
+                  - { label: "Nama Hero", name: "hero_name", widget: "string", required: false }
+                  - { label: "Peran Hero", name: "hero_role", widget: "string", required: false }
+                  - { label: "Tag Skill 1", name: "skill_tag_1", widget: "string", required: false }
+                  - { label: "Tag Skill 2", name: "skill_tag_2", widget: "string", required: false }
+                  - { label: "Tag Skill 3", name: "skill_tag_3", widget: "string", required: false }
+                  - { label: "Tag Skill 4", name: "skill_tag_4", widget: "string", required: false }
+                  - { label: "CTA Hero Proyek", name: "hero_cta_projects", widget: "string", required: false }
+                  - { label: "CTA Hero Kontak", name: "hero_cta_contact", widget: "string", required: false }
+                  - { label: "Judul About", name: "about_title", widget: "string", required: false }
                   - { label: "Paragraf About 1", name: "about_p1", widget: "text" }
-                  - { label: "Paragraf About 2", name: "about_p2", widget: "text" }
-                  - { label: "Paragraf About 3", name: "about_p3", widget: "text" }
                   - { label: "Lead Galeri", name: "gallery_lead", widget: "text" }
                   - { label: "Judul Publikasi", name: "publications_title", widget: "string" }
                   - { label: "Lead Publikasi", name: "publications_lead", widget: "text" }
+                  - { label: "Judul Kontak", name: "contact_title", widget: "string", required: false }
+                  - { label: "Heading Let\'s Connect", name: "contact_heading", widget: "string", required: false }
                   - { label: "Deskripsi Kontak", name: "contact_desc", widget: "text" }
+                  - { label: "Heading CV", name: "cv_heading", widget: "string", required: false }
+                  - { label: "Label CV Data/AI", name: "cv_data", widget: "string", required: false }
+                  - { label: "Label CV PM", name: "cv_pm", widget: "string", required: false }
                   - { label: "Meta Title", name: "meta_title", widget: "string" }
                   - { label: "Meta Description", name: "meta_desc", widget: "text" }
                   - { label: "Meta OG Description", name: "meta_og_desc", widget: "text" }
@@ -43,16 +54,27 @@ collections:
                 name: "id"
                 widget: "object"
                 fields:
-                  - { label: "Judul Hero", name: "hero_title", widget: "string" }
-                  - { label: "Deskripsi Hero", name: "hero_desc", widget: "text" }
-                  - { label: "Lead About", name: "about_lead", widget: "text" }
+                  - { label: "Sapaan Hero", name: "hero_greeting", widget: "string", required: false }
+                  - { label: "Pembuka Hero", name: "hero_intro", widget: "string", required: false }
+                  - { label: "Nama Hero", name: "hero_name", widget: "string", required: false }
+                  - { label: "Peran Hero", name: "hero_role", widget: "string", required: false }
+                  - { label: "Tag Skill 1", name: "skill_tag_1", widget: "string", required: false }
+                  - { label: "Tag Skill 2", name: "skill_tag_2", widget: "string", required: false }
+                  - { label: "Tag Skill 3", name: "skill_tag_3", widget: "string", required: false }
+                  - { label: "Tag Skill 4", name: "skill_tag_4", widget: "string", required: false }
+                  - { label: "CTA Hero Proyek", name: "hero_cta_projects", widget: "string", required: false }
+                  - { label: "CTA Hero Kontak", name: "hero_cta_contact", widget: "string", required: false }
+                  - { label: "Judul About", name: "about_title", widget: "string", required: false }
                   - { label: "Paragraf About 1", name: "about_p1", widget: "text" }
-                  - { label: "Paragraf About 2", name: "about_p2", widget: "text" }
-                  - { label: "Paragraf About 3", name: "about_p3", widget: "text" }
                   - { label: "Lead Galeri", name: "gallery_lead", widget: "text" }
                   - { label: "Judul Publikasi", name: "publications_title", widget: "string" }
                   - { label: "Lead Publikasi", name: "publications_lead", widget: "text" }
+                  - { label: "Judul Kontak", name: "contact_title", widget: "string", required: false }
+                  - { label: "Heading Let\'s Connect", name: "contact_heading", widget: "string", required: false }
                   - { label: "Deskripsi Kontak", name: "contact_desc", widget: "text" }
+                  - { label: "Heading CV", name: "cv_heading", widget: "string", required: false }
+                  - { label: "Label CV Data/AI", name: "cv_data", widget: "string", required: false }
+                  - { label: "Label CV PM", name: "cv_pm", widget: "string", required: false }
                   - { label: "Meta Title", name: "meta_title", widget: "string" }
                   - { label: "Meta Description", name: "meta_desc", widget: "text" }
                   - { label: "Meta OG Description", name: "meta_og_desc", widget: "text" }
@@ -63,19 +85,6 @@ collections:
               - { label: "URL Canonical", name: "canonical", widget: "string", hint: "Contoh: https://domainkamu.com/" }
               - { label: "Gambar OG", name: "og_image", widget: "image" }
               - { label: "Kata Kunci", name: "keywords", widget: "text", hint: "Pisahkan dengan koma" }
-          - label: "Galeri Hero"
-            name: "heroGallery"
-            widget: "list"
-            summary: "{{fields.alt}}"
-            fields:
-              - { label: "Gambar", name: "image", widget: "image" }
-              - { label: "Alt", name: "alt", widget: "string" }
-          - label: "Gambar About"
-            name: "aboutImage"
-            widget: "object"
-            fields:
-              - { label: "Sumber", name: "src", widget: "image" }
-              - { label: "Alt", name: "alt", widget: "string" }
           - label: "Link CV"
             name: "cv"
             widget: "object"

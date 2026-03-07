@@ -373,12 +373,6 @@
             margin: 0;
         }
 
-        .hero-media {
-            min-width: 0;
-            display: flex;
-            align-items: stretch;
-        }
-
         .hero-main::after {
             content: "";
             position: absolute;
@@ -524,46 +518,6 @@
         .btn-whatsapp:hover {
             background: #20BA5A;
             border-color: #20BA5A;
-        }
-
-        .hero-gallery {
-            margin-top: 1.3rem;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.55rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-media .hero-gallery {
-            margin-top: 0;
-            width: 100%;
-            grid-template-columns: 1fr;
-            gap: 0.65rem;
-        }
-
-        .hero-gallery-item {
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(75, 107, 223, 0.22);
-            background: #e8eeff;
-            box-shadow: 0 10px 20px rgba(41, 61, 127, 0.12);
-        }
-
-        .hero-gallery-item img {
-            width: 100%;
-            height: 86px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .hero-media .hero-gallery-item img {
-            height: 118px;
-        }
-
-        .hero-gallery-item:hover img {
-            transform: scale(1.05);
         }
 
         .quick-card,
@@ -1395,10 +1349,6 @@
                 margin: 0 auto;
             }
 
-            .hero-media .hero-gallery {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-
             .hero-grid {
                 grid-template-columns: 1fr;
             }
@@ -1493,10 +1443,6 @@
                 font-size: 1.2rem;
             }
 
-            .hero-gallery {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
             .project-filters {
                 gap: 0.45rem;
             }
@@ -1541,10 +1487,6 @@
 
             .hero-actions .btn {
                 width: 100%;
-            }
-
-            .hero-gallery {
-                grid-template-columns: 1fr;
             }
 
             .gallery-container {
@@ -1737,7 +1679,7 @@
                     </div>
                     <div class="hero-copy">
                         <div class="hero-greeting" data-i18n="hero_greeting">Hello</div>
-                        <h1 class="hero-name"><span data-i18n="hero_intro">I'm</span> <span data-i18n="hero_name">Muhamad Aditya Darmawan</span>,</h1>
+                        <h1 class="hero-name"><span data-i18n="hero_intro">I'm</span> <span data-i18n="hero_name">Muhamad Aditya Darmawan</span></h1>
                         <p class="hero-role" data-i18n="hero_role">Data Science & AI Engineer Enthusiast</p>
                         <div class="hero-skills">
                             <span class="hero-skill-tag" data-i18n="skill_tag_1">Data Science</span>
@@ -2230,7 +2172,6 @@
         const galleryModalImage = document.getElementById("gallery-modal-image");
         const galleryModalTitle = document.getElementById("gallery-modal-title");
         const galleryModalClose = document.getElementById("gallery-modal-close");
-        const profileImageEl = document.getElementById("profile-image");
         const educationListEl = document.getElementById("education-list");
         const skillsListEl = document.getElementById("skills-list");
         const certificationsListEl = document.getElementById("certifications-list");
@@ -2257,40 +2198,18 @@
                 gallery_title: "Gallery",
                 gallery_lead: "Personal moments and visual snapshots from my professional journey.",
                 gallery_close: "Close",
-                hero_badge: "Available for Work Opportunities",
                 hero_greeting: "Hello",
                 hero_intro: "I'm",
                 hero_name: "Muhamad Aditya Darmawan",
                 hero_role: "Data Science & AI Engineer Enthusiast",
-                hero_cta_hire: "Hire Me",
-                hero_cta_whatsapp: "WhatsApp",
                 skill_tag_1: "Data Science",
                 skill_tag_2: "Machine Learning",
                 skill_tag_3: "AI Development",
                 skill_tag_4: "Project Management",
                 hero_cta_projects: "Explore Projects",
                 hero_cta_contact: "Let's Connect",
-                hero_title: "Welcome to My Professional Portfolio.",
-                hero_desc: "Data and AI enthusiast with strong experience in machine learning, system development, and cross-functional collaboration. This portfolio highlights my education, certifications, project journey, and practical impact.",
-                core_focus: "Core Focus",
-                focus_1: "Data Science",
-                focus_2: "Machine Learning Engineer",
-                focus_3: "AI Engineer",
-                focus_4: "Project Management",
-                hero_panel_title: "Portfolio Snapshot",
-                hero_panel_item_1: "Education and achievements",
-                hero_panel_item_2: "Professional certifications",
-                hero_panel_item_3: "End-to-end project journey",
-                hero_panel_item_4: "Practical impact and outcomes",
-                hero_panel_note: "A focused, data-driven portfolio crafted for clear communication and measurable value.",
-                highlights: "Current Highlights",
-                highlight_meta: "Informatics Graduate - Universitas Siliwangi | GPA 3.97/4.0",
-                highlight_1: "Journal publication in progress",
-                highlight_2: "600+ schools AI training impact",
                 about_title: "About Me",
-                about_p1: "Data Scientist yang berfokus pada AI dan Machine Learning dengan fondasi yang kuat dalam pemodelan serta pengembangan ML end-to-end. Berpengalaman dalam merancang pipeline machine learning yang tangguh, mengoptimalkan arsitektur deep learning, dan menghasilkan model prediktif berkinerja tinggi. Terbiasa menggunakan Python, TensorFlow, PyTorch, dan SQL, dengan keahlian dalam rekayasa fitur, optimasi model, serta strategi evaluasi. Termotivasi untuk membangun solusi AI yang skalabel dan berorientasi produksi, yang mampu memberikan dampak nyata bagi bisnis maupun penelitian.",
-                about_p2: "",
-                about_p3: "",
+                about_p1: "AI-focused Data Scientist and Machine Learning Engineer with a strong foundation in modeling and end-to-end ML development. Experienced in designing robust machine learning pipelines, optimizing deep learning architectures, and delivering high-performance predictive models. Proficient in Python, TensorFlow, PyTorch, and SQL, with expertise in feature engineering, model optimization, and evaluation strategies. Driven to build scalable, production-oriented AI solutions that generate measurable business and research impact.",
                 education_title: "Education",
                 skills_title: "Skills",
                 cert_title: "Professional Certifications",
@@ -2323,41 +2242,18 @@
                 gallery_title: "Galeri",
                 gallery_lead: "Momen personal dan cuplikan visual dari perjalanan profesional saya.",
                 gallery_close: "Tutup",
-                hero_badge: "Terbuka untuk Kesempatan Kerja",
                 hero_greeting: "Halo",
                 hero_intro: "Saya",
                 hero_name: "Muhamad Aditya Darmawan",
                 hero_role: "Data Science & AI Engineer Enthusiast",
-                hero_cta_hire: "Hubungi Saya",
-                hero_cta_whatsapp: "WhatsApp",
                 skill_tag_1: "Data Science",
                 skill_tag_2: "Machine Learning",
                 skill_tag_3: "AI Development",
                 skill_tag_4: "Project Management",
                 hero_cta_projects: "Lihat Proyek",
                 hero_cta_contact: "Mari Terhubung",
-                hero_title: "Welcome to My Professional Portfolio.",
-                hero_desc: "Data and AI enthusiast with strong experience in machine learning, system development, and cross-functional collaboration. This portfolio highlights my education, certifications, project journey, and practical impact.",
-                core_focus: "Core Focus",
-                focus_1: "Data Science",
-                focus_2: "Machine Learning Engineer",
-                focus_3: "AI Engineer",
-                focus_4: "Project Management",
-                hero_panel_title: "Ringkasan Portofolio",
-                hero_panel_item_1: "Pendidikan dan pencapaian",
-                hero_panel_item_2: "Sertifikasi profesional",
-                hero_panel_item_3: "Perjalanan proyek end-to-end",
-                hero_panel_item_4: "Dampak praktis dan hasil nyata",
-                hero_panel_note: "Portofolio yang fokus dan berbasis data untuk komunikasi yang jelas serta nilai yang terukur.",
-                highlights: "Sorotan Saat Ini",
-                highlight_meta: "Lulusan Informatika - Universitas Siliwangi | IPK 3.97/4.0",
-                highlight_1: "Publikasi jurnal sedang diproses",
-                highlight_2: "Dampak pelatihan AI ke 600+ sekolah",
                 about_title: "Tentang Saya",
-                about_lead: "Membangun solusi teknologi yang praktis dengan komunikasi yang jelas dan pola pikir berbasis data.",
                 about_p1: "Data Scientist yang berfokus pada AI dan Machine Learning dengan fondasi yang kuat dalam pemodelan serta pengembangan ML end-to-end. Berpengalaman dalam merancang pipeline machine learning yang tangguh, mengoptimalkan arsitektur deep learning, dan menghasilkan model prediktif berkinerja tinggi. Terbiasa menggunakan Python, TensorFlow, PyTorch, dan SQL, dengan keahlian dalam rekayasa fitur, optimasi model, serta strategi evaluasi. Termotivasi untuk membangun solusi AI yang skalabel dan berorientasi produksi, yang mampu memberikan dampak nyata bagi bisnis maupun penelitian.",
-                about_p2: "",
-                about_p3: "",
                 education_title: "Pendidikan",
                 skills_title: "Keahlian",
                 cert_title: "Sertifikasi Profesional",
@@ -2717,11 +2613,6 @@
 
                 if (settings?.seo) {
                     seoOverrides = settings.seo;
-                }
-
-                if (settings?.aboutImage?.src && profileImageEl) {
-                    profileImageEl.src = settings.aboutImage.src;
-                    profileImageEl.alt = settings.aboutImage.alt || profileImageEl.alt;
                 }
 
                 if (settings?.cv?.data && cvDataLinkEl) {
