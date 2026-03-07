@@ -27,7 +27,10 @@
     {
       "order": 3,
       "image": "/Asset/aditya1.png",
-      "focus": { "x": 50, "y": 50 },
+      "focus": {
+        "x": 50,
+        "y": 50
+      },
       "caption": {
         "en": "Casual Moment",
         "id": "Momen Santai"
@@ -36,7 +39,10 @@
     {
       "order": 4,
       "image": "/Asset/me.png",
-      "focus": { "x": 50, "y": 50 },
+      "focus": {
+        "x": 50,
+        "y": 50
+      },
       "caption": {
         "en": "Conference Presentation",
         "id": "Presentasi Konferensi"
@@ -45,7 +51,10 @@
     {
       "order": 5,
       "image": "/Asset/mesemiformal.png",
-      "focus": { "x": 50, "y": 50 },
+      "focus": {
+        "x": 50,
+        "y": 50
+      },
       "caption": {
         "en": "Team Collaboration",
         "id": "Kolaborasi Tim"
@@ -54,7 +63,10 @@
     {
       "order": 6,
       "image": "/Asset/mycoffe.png",
-      "focus": { "x": 50, "y": 50 },
+      "focus": {
+        "x": 50,
+        "y": 50
+      },
       "caption": {
         "en": "Working Session",
         "id": "Sesi Kerja"
@@ -63,7 +75,10 @@
     {
       "order": 7,
       "image": "/Asset/babarengan.png",
-      "focus": { "x": 50, "y": 50 },
+      "focus": {
+        "x": 50,
+        "y": 50
+      },
       "caption": {
         "en": "Creative Process",
         "id": "Proses Kreatif"
@@ -72,7 +87,10 @@
     {
       "order": 8,
       "image": "/Asset/risk.png",
-      "focus": { "x": 50, "y": 50 },
+      "focus": {
+        "x": 50,
+        "y": 50
+      },
       "caption": {
         "en": "Outdoor Portrait",
         "id": "Potret Outdoor"
@@ -81,7 +99,10 @@
     {
       "order": 9,
       "image": "/Asset/TNN.png",
-      "focus": { "x": 50, "y": 50 },
+      "focus": {
+        "x": 50,
+        "y": 50
+      },
       "caption": {
         "en": "Professional Headshot",
         "id": "Foto Headshot Profesional"
