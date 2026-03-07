@@ -21,6 +21,15 @@
     <link rel="canonical" id="canonical-url" href="">
     <link rel="icon" type="image/svg+xml" href="Asset/favicon.svg">
     <link rel="apple-touch-icon" href="Asset/favicon.svg">
+    <script>
+        (function() {
+            var hash = window.location.hash || "";
+            var hasIdentityToken = /(^|[?#&])(invite_token|recovery_token|confirmation_token)=/i.test(hash);
+            if (hasIdentityToken && !window.location.pathname.startsWith("/admin")) {
+                window.location.replace("/admin/" + hash);
+            }
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
