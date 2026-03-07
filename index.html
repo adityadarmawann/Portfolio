@@ -1832,7 +1832,7 @@
                 <div class="skill-card">
                     <div class="cert-card-top">
                         <h3>Program Analyst</h3>
-                        <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">Sertifikat/Certificate</a>
+                        <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1" data-en="Certificate" data-id="Sertifikat">Certificate</a>
                     </div>
                     <p><em>Certified by BNSP Authority and LSP Siliwangi University</em></p>
                     <ul>
@@ -1845,7 +1845,7 @@
                 <div class="skill-card">
                     <div class="cert-card-top">
                         <h3>ICT Project Manager</h3>
-                        <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">Sertifikat/Certificate</a>
+                        <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1" data-en="Certificate" data-id="Sertifikat">Certificate</a>
                     </div>
                     <p><em>Certified by BNSP Authority and LSP Siliwangi University</em></p>
                     <ul>
@@ -1858,7 +1858,7 @@
                 <div class="skill-card">
                     <div class="cert-card-top">
                         <h3>Data Science</h3>
-                        <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">Sertifikat/Certificate</a>
+                        <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1" data-en="Certificate" data-id="Sertifikat">Certificate</a>
                     </div>
                     <p><em>Certified by PT Hacktivate Teknologi Indonesia on Study Independent Program</em></p>
                     <ul>
@@ -2458,6 +2458,7 @@
                 const certificateHref = hasCertificateUrl ? group.certificateUrl.trim() : "#";
                 const certificateClass = hasCertificateUrl ? "cert-link-btn" : "cert-link-btn is-disabled";
                 const certificateExtraAttrs = hasCertificateUrl ? 'target="_blank" rel="noopener"' : 'aria-disabled="true" tabindex="-1"';
+                const certificateLabel = currentLanguage === "id" ? "Sertifikat" : "Certificate";
                 const itemsList = (group.items || []).map((item) => {
                     const text = item[currentLanguage] || item.en || "";
                     return `<li data-en="${escapeHtml(item.en || text)}" data-id="${escapeHtml(item.id || text)}">${escapeHtml(text)}</li>`;
@@ -2467,7 +2468,7 @@
                     <div class="skill-card">
                         <div class="cert-card-top">
                             <h3 data-en="${escapeHtml(group.title?.en || title)}" data-id="${escapeHtml(group.title?.id || title)}">${escapeHtml(title)}</h3>
-                            <a class="${certificateClass}" href="${escapeHtml(certificateHref)}" ${certificateExtraAttrs}>Sertifikat/Certificate</a>
+                            <a class="${certificateClass}" href="${escapeHtml(certificateHref)}" ${certificateExtraAttrs} data-en="Certificate" data-id="Sertifikat">${certificateLabel}</a>
                         </div>
                         ${subtitle ? `<p><em data-en="${escapeHtml(group.subtitle.en || subtitle)}" data-id="${escapeHtml(group.subtitle.id || subtitle)}">${escapeHtml(subtitle)}</em></p>` : ""}
                         <ul>${itemsList}</ul>
