@@ -78,7 +78,7 @@
     return getEntryValueAtPath(entry, ["image"]);
   }
 
-  function findImageValueFromDom(forID) {
+  function findImageValueFromDom(forID, rootEl) {
     function readValueFromElement(element) {
       if (!element) {
         return "";
@@ -132,9 +132,9 @@
       return "";
     }
 
-    function findNearestImageValue(forIDValue) {
+    function findNearestImageValue(startEl, forIDValue) {
       var focusEl = document.getElementById(forIDValue);
-      var container = focusEl ? focusEl.parentElement : null;
+      var container = startEl || (focusEl ? focusEl.parentElement : null);
       var hops = 0;
 
       while (container && hops < 6) {
@@ -158,6 +158,80 @@
 
         container = container.parentElement;
         hops += 1;
+      }
+
+      return "";
+    }
+
+    function findImageValueNearWidgetRoot(startEl) {
+      if (!startEl) {
+        return "";
+      }
+
+      var container = startEl;
+      var hops = 0;
+
+      while (container && hops < 8) {
+        var mediaCandidates = container.querySelectorAll("img[src], input[type='text'], input[type='hidden'], textarea");
+        for (var i = 0; i < mediaCandidates.length; i += 1) {
+          var candidate = mediaCandidates[i];
+          var value = readValueFromElement(candidate);
+          if (!value) {
+            continue;
+          }
+
+          var isMediaLike = /(^https?:|^blob:|^data:image|^\/|^Asset\/|uploads\/)/i.test(value);
+          if (isMediaLike) {
+            return value;
+          }
+        }
+
+        container = container.parentElement;
+        hops += 1;
+      }
+
+      return "";
+    }
+
+    function findImageValueByListIndex(forIDValue) {
+      if (!forIDValue || typeof forIDValue !== "string") {
+        return "";
+      }
+
+      var indexMatch = forIDValue.match(/(?:\.|\[)(\d+)(?:\.|\])/);
+      if (!indexMatch) {
+        return "";
+      }
+
+      var indexToken = indexMatch[1];
+      var globalCandidates = document.querySelectorAll("input, textarea, img");
+
+      for (var i = 0; i < globalCandidates.length; i += 1) {
+        var candidate = globalCandidates[i];
+        var candidateHint = ((candidate.id || "") + " " + (candidate.name || "") + " " + (candidate.className || "")).toLowerCase();
+
+        var hasIndex = candidateHint.indexOf(indexToken) !== -1;
+        var hasImageKeyword = candidate.tagName === "IMG" || candidateHint.indexOf("image") !== -1 || candidateHint.indexOf("media") !== -1;
+        if (!hasIndex || !hasImageKeyword) {
+          continue;
+        }
+
+        var value = readValueFromElement(candidate);
+        if (value && isLikelyImagePath(value)) {
+          return value;
+        }
+      }
+
+      return "";
+    }
+
+    function findAnyImageLikeValue() {
+      var globalCandidates = document.querySelectorAll("input[type='text'], input[type='hidden'], textarea, img[src]");
+      for (var i = 0; i < globalCandidates.length; i += 1) {
+        var value = readValueFromElement(globalCandidates[i]);
+        if (value && isLikelyImagePath(value)) {
+          return value;
+        }
       }
 
       return "";
@@ -188,9 +262,24 @@
       }
     }
 
-    var nearestImageValue = findNearestImageValue(forID);
+    var nearestImageValue = findNearestImageValue(rootEl, forID);
     if (nearestImageValue) {
       return nearestImageValue;
+    }
+
+    var nearbyValue = findImageValueNearWidgetRoot(rootEl);
+    if (nearbyValue) {
+      return nearbyValue;
+    }
+
+    var indexScopedValue = findImageValueByListIndex(forID);
+    if (indexScopedValue) {
+      return indexScopedValue;
+    }
+
+    var anyImageLikeValue = findAnyImageLikeValue();
+    if (anyImageLikeValue) {
+      return anyImageLikeValue;
     }
 
     return "";
@@ -260,7 +349,7 @@
       },
 
       resolveImageSource: function () {
-        return normalizeImageUrl(findImageValueFromEntry(this.props.entry, this.props.forID) || findImageValueFromDom(this.props.forID));
+        return normalizeImageUrl(findImageValueFromEntry(this.props.entry, this.props.forID) || findImageValueFromDom(this.props.forID, this.rootEl));
       },
 
       syncImageSource: function () {
@@ -465,6 +554,9 @@
           "div",
           {
             className: this.props.classNameWrapper,
+            ref: function (el) {
+              this.rootEl = el;
+            }.bind(this),
             style: {
               border: "1px solid #d0d7eb",
               borderRadius: "10px",
