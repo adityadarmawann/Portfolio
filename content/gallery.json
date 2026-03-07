@@ -3,6 +3,7 @@
     {
       "order": 1,
       "image": "/Asset/uploads/1767177539604.jpg",
+      "focus": { "x": 50, "y": 50 },
       "caption": {
         "en": "Instructure",
         "id": "Instruktur"
@@ -11,6 +12,7 @@
     {
       "order": 2,
       "image": "/Asset/uploads/1767177521314.jpg",
+      "focus": { "x": 50, "y": 50 },
       "caption": {
         "en": "Instructure",
         "id": "Instruktur"
@@ -19,6 +21,7 @@
     {
       "order": 3,
       "image": "Asset/photo-3.jpg",
+      "focus": { "x": 50, "y": 50 },
       "caption": {
         "en": "Casual Moment",
         "id": "Momen Santai"
@@ -27,6 +30,7 @@
     {
       "order": 4,
       "image": "Asset/photo-4.jpg",
+      "focus": { "x": 50, "y": 50 },
       "caption": {
         "en": "Conference Presentation",
         "id": "Presentasi Konferensi"
@@ -35,6 +39,7 @@
     {
       "order": 5,
       "image": "Asset/photo-5.jpg",
+      "focus": { "x": 50, "y": 50 },
       "caption": {
         "en": "Team Collaboration",
         "id": "Kolaborasi Tim"
@@ -43,6 +48,7 @@
     {
       "order": 6,
       "image": "Asset/photo-6.jpg",
+      "focus": { "x": 50, "y": 50 },
       "caption": {
         "en": "Working Session",
         "id": "Sesi Kerja"
@@ -51,6 +57,7 @@
     {
       "order": 7,
       "image": "Asset/photo-7.jpg",
+      "focus": { "x": 50, "y": 50 },
       "caption": {
         "en": "Creative Process",
         "id": "Proses Kreatif"
@@ -59,6 +66,7 @@
     {
       "order": 8,
       "image": "Asset/photo-8.jpg",
+      "focus": { "x": 50, "y": 50 },
       "caption": {
         "en": "Outdoor Portrait",
         "id": "Potret Outdoor"
@@ -67,6 +75,7 @@
     {
       "order": 9,
       "image": "Asset/photo-9.jpg",
+      "focus": { "x": 50, "y": 50 },
       "caption": {
         "en": "Professional Headshot",
         "id": "Foto Headshot Profesional"
