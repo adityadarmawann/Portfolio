@@ -277,7 +277,7 @@
             border: 1px solid rgba(61, 88, 171, 0.2);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow);
-            padding: 2rem;
+            padding: clamp(1.8rem, 3vw, 3rem);
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
@@ -285,13 +285,92 @@
 
         .hero-layout {
             display: grid;
-            grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.78fr);
-            gap: 1.15rem;
-            align-items: stretch;
+            grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
+            gap: clamp(2rem, 4vw, 4rem);
+            align-items: center;
+        }
+
+        .hero-photo {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 480px;
+        }
+
+        .hero-photo-wrapper {
+            position: relative;
+            max-width: 420px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .hero-photo-wrapper::before {
+            content: "";
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            width: 85%;
+            height: 85%;
+            background: linear-gradient(135deg, rgba(75, 107, 223, 0.25), rgba(111, 136, 234, 0.15));
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 20px 40px rgba(31, 54, 120, 0.25));
         }
 
         .hero-copy {
             min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .hero-greeting {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 1rem;
+            background: rgba(75, 107, 223, 0.08);
+            border: 1px solid rgba(75, 107, 223, 0.2);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            color: var(--brand);
+            font-weight: 500;
+            width: fit-content;
+        }
+
+        .hero-greeting::before {
+            content: "👋";
+            font-size: 1.1rem;
+        }
+
+        .hero-name {
+            font-family: "Sora", sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            line-height: 1.2;
+            font-weight: 700;
+            color: #1a1f36;
+            margin: 0;
+        }
+
+        .hero-name span {
+            color: var(--brand);
+        }
+
+        .hero-role {
+            font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+            color: #2d3748;
+            font-weight: 500;
+            line-height: 1.5;
+            margin: 0;
         }
 
         .hero-media {
@@ -309,6 +388,16 @@
             bottom: -120px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(75, 107, 223, 0.16), rgba(75, 107, 223, 0));
+            pointer-events: none;
+        }
+
+        .hero-main::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 8% 18%, rgba(255, 255, 255, 0.5), transparent 35%),
+                linear-gradient(115deg, rgba(75, 107, 223, 0.05), rgba(111, 136, 234, 0.02));
             pointer-events: none;
         }
 
@@ -335,17 +424,26 @@
             font-family: "Sora", sans-serif;
             font-size: clamp(1.9rem, 3.2vw, 3.15rem);
             line-height: 1.16;
-            margin-bottom: 0.9rem;
+            margin-bottom: 0;
             letter-spacing: -0.02em;
             max-width: 30ch;
             text-wrap: balance;
             word-break: normal;
             overflow-wrap: normal;
+            position: relative;
+            z-index: 1;
         }
 
         .hero p {
             color: var(--muted);
             max-width: 64ch;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-desc {
+            font-size: clamp(1.02rem, 1.45vw, 1.12rem);
+            line-height: 1.68;
         }
 
         .hero-actions {
@@ -355,43 +453,28 @@
             flex-wrap: wrap;
         }
 
-        .hero-focus {
-            margin-top: 1rem;
-            color: #324250;
-        }
-
-        .hero-focus-title {
-            font-family: "Sora", sans-serif;
-            font-size: 0.96rem;
-            font-weight: 700;
-            color: #233b78;
-            margin-bottom: 0.45rem;
-        }
-
-        .hero-focus-list {
-            list-style: none;
+        .hero-skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.45rem 0.75rem;
-            margin: 0;
-            padding: 0;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
         }
 
-        .hero-focus-list li {
-            font-size: 0.92rem;
-            position: relative;
-            padding-left: 0.8rem;
+        .hero-skill-tag {
+            padding: 0.5rem 1.1rem;
+            background: rgba(75, 107, 223, 0.06);
+            border: 1px solid rgba(75, 107, 223, 0.15);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #2d3748;
+            font-weight: 500;
+            transition: all 0.2s ease;
         }
 
-        .hero-focus-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.58rem;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
+        .hero-skill-tag:hover {
+            background: rgba(75, 107, 223, 0.12);
+            border-color: rgba(75, 107, 223, 0.3);
+            transform: translateY(-2px);
         }
 
         .btn {
@@ -430,6 +513,17 @@
         .btn-secondary::before {
             content: "\2709";
             font-size: 0.82rem;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            border: 2px solid #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20BA5A;
+            border-color: #20BA5A;
         }
 
         .hero-gallery {
@@ -578,10 +672,6 @@
             box-shadow: 0 6px 15px rgba(64, 90, 170, 0.16);
         }
 
-        #about h2::before {
-            content: "\263A";
-        }
-
         #education h2::before {
             content: "\1F393";
         }
@@ -618,37 +708,6 @@
             color: var(--muted);
             max-width: 62ch;
             margin-bottom: 1.2rem;
-        }
-
-        #about .section-lead {
-            max-width: 100%;
-            white-space: nowrap;
-        }
-
-        .about-wrap {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.3rem;
-            align-items: stretch;
-            max-width: 100%;
-            margin: 0;
-        }
-
-        .profile-frame {
-            background: var(--surface);
-            border: 1px solid rgba(61, 88, 171, 0.16);
-            border-radius: var(--radius-lg);
-            padding: 0.7rem;
-            box-shadow: var(--shadow);
-            min-height: 100%;
-        }
-
-        .profile-frame img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            border-radius: 16px;
-            display: block;
         }
 
         .about-content {
@@ -1200,10 +1259,22 @@
             padding: 1.8rem;
         }
 
-        .contact-info h3 {
+        .contact-intro {
+            margin-bottom: 1.1rem;
+            text-align: center;
+            max-width: 82ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-subheading {
             font-family: "Sora", sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.35rem;
+            margin: 1.1rem 0 0.7rem;
+        }
+
+        .contact-subheading-center {
+            text-align: center;
         }
 
         .contact-links {
@@ -1243,7 +1314,6 @@
         }
 
         .cv-grid {
-            margin-top: 1rem;
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 0.75rem;
@@ -1296,28 +1366,46 @@
 
             .hero-layout {
                 grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .hero-photo {
+                min-height: 350px;
+            }
+
+            .hero-photo-wrapper {
+                max-width: 300px;
+            }
+
+            .hero-skills {
+                justify-content: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-greeting,
+            .hero-name,
+            .hero-role {
+                text-align: center;
+            }
+
+            .hero-greeting {
+                margin: 0 auto;
             }
 
             .hero-media .hero-gallery {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
             }
 
-            .hero-grid,
-            .about-wrap {
+            .hero-grid {
                 grid-template-columns: 1fr;
             }
 
             .skills-grid,
             .projects-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            #about .section-lead {
-                white-space: normal;
-            }
-
-            .about-wrap {
-                max-width: 100%;
             }
         }
 
@@ -1642,39 +1730,24 @@
         <div class="container hero-grid">
             <div class="hero-main reveal">
                 <div class="hero-layout">
-                    <div class="hero-copy">
-                        <div class="hero-badge" data-i18n="hero_badge">Available for Work Opportunities</div>
-                        <h1 data-i18n="hero_title">Selamat Datang di Portofolio Profesional Muhamad Aditya Darmawan.</h1>
-                        <p data-i18n="hero_desc">
-                            Data and AI enthusiast with strong experience in machine learning, system development,
-                            and cross-functional collaboration. This portfolio highlights my education, certifications,
-                            project journey, and practical impact.
-                        </p>
-                        <div class="hero-focus" aria-label="Core focus">
-                            <p class="hero-focus-title" data-i18n="core_focus">Core Focus</p>
-                            <ul class="hero-focus-list">
-                                <li data-i18n="focus_1">Data Science</li>
-                                <li data-i18n="focus_2">Machine Learning Engineer</li>
-                                <li data-i18n="focus_3">AI Engineer</li>
-                                <li data-i18n="focus_4">Project Management</li>
-                            </ul>
-                        </div>
-                        <div class="hero-actions">
-                            <a class="btn btn-primary" href="#projects" data-i18n="hero_cta_projects">Explore Projects</a>
-                            <a class="btn btn-secondary" href="#contact" data-i18n="hero_cta_contact">Let's Connect</a>
+                    <div class="hero-photo">
+                        <div class="hero-photo-wrapper">
+                            <img src="Asset/mesemiformal.png" alt="Muhamad Aditya Darmawan - Professional Portrait">
                         </div>
                     </div>
-                    <div class="hero-media">
-                        <div class="hero-gallery" id="hero-gallery" aria-label="Project visual previews">
-                            <div class="hero-gallery-item">
-                                <img src="Asset/TNN.png" alt="AI project preview">
-                            </div>
-                            <div class="hero-gallery-item">
-                                <img src="Asset/AI Comparison.png" alt="Data project preview">
-                            </div>
-                            <div class="hero-gallery-item">
-                                <img src="Asset/Web Niskala.png" alt="Web project preview">
-                            </div>
+                    <div class="hero-copy">
+                        <div class="hero-greeting" data-i18n="hero_greeting">Hello</div>
+                        <h1 class="hero-name"><span data-i18n="hero_intro">I'm</span> <span data-i18n="hero_name">Muhamad Aditya Darmawan</span>,</h1>
+                        <p class="hero-role" data-i18n="hero_role">Data Science & AI Engineer Enthusiast</p>
+                        <div class="hero-skills">
+                            <span class="hero-skill-tag" data-i18n="skill_tag_1">Data Science</span>
+                            <span class="hero-skill-tag" data-i18n="skill_tag_2">Machine Learning</span>
+                            <span class="hero-skill-tag" data-i18n="skill_tag_3">AI Development</span>
+                            <span class="hero-skill-tag" data-i18n="skill_tag_4">Project Management</span>
+                        </div>
+                        <div class="hero-actions">
+                            <a class="btn btn-primary" href="#projects" data-i18n="hero_cta_projects">My Project</a>
+                            <a class="btn btn-secondary" href="#contact" data-i18n="hero_cta_contact">Contact</a>
                         </div>
                     </div>
                 </div>
@@ -1685,16 +1758,8 @@
     <main class="container-main">
         <section id="about" class="reveal">
             <h2 data-i18n="about_title">About Me</h2>
-            <p class="section-lead" data-i18n="about_lead">Building practical technology solutions with clear communication and data-driven thinking.</p>
-            <div class="about-wrap">
-                <div class="profile-frame">
-                    <img id="profile-image" src="Asset/aditya1.png" alt="Aditya Profile">
-                </div>
-                <div class="about-content">
-                    <p data-i18n="about_p1">Bachelor's graduate in Informatics from the Faculty of Engineering, Universitas Siliwangi, with strong skills in data analysis, statistical modeling, and system development. Proficient in Python, SQL, PyTorch, and TensorFlow with hands-on experience in building and evaluating machine learning models. Able to extract actionable insights from complex datasets and turn them into strategic recommendations.</p>
-                    <p data-i18n="about_p2">Known for clear and confident communication, with experience presenting technical material in both academic and organizational settings. Frequently invited as a speaker or facilitator in workshops, demonstrating the ability to engage diverse audiences.</p>
-                    <p data-i18n="about_p3">Passionate about data-driven innovation and eager to contribute to collaborative, solution-focused environments. Combines analytical thinking, technical expertise, and communication skills to support effective decision-making and technological growth.</p>
-                </div>
+            <div class="about-content">
+                <p data-i18n="about_p1">AI-focused Data Scientist and Machine Learning Engineer with a strong foundation in modeling and end-to-end ML development. Experienced in designing robust machine learning pipelines, optimizing deep learning architectures, and delivering high-performance predictive models. Proficient in Python, TensorFlow, PyTorch, and SQL, with expertise in feature engineering, model optimization, and evaluation strategies. Driven to build scalable, production-oriented AI solutions that generate measurable business and research impact.</p>
             </div>
         </section>
 
@@ -2099,20 +2164,19 @@
         <section id="contact" class="reveal">
             <h2 data-i18n="contact_title">Contact</h2>
             <div class="contact-info">
-                <h3 data-i18n="contact_heading">Let's Connect</h3>
-                <p data-i18n="contact_desc">This portfolio reflects my passion for continuous learning and creating innovative solutions. Thank you for taking the time to review my portfolio. I believe my skills in Data, AI Engineer, and Project Management will be a great fit for your company's vision. Let's discuss how we can build something great together.</p>
+                <p class="contact-intro" data-i18n="contact_desc">This portfolio reflects my passion for continuous learning and creating innovative solutions. Thank you for taking the time to review my portfolio. I believe my skills in Data, AI Engineer, and Project Management will be a great fit for your company's vision. Let's discuss how we can build something great together.</p>
 
-                <div style="margin: 1.2rem 0 0.4rem;">
-                    <h4 style="margin-bottom: 0.75rem; font-family: 'Sora', sans-serif;" data-i18n="cv_heading">You can download my CV here:</h4>
-                    <div class="cv-grid">
-                        <a id="cv-data-link" href="https://1drv.ms/b/c/e8e138949147d58e/IQAFI4PIO1INTb1Jo-O4fD6tAZR5PBwNO9dRDXw1NJYToPI?e=xm2zfj" target="_blank" rel="noopener" class="cv-download-btn">
-                            <span data-i18n="cv_data">CV in Data and AI Scope</span>
-                        </a>
-                        <a id="cv-pm-link" href="https://1drv.ms/b/c/e8e138949147d58e/IQB9Zq4C9iheS4MRDd-6DkD6AX5rWSZEYpjEPUPYAzIGwGw?e=qEIE5J" target="_blank" rel="noopener" class="cv-download-btn">
-                            <span data-i18n="cv_pm">CV Project Management Scope</span>
-                        </a>
-                    </div>
+                <h3 class="contact-subheading contact-subheading-center" data-i18n="cv_heading">You can download my CV here:</h3>
+                <div class="cv-grid">
+                    <a id="cv-data-link" href="https://1drv.ms/b/c/e8e138949147d58e/IQAFI4PIO1INTb1Jo-O4fD6tAZR5PBwNO9dRDXw1NJYToPI?e=xm2zfj" target="_blank" rel="noopener" class="cv-download-btn">
+                        <span data-i18n="cv_data">CV in Data and AI Scope</span>
+                    </a>
+                    <a id="cv-pm-link" href="https://1drv.ms/b/c/e8e138949147d58e/IQB9Zq4C9iheS4MRDd-6DkD6AX5rWSZEYpjEPUPYAzIGwGw?e=qEIE5J" target="_blank" rel="noopener" class="cv-download-btn">
+                        <span data-i18n="cv_pm">CV Project Management Scope</span>
+                    </a>
                 </div>
+
+                <h3 class="contact-subheading contact-subheading-center" data-i18n="contact_heading">Let's Connect</h3>
 
                 <div class="contact-links" id="contact-links">
                     <a href="mailto:darmawanaditya521@gmail.com" class="contact-link">
@@ -2166,7 +2230,6 @@
         const galleryModalImage = document.getElementById("gallery-modal-image");
         const galleryModalTitle = document.getElementById("gallery-modal-title");
         const galleryModalClose = document.getElementById("gallery-modal-close");
-        const heroGalleryEl = document.getElementById("hero-gallery");
         const profileImageEl = document.getElementById("profile-image");
         const educationListEl = document.getElementById("education-list");
         const skillsListEl = document.getElementById("skills-list");
@@ -2195,24 +2258,39 @@
                 gallery_lead: "Personal moments and visual snapshots from my professional journey.",
                 gallery_close: "Close",
                 hero_badge: "Available for Work Opportunities",
-                hero_title: "Welcome to Muhamad Aditya Darmawan's Professional Portfolio.",
-                hero_desc: "Data and AI enthusiast with strong experience in machine learning, system development, and cross-functional collaboration. This portfolio highlights my education, certifications, project journey, and practical impact.",
+                hero_greeting: "Hello",
+                hero_intro: "I'm",
+                hero_name: "Muhamad Aditya Darmawan",
+                hero_role: "Data Science & AI Engineer Enthusiast",
+                hero_cta_hire: "Hire Me",
+                hero_cta_whatsapp: "WhatsApp",
+                skill_tag_1: "Data Science",
+                skill_tag_2: "Machine Learning",
+                skill_tag_3: "AI Development",
+                skill_tag_4: "Project Management",
                 hero_cta_projects: "Explore Projects",
                 hero_cta_contact: "Let's Connect",
+                hero_title: "Welcome to My Professional Portfolio.",
+                hero_desc: "Data and AI enthusiast with strong experience in machine learning, system development, and cross-functional collaboration. This portfolio highlights my education, certifications, project journey, and practical impact.",
                 core_focus: "Core Focus",
                 focus_1: "Data Science",
                 focus_2: "Machine Learning Engineer",
                 focus_3: "AI Engineer",
                 focus_4: "Project Management",
+                hero_panel_title: "Portfolio Snapshot",
+                hero_panel_item_1: "Education and achievements",
+                hero_panel_item_2: "Professional certifications",
+                hero_panel_item_3: "End-to-end project journey",
+                hero_panel_item_4: "Practical impact and outcomes",
+                hero_panel_note: "A focused, data-driven portfolio crafted for clear communication and measurable value.",
                 highlights: "Current Highlights",
                 highlight_meta: "Informatics Graduate - Universitas Siliwangi | GPA 3.97/4.0",
                 highlight_1: "Journal publication in progress",
                 highlight_2: "600+ schools AI training impact",
                 about_title: "About Me",
-                about_lead: "Building practical technology solutions with clear communication and data-driven thinking.",
-                about_p1: "Bachelor's graduate in Informatics from the Faculty of Engineering, Universitas Siliwangi, with strong skills in data analysis, statistical modeling, and system development. Proficient in Python, SQL, PyTorch, and TensorFlow with hands-on experience in building and evaluating machine learning models. Able to extract actionable insights from complex datasets and turn them into strategic recommendations.",
-                about_p2: "Known for clear and confident communication, with experience presenting technical material in both academic and organizational settings. Frequently invited as a speaker or facilitator in workshops, demonstrating the ability to engage diverse audiences.",
-                about_p3: "Passionate about data-driven innovation and eager to contribute to collaborative, solution-focused environments. Combines analytical thinking, technical expertise, and communication skills to support effective decision-making and technological growth.",
+                about_p1: "Data Scientist yang berfokus pada AI dan Machine Learning dengan fondasi yang kuat dalam pemodelan serta pengembangan ML end-to-end. Berpengalaman dalam merancang pipeline machine learning yang tangguh, mengoptimalkan arsitektur deep learning, dan menghasilkan model prediktif berkinerja tinggi. Terbiasa menggunakan Python, TensorFlow, PyTorch, dan SQL, dengan keahlian dalam rekayasa fitur, optimasi model, serta strategi evaluasi. Termotivasi untuk membangun solusi AI yang skalabel dan berorientasi produksi, yang mampu memberikan dampak nyata bagi bisnis maupun penelitian.",
+                about_p2: "",
+                about_p3: "",
                 education_title: "Education",
                 skills_title: "Skills",
                 cert_title: "Professional Certifications",
@@ -2246,24 +2324,40 @@
                 gallery_lead: "Momen personal dan cuplikan visual dari perjalanan profesional saya.",
                 gallery_close: "Tutup",
                 hero_badge: "Terbuka untuk Kesempatan Kerja",
-                hero_title: "Selamat Datang di Portofolio Profesional Muhamad Aditya Darmawan.",
-                hero_desc: "Antusias di bidang Data dan AI dengan pengalaman kuat pada machine learning, pengembangan sistem, dan kolaborasi lintas fungsi. Portofolio ini menampilkan pendidikan, sertifikasi, perjalanan proyek, dan dampak nyata yang telah saya bangun.",
+                hero_greeting: "Halo",
+                hero_intro: "Saya",
+                hero_name: "Muhamad Aditya Darmawan",
+                hero_role: "Data Science & AI Engineer Enthusiast",
+                hero_cta_hire: "Hubungi Saya",
+                hero_cta_whatsapp: "WhatsApp",
+                skill_tag_1: "Data Science",
+                skill_tag_2: "Machine Learning",
+                skill_tag_3: "AI Development",
+                skill_tag_4: "Project Management",
                 hero_cta_projects: "Lihat Proyek",
                 hero_cta_contact: "Mari Terhubung",
-                core_focus: "Fokus Utama",
+                hero_title: "Welcome to My Professional Portfolio.",
+                hero_desc: "Data and AI enthusiast with strong experience in machine learning, system development, and cross-functional collaboration. This portfolio highlights my education, certifications, project journey, and practical impact.",
+                core_focus: "Core Focus",
                 focus_1: "Data Science",
                 focus_2: "Machine Learning Engineer",
                 focus_3: "AI Engineer",
                 focus_4: "Project Management",
+                hero_panel_title: "Ringkasan Portofolio",
+                hero_panel_item_1: "Pendidikan dan pencapaian",
+                hero_panel_item_2: "Sertifikasi profesional",
+                hero_panel_item_3: "Perjalanan proyek end-to-end",
+                hero_panel_item_4: "Dampak praktis dan hasil nyata",
+                hero_panel_note: "Portofolio yang fokus dan berbasis data untuk komunikasi yang jelas serta nilai yang terukur.",
                 highlights: "Sorotan Saat Ini",
                 highlight_meta: "Lulusan Informatika - Universitas Siliwangi | IPK 3.97/4.0",
                 highlight_1: "Publikasi jurnal sedang diproses",
                 highlight_2: "Dampak pelatihan AI ke 600+ sekolah",
                 about_title: "Tentang Saya",
                 about_lead: "Membangun solusi teknologi yang praktis dengan komunikasi yang jelas dan pola pikir berbasis data.",
-                about_p1: "Lulusan S1 Informatika dari Fakultas Teknik Universitas Siliwangi dengan kemampuan kuat pada analisis data, pemodelan statistik, dan pengembangan sistem. Menguasai Python, SQL, PyTorch, dan TensorFlow dengan pengalaman langsung membangun serta mengevaluasi model machine learning. Terbiasa mengekstrak insight yang dapat ditindaklanjuti dari data kompleks menjadi rekomendasi strategis.",
-                about_p2: "Dikenal dengan komunikasi yang jelas dan percaya diri, serta berpengalaman menyampaikan materi teknis dalam konteks akademik maupun organisasi. Sering diundang sebagai pembicara atau fasilitator workshop, dengan kemampuan melibatkan audiens yang beragam.",
-                about_p3: "Memiliki semangat tinggi pada inovasi berbasis data dan siap berkontribusi dalam lingkungan kolaboratif yang berorientasi solusi. Menggabungkan pola pikir analitis, keahlian teknis, dan kemampuan komunikasi untuk mendukung keputusan yang efektif serta pertumbuhan teknologi.",
+                about_p1: "Data Scientist yang berfokus pada AI dan Machine Learning dengan fondasi yang kuat dalam pemodelan serta pengembangan ML end-to-end. Berpengalaman dalam merancang pipeline machine learning yang tangguh, mengoptimalkan arsitektur deep learning, dan menghasilkan model prediktif berkinerja tinggi. Terbiasa menggunakan Python, TensorFlow, PyTorch, dan SQL, dengan keahlian dalam rekayasa fitur, optimasi model, serta strategi evaluasi. Termotivasi untuk membangun solusi AI yang skalabel dan berorientasi produksi, yang mampu memberikan dampak nyata bagi bisnis maupun penelitian.",
+                about_p2: "",
+                about_p3: "",
                 education_title: "Pendidikan",
                 skills_title: "Keahlian",
                 cert_title: "Sertifikasi Profesional",
@@ -2623,14 +2717,6 @@
 
                 if (settings?.seo) {
                     seoOverrides = settings.seo;
-                }
-
-                if (settings?.heroGallery && heroGalleryEl) {
-                    heroGalleryEl.innerHTML = settings.heroGallery.map((item) => `
-                        <div class="hero-gallery-item">
-                            <img src="${escapeHtml(item.image || "")}" alt="${escapeHtml(item.alt || "Hero preview")}">
-                        </div>
-                    `).join("");
                 }
 
                 if (settings?.aboutImage?.src && profileImageEl) {
