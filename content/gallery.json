@@ -4,16 +4,16 @@
       "order": 1,
       "image": "/Asset/uploads/1767177539604.jpg",
       "caption": {
-        "en": "Instruktur",
-        "id": "Instructure"
+        "en": "Instructure",
+        "id": "Instruktur"
       }
     },
     {
       "order": 2,
-      "image": "Asset/photo-2.jpg",
+      "image": "/Asset/uploads/1767177521314.jpg",
       "caption": {
-        "en": "At Work",
-        "id": "Saat Bekerja"
+        "en": "Instructure",
+        "id": "Instruktur"
       }
     },
     {
