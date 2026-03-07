@@ -1,5 +1,8 @@
 # Canonicalize direct index access
 /index.html  /  301
 
+# Never rewrite Netlify service endpoints (Identity, Git Gateway, Functions)
+/.netlify/*  /.netlify/:splat  200
+
 # Return a real 404 page for unknown routes
 /*  /404.html  404

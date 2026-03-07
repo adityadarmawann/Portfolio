@@ -2,7 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-local_backend: true
+site_url: https://portfolio-adityadarmawan.netlify.app
+display_url: https://portfolio-adityadarmawan.netlify.app
 publish_mode: simple
 
 media_folder: "Asset/uploads"
