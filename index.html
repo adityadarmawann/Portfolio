@@ -846,6 +846,14 @@
             background: rgba(59, 92, 212, 0.98);
         }
 
+        .cert-link-btn.is-disabled {
+            background: rgba(109, 127, 181, 0.86);
+            border-color: rgba(255, 255, 255, 0.48);
+            box-shadow: none;
+            pointer-events: none;
+            cursor: default;
+        }
+
         .project-card {
             overflow: hidden;
             display: flex;
@@ -1828,6 +1836,10 @@
             <h2 data-i18n="cert_title">Professional Certifications</h2>
             <div class="skills-grid" id="certifications-list">
                 <div class="skill-card">
+                    <div class="cert-card-media">
+                        <img src="Asset/aditya1.png" alt="Program Analyst Certificate">
+                        <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">Sertifikat/Certificate</a>
+                    </div>
                     <h3>Program Analyst</h3>
                     <p><em>Certified by BNSP Authority and LSP Siliwangi University</em></p>
                     <ul>
@@ -1838,6 +1850,10 @@
                     </ul>
                 </div>
                 <div class="skill-card">
+                    <div class="cert-card-media">
+                        <img src="Asset/aditya1.png" alt="ICT Project Manager Certificate">
+                        <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">Sertifikat/Certificate</a>
+                    </div>
                     <h3>ICT Project Manager</h3>
                     <p><em>Certified by BNSP Authority and LSP Siliwangi University</em></p>
                     <ul>
@@ -1848,6 +1864,10 @@
                     </ul>
                 </div>
                 <div class="skill-card">
+                    <div class="cert-card-media">
+                        <img src="Asset/aditya1.png" alt="Data Science Certificate">
+                        <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">Sertifikat/Certificate</a>
+                    </div>
                     <h3>Data Science</h3>
                     <p><em>Certified by PT Hacktivate Teknologi Indonesia on Study Independent Program</em></p>
                     <ul>
@@ -2444,6 +2464,10 @@
                 const title = group.title?.[currentLanguage] || group.title?.en || "";
                 const subtitle = group.subtitle ? (group.subtitle[currentLanguage] || group.subtitle.en || "") : "";
                 const imageAlt = group.imageAlt || title || "Certificate";
+                const hasCertificateUrl = isValidHttpUrl(group.certificateUrl);
+                const certificateHref = hasCertificateUrl ? group.certificateUrl.trim() : "#";
+                const certificateClass = hasCertificateUrl ? "cert-link-btn" : "cert-link-btn is-disabled";
+                const certificateExtraAttrs = hasCertificateUrl ? 'target="_blank" rel="noopener"' : 'aria-disabled="true" tabindex="-1"';
                 const itemsList = (group.items || []).map((item) => {
                     const text = item[currentLanguage] || item.en || "";
                     return `<li data-en="${escapeHtml(item.en || text)}" data-id="${escapeHtml(item.id || text)}">${escapeHtml(text)}</li>`;
@@ -2453,7 +2477,7 @@
                     <div class="skill-card">
                         <div class="cert-card-media">
                             ${group.image ? `<img src="${escapeHtml(group.image)}" alt="${escapeHtml(imageAlt)}">` : ""}
-                            ${group.certificateUrl ? `<a class="cert-link-btn" href="${escapeHtml(group.certificateUrl)}" target="_blank" rel="noopener">Sertifikat/Certificate</a>` : ""}
+                            <a class="${certificateClass}" href="${escapeHtml(certificateHref)}" ${certificateExtraAttrs}>Sertifikat/Certificate</a>
                         </div>
                         <h3 data-en="${escapeHtml(group.title?.en || title)}" data-id="${escapeHtml(group.title?.id || title)}">${escapeHtml(title)}</h3>
                         ${subtitle ? `<p><em data-en="${escapeHtml(group.subtitle.en || subtitle)}" data-id="${escapeHtml(group.subtitle.id || subtitle)}">${escapeHtml(subtitle)}</em></p>` : ""}
@@ -2461,6 +2485,24 @@
                     </div>
                 `;
             }).join("");
+        }
+
+        function isValidHttpUrl(urlValue) {
+            if (typeof urlValue !== "string") {
+                return false;
+            }
+
+            const trimmed = urlValue.trim();
+            if (!trimmed) {
+                return false;
+            }
+
+            try {
+                const parsed = new URL(trimmed);
+                return parsed.protocol === "http:" || parsed.protocol === "https:";
+            } catch (error) {
+                return false;
+            }
         }
 
         function renderProjects(items) {

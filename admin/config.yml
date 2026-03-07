@@ -176,7 +176,14 @@ collections:
                   - { label: "Bahasa Indonesia", name: "id", widget: "string" }
               - { label: "Gambar Sertifikat", name: "image", widget: "image", required: false }
               - { label: "Alt Gambar Sertifikat", name: "imageAlt", widget: "string", required: false }
-              - { label: "URL Sertifikat", name: "certificateUrl", widget: "string", required: false, hint: "Gunakan URL lengkap (Google Drive/OneDrive/dll)." }
+              - label: "URL Sertifikat"
+                name: "certificateUrl"
+                widget: "string"
+                required: false
+                hint: "Gunakan URL lengkap diawali https://"
+                pattern:
+                  - "^https?://.+$"
+                  - "URL harus diawali http:// atau https://"
               - label: "Poin"
                 name: "items"
                 widget: "list"
