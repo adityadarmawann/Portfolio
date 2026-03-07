@@ -3,8 +3,6 @@
     {
       "title": { "en": "Program Analyst", "id": "Program Analyst" },
       "subtitle": { "en": "Certified by BNSP Authority and LSP Siliwangi University", "id": "Tersertifikasi oleh BNSP dan LSP Universitas Siliwangi" },
-      "image": "",
-      "imageAlt": "",
       "certificateUrl": "",
       "items": [
         { "en": "Program unit testing, debugging, and profiling", "id": "Unit testing, debugging, dan profiling program" },
@@ -15,8 +13,6 @@
     {
       "title": { "en": "ICT Project Manager", "id": "ICT Project Manager" },
       "subtitle": { "en": "Certified by BNSP Authority and LSP Siliwangi University", "id": "Tersertifikasi oleh BNSP dan LSP Universitas Siliwangi" },
-      "image": "",
-      "imageAlt": "",
       "certificateUrl": "",
       "items": [
         { "en": "Project integration and scope management", "id": "Manajemen integrasi dan ruang lingkup proyek" },
@@ -27,8 +23,6 @@
     {
       "title": { "en": "Data Science", "id": "Data Science" },
       "subtitle": { "en": "Certified by PT Hacktivate Teknologi Indonesia on Study Independent Program", "id": "Tersertifikasi oleh PT Hacktivate Teknologi Indonesia pada Program Studi Independen" },
-      "image": "",
-      "imageAlt": "",
       "certificateUrl": "",
       "items": [
         { "en": "Python and Data Processing", "id": "Python dan Pemrosesan Data" },

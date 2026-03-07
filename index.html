@@ -806,26 +806,15 @@
             background: var(--brand);
         }
 
-        .cert-card-media {
-            position: relative;
-            margin: -1.35rem -1.35rem 0.95rem;
-            aspect-ratio: 4 / 3;
-            background: linear-gradient(150deg, #d8e4ff 0%, #eff4ff 100%);
-            border-bottom: 1px solid rgba(61, 88, 171, 0.16);
-            overflow: hidden;
-        }
-
-        .cert-card-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+        .cert-card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.45rem;
         }
 
         .cert-link-btn {
-            position: absolute;
-            top: 0.6rem;
-            right: 0.6rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -833,12 +822,17 @@
             border-radius: 8px;
             font-size: 0.74rem;
             font-weight: 700;
+            white-space: nowrap;
             background: rgba(75, 107, 223, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.64);
             color: #ffffff;
             box-shadow: 0 6px 15px rgba(34, 56, 132, 0.28);
             text-decoration: none;
             transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .cert-card-top h3 {
+            margin-bottom: 0;
         }
 
         .cert-link-btn:hover {
@@ -1836,11 +1830,10 @@
             <h2 data-i18n="cert_title">Professional Certifications</h2>
             <div class="skills-grid" id="certifications-list">
                 <div class="skill-card">
-                    <div class="cert-card-media">
-                        <img src="Asset/aditya1.png" alt="Program Analyst Certificate">
+                    <div class="cert-card-top">
+                        <h3>Program Analyst</h3>
                         <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">Sertifikat/Certificate</a>
                     </div>
-                    <h3>Program Analyst</h3>
                     <p><em>Certified by BNSP Authority and LSP Siliwangi University</em></p>
                     <ul>
                         <li>Program unit testing, debugging, and profiling</li>
@@ -1850,11 +1843,10 @@
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <div class="cert-card-media">
-                        <img src="Asset/aditya1.png" alt="ICT Project Manager Certificate">
+                    <div class="cert-card-top">
+                        <h3>ICT Project Manager</h3>
                         <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">Sertifikat/Certificate</a>
                     </div>
-                    <h3>ICT Project Manager</h3>
                     <p><em>Certified by BNSP Authority and LSP Siliwangi University</em></p>
                     <ul>
                         <li>Project integration and scope management</li>
@@ -1864,11 +1856,10 @@
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <div class="cert-card-media">
-                        <img src="Asset/aditya1.png" alt="Data Science Certificate">
+                    <div class="cert-card-top">
+                        <h3>Data Science</h3>
                         <a class="cert-link-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">Sertifikat/Certificate</a>
                     </div>
-                    <h3>Data Science</h3>
                     <p><em>Certified by PT Hacktivate Teknologi Indonesia on Study Independent Program</em></p>
                     <ul>
                         <li>Python and Data Processing</li>
@@ -2132,40 +2123,40 @@
             <div class="gallery-container">
                 <button class="gallery-nav-btn prev" id="gallery-prev" aria-label="Previous">‹</button>
                 <div class="gallery-grid" id="gallery-grid">
-                <figure class="gallery-card" data-full="Asset/photo-1.jpg" data-caption="Professional Portrait">
-                    <img src="Asset/photo-1.jpg" alt="Professional Portrait">
+                <figure class="gallery-card" data-full="/Asset/uploads/1767177539604.jpg">
+                    <img src="/Asset/uploads/1767177539604.jpg" alt="Professional Portrait">
                     <figcaption>Professional Portrait</figcaption>
                 </figure>
-                <figure class="gallery-card" data-full="Asset/photo-2.jpg" data-caption="At Work">
-                    <img src="Asset/photo-2.jpg" alt="At Work">
+                <figure class="gallery-card" data-full="/Asset/uploads/1767177521314.jpg">
+                    <img src="/Asset/uploads/1767177521314.jpg" alt="At Work">
                     <figcaption>At Work</figcaption>
                 </figure>
-                <figure class="gallery-card" data-full="Asset/photo-3.jpg" data-caption="Casual Moment">
-                    <img src="Asset/photo-3.jpg" alt="Casual Moment">
+                <figure class="gallery-card" data-full="/Asset/aditya1.png">
+                    <img src="/Asset/aditya1.png" alt="Casual Moment">
                     <figcaption>Casual Moment</figcaption>
                 </figure>
-                <figure class="gallery-card" data-full="Asset/photo-4.jpg" data-caption="Conference Presentation">
-                    <img src="Asset/photo-4.jpg" alt="Conference Presentation">
+                <figure class="gallery-card" data-full="/Asset/me.png">
+                    <img src="/Asset/me.png" alt="Conference Presentation">
                     <figcaption>Conference Presentation</figcaption>
                 </figure>
-                <figure class="gallery-card" data-full="Asset/photo-5.jpg" data-caption="Team Collaboration">
-                    <img src="Asset/photo-5.jpg" alt="Team Collaboration">
+                <figure class="gallery-card" data-full="/Asset/mesemiformal.png">
+                    <img src="/Asset/mesemiformal.png" alt="Team Collaboration">
                     <figcaption>Team Collaboration</figcaption>
                 </figure>
-                <figure class="gallery-card" data-full="Asset/photo-6.jpg" data-caption="Working Session">
-                    <img src="Asset/photo-6.jpg" alt="Working Session">
+                <figure class="gallery-card" data-full="/Asset/mycoffe.png">
+                    <img src="/Asset/mycoffe.png" alt="Working Session">
                     <figcaption>Working Session</figcaption>
                 </figure>
-                <figure class="gallery-card" data-full="Asset/photo-7.jpg" data-caption="Creative Process">
-                    <img src="Asset/photo-7.jpg" alt="Creative Process">
+                <figure class="gallery-card" data-full="/Asset/babarengan.png">
+                    <img src="/Asset/babarengan.png" alt="Creative Process">
                     <figcaption>Creative Process</figcaption>
                 </figure>
-                <figure class="gallery-card" data-full="Asset/photo-8.jpg" data-caption="Outdoor Portrait">
-                    <img src="Asset/photo-8.jpg" alt="Outdoor Portrait">
+                <figure class="gallery-card" data-full="/Asset/risk.png">
+                    <img src="/Asset/risk.png" alt="Outdoor Portrait">
                     <figcaption>Outdoor Portrait</figcaption>
                 </figure>
-                <figure class="gallery-card" data-full="Asset/photo-9.jpg" data-caption="Professional Headshot">
-                    <img src="Asset/photo-9.jpg" alt="Professional Headshot">
+                <figure class="gallery-card" data-full="/Asset/TNN.png">
+                    <img src="/Asset/TNN.png" alt="Professional Headshot">
                     <figcaption>Professional Headshot</figcaption>
                 </figure>
                 </div>
@@ -2463,7 +2454,6 @@
             certificationsListEl.innerHTML = items.map((group) => {
                 const title = group.title?.[currentLanguage] || group.title?.en || "";
                 const subtitle = group.subtitle ? (group.subtitle[currentLanguage] || group.subtitle.en || "") : "";
-                const imageAlt = group.imageAlt || title || "Certificate";
                 const hasCertificateUrl = isValidHttpUrl(group.certificateUrl);
                 const certificateHref = hasCertificateUrl ? group.certificateUrl.trim() : "#";
                 const certificateClass = hasCertificateUrl ? "cert-link-btn" : "cert-link-btn is-disabled";
@@ -2475,11 +2465,10 @@
 
                 return `
                     <div class="skill-card">
-                        <div class="cert-card-media">
-                            ${group.image ? `<img src="${escapeHtml(group.image)}" alt="${escapeHtml(imageAlt)}">` : ""}
+                        <div class="cert-card-top">
+                            <h3 data-en="${escapeHtml(group.title?.en || title)}" data-id="${escapeHtml(group.title?.id || title)}">${escapeHtml(title)}</h3>
                             <a class="${certificateClass}" href="${escapeHtml(certificateHref)}" ${certificateExtraAttrs}>Sertifikat/Certificate</a>
                         </div>
-                        <h3 data-en="${escapeHtml(group.title?.en || title)}" data-id="${escapeHtml(group.title?.id || title)}">${escapeHtml(title)}</h3>
                         ${subtitle ? `<p><em data-en="${escapeHtml(group.subtitle.en || subtitle)}" data-id="${escapeHtml(group.subtitle.id || subtitle)}">${escapeHtml(subtitle)}</em></p>` : ""}
                         <ul>${itemsList}</ul>
                     </div>
@@ -2656,7 +2645,7 @@
                 const focusX = clampPercent(item.focus?.x);
                 const focusY = clampPercent(item.focus?.y);
                 return `
-                    <figure class="gallery-card" data-full="${escapeHtml(item.image || "")}" data-caption="${escapeHtml(caption)}" style="--focus-x:${focusX}%; --focus-y:${focusY}%;">
+                    <figure class="gallery-card" data-full="${escapeHtml(item.image || "")}" style="--focus-x:${focusX}%; --focus-y:${focusY}%;">
                         <img src="${escapeHtml(item.image || "")}" alt="${escapeHtml(caption)}">
                         <figcaption data-en="${escapeHtml(item.caption?.en || caption)}" data-id="${escapeHtml(item.caption?.id || caption)}">${escapeHtml(caption)}</figcaption>
                     </figure>
@@ -2698,7 +2687,9 @@
         function bindGalleryInteractions() {
             galleryCards.forEach((card) => {
                 card.addEventListener("click", () => {
-                    openGalleryModal(card.dataset.full, card.dataset.caption);
+                    const captionEl = card.querySelector("figcaption");
+                    const captionText = captionEl ? captionEl.textContent.trim() : "";
+                    openGalleryModal(card.dataset.full, captionText);
                 });
             });
         }

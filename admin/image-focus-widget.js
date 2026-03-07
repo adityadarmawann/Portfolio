@@ -25,12 +25,57 @@
     };
   }
 
-  function findImageValueFromEntry(entry) {
+  function normalizePathSegment(segment) {
+    if (/^\d+$/.test(segment)) {
+      return Number(segment);
+    }
+    return segment;
+  }
+
+  function getEntryValueAtPath(entry, rawPathSegments) {
+    if (!entry || typeof entry.getIn !== "function" || !rawPathSegments || !rawPathSegments.length) {
+      return "";
+    }
+
+    var normalized = rawPathSegments.map(normalizePathSegment);
+    return (
+      entry.getIn(["data"].concat(normalized)) ||
+      entry.getIn(normalized) ||
+      ""
+    );
+  }
+
+  function buildImagePathFromForID(forID) {
+    if (!forID || typeof forID !== "string") {
+      return null;
+    }
+
+    var segments = forID.split(".");
+    if (!segments.length) {
+      return null;
+    }
+
+    var lastIndex = segments.length - 1;
+    if (segments[lastIndex] !== "focus") {
+      return null;
+    }
+
+    segments[lastIndex] = "image";
+    return segments;
+  }
+
+  function findImageValueFromEntry(entry, forID) {
     if (!entry || typeof entry.getIn !== "function") {
       return "";
     }
 
-    return entry.getIn(["data", "image"]) || entry.getIn(["image"]) || "";
+    var forIDImagePath = buildImagePathFromForID(forID);
+    var fromForID = getEntryValueAtPath(entry, forIDImagePath);
+    if (fromForID) {
+      return fromForID;
+    }
+
+    return getEntryValueAtPath(entry, ["image"]);
   }
 
   function findImageValueFromDom(forID) {
@@ -46,6 +91,23 @@
     }
 
     return "";
+  }
+
+  function normalizeImageUrl(value) {
+    if (typeof value !== "string") {
+      return "";
+    }
+
+    var trimmed = value.trim();
+    if (!trimmed) {
+      return "";
+    }
+
+    if (/^(https?:|data:|blob:)/i.test(trimmed) || trimmed.charAt(0) === "/") {
+      return trimmed;
+    }
+
+    return "/" + trimmed.replace(/^\/+/, "");
   }
 
   function maybeInitCmsAfterWidgetRegister() {
@@ -194,7 +256,8 @@
       },
 
       render: function () {
-        var image = findImageValueFromEntry(this.props.entry) || findImageValueFromDom(this.props.forID);
+        var image = findImageValueFromEntry(this.props.entry, this.props.forID) || findImageValueFromDom(this.props.forID);
+        image = normalizeImageUrl(image);
         var hasImage = Boolean(image);
         var x = this.state.x;
         var y = this.state.y;
