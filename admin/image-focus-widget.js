@@ -79,15 +79,118 @@
   }
 
   function findImageValueFromDom(forID) {
+    function readValueFromElement(element) {
+      if (!element) {
+        return "";
+      }
+
+      if (typeof element.value === "string" && element.value.trim()) {
+        return element.value.trim();
+      }
+
+      if (typeof element.getAttribute === "function") {
+        var srcAttr = element.getAttribute("src");
+        if (srcAttr && srcAttr.trim()) {
+          return srcAttr.trim();
+        }
+      }
+
+      return "";
+    }
+
+    function isLikelyImagePath(value) {
+      return /^(https?:|blob:|data:|\/)/i.test(value) || /^Asset\//i.test(value);
+    }
+
+    function findByIdOrName(idOrName) {
+      if (!idOrName) {
+        return "";
+      }
+
+      var byId = document.getElementById(idOrName);
+      var fromId = readValueFromElement(byId);
+      if (fromId) {
+        return fromId;
+      }
+
+      try {
+        var byName = document.querySelector('[name="' + idOrName.replace(/"/g, '\\"') + '"]');
+        var fromName = readValueFromElement(byName);
+        if (fromName) {
+          return fromName;
+        }
+
+        var byNameEndsWith = document.querySelector('[name$="' + idOrName.replace(/"/g, '\\"') + '"]');
+        var fromNameEndsWith = readValueFromElement(byNameEndsWith);
+        if (fromNameEndsWith) {
+          return fromNameEndsWith;
+        }
+      } catch (error) {
+        // ignore invalid selector and continue fallback chain
+      }
+
+      return "";
+    }
+
+    function findNearestImageValue(forIDValue) {
+      var focusEl = document.getElementById(forIDValue);
+      var container = focusEl ? focusEl.parentElement : null;
+      var hops = 0;
+
+      while (container && hops < 6) {
+        var candidates = container.querySelectorAll("input, textarea, img");
+        for (var i = 0; i < candidates.length; i += 1) {
+          var candidate = candidates[i];
+          if (focusEl && candidate === focusEl) {
+            continue;
+          }
+
+          var hint = ((candidate.id || "") + " " + (candidate.name || "") + " " + (candidate.className || "")).toLowerCase();
+          if (candidate.tagName !== "IMG" && hint.indexOf("image") === -1 && hint.indexOf("media") === -1) {
+            continue;
+          }
+
+          var candidateValue = readValueFromElement(candidate);
+          if (candidateValue && isLikelyImagePath(candidateValue)) {
+            return candidateValue;
+          }
+        }
+
+        container = container.parentElement;
+        hops += 1;
+      }
+
+      return "";
+    }
+
     if (!forID) {
       return "";
     }
 
     var imageId = forID.replace(/focus$/, "image");
-    var imageInput = document.getElementById(imageId);
+    var dotPath = imageId.replace(/\[(\d+)\]/g, ".$1");
+    var bracketPath = imageId.replace(/\.(\d+)\./g, "[$1].");
+    var pathVariants = [
+      imageId,
+      dotPath,
+      bracketPath,
+      imageId.replace(/\./g, "__"),
+      imageId.replace(/\./g, "_"),
+      imageId.replace(/\./g, "-"),
+      imageId.replace(/\[(\d+)\]/g, ".$1"),
+      imageId.replace(/\.(\d+)\./g, "__$1__")
+    ];
 
-    if (imageInput && imageInput.value) {
-      return imageInput.value;
+    for (var variantIndex = 0; variantIndex < pathVariants.length; variantIndex += 1) {
+      var fromVariant = findByIdOrName(pathVariants[variantIndex]);
+      if (fromVariant) {
+        return fromVariant;
+      }
+    }
+
+    var nearestImageValue = findNearestImageValue(forID);
+    if (nearestImageValue) {
+      return nearestImageValue;
     }
 
     return "";
@@ -147,19 +250,36 @@
     var ImageFocusControl = createClass({
       getInitialState: function () {
         var initialValue = toPlainValue(this.props.value);
+        var initialImage = normalizeImageUrl(findImageValueFromEntry(this.props.entry, this.props.forID) || findImageValueFromDom(this.props.forID));
         return {
           x: initialValue.x,
           y: initialValue.y,
-          dragging: false
+          dragging: false,
+          imageSrc: initialImage
         };
+      },
+
+      resolveImageSource: function () {
+        return normalizeImageUrl(findImageValueFromEntry(this.props.entry, this.props.forID) || findImageValueFromDom(this.props.forID));
+      },
+
+      syncImageSource: function () {
+        var nextImage = this.resolveImageSource();
+        if (nextImage !== this.state.imageSrc) {
+          this.setState({ imageSrc: nextImage });
+        }
       },
 
       componentDidMount: function () {
         this.pushChange(this.state.x, this.state.y);
+        this.syncImageSource();
         window.addEventListener("mousemove", this.handleMouseMove);
         window.addEventListener("mouseup", this.handleMouseUp);
         window.addEventListener("touchmove", this.handleMouseMove, { passive: false });
         window.addEventListener("touchend", this.handleMouseUp);
+
+        // Decap does not always re-render sibling widgets when image field changes.
+        this.imageSyncTimer = window.setInterval(this.syncImageSource, 350);
       },
 
       componentWillUnmount: function () {
@@ -167,9 +287,18 @@
         window.removeEventListener("mouseup", this.handleMouseUp);
         window.removeEventListener("touchmove", this.handleMouseMove);
         window.removeEventListener("touchend", this.handleMouseUp);
+
+        if (this.imageSyncTimer) {
+          window.clearInterval(this.imageSyncTimer);
+          this.imageSyncTimer = null;
+        }
       },
 
       componentDidUpdate: function (prevProps) {
+        if (prevProps.entry !== this.props.entry || prevProps.forID !== this.props.forID) {
+          this.syncImageSource();
+        }
+
         if (prevProps.value !== this.props.value && !this.state.dragging) {
           var nextValue = toPlainValue(this.props.value);
           if (nextValue.x !== this.state.x || nextValue.y !== this.state.y) {
@@ -256,8 +385,7 @@
       },
 
       render: function () {
-        var image = findImageValueFromEntry(this.props.entry, this.props.forID) || findImageValueFromDom(this.props.forID);
-        image = normalizeImageUrl(image);
+        var image = this.state.imageSrc || this.resolveImageSource();
         var hasImage = Boolean(image);
         var x = this.state.x;
         var y = this.state.y;
@@ -276,13 +404,39 @@
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  textAlign: "center",
+                  textAlign: "left",
                   color: "#4b5f8f",
                   fontSize: "13px",
                   padding: "10px"
                 }
               },
-              "Pilih gambar dulu, lalu geser titik fokus di sini."
+              h(
+                "div",
+                {
+                  style: {
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    background: "rgba(255,255,255,0.55)",
+                    border: "1px solid #c5d1f0",
+                    borderRadius: "999px",
+                    padding: "6px 10px"
+                  }
+                },
+                [
+                  h("span", {
+                    key: "dot",
+                    style: {
+                      width: "8px",
+                      height: "8px",
+                      borderRadius: "50%",
+                      background: "#4c6bdd",
+                      display: "inline-block"
+                    }
+                  }),
+                  h("span", { key: "text" }, "Tambahkan gambar di field Gambar di atas")
+                ]
+              )
             )
           );
         }
@@ -295,8 +449,8 @@
                 position: "absolute",
                 left: x + "%",
                 top: y + "%",
-                width: "18px",
-                height: "18px",
+                width: "12px",
+                height: "12px",
                 borderRadius: "50%",
                 background: "rgba(255,255,255,0.95)",
                 border: "2px solid #3f5fcf",
